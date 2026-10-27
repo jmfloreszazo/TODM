@@ -1,0 +1,45 @@
+name: TODM v0.4 reproducibility
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  reference:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Run reference oracle, governance fixtures, and qualification suite
+        run: python3 scripts/verify_all.py
+      - name: Verify signed G2 and G6 attestations and adversarial controls
+        run: |
+          python3 scripts/signed_assurance.py
+          python3 scripts/verify_signed.py
+      - name: Verify fail-closed release gate and reproducibility evidence
+        run: python3 scripts/reproduce.py
+      - name: Generate offline executive dashboard
+        run: python3 scripts/build_dashboard.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: todm-python-evidence
+          path: |
+            results/reference-execution.json
+            results/governance-execution.json
+            results/signed-assurance-execution.json
+            results/reproducibility-v0.4.json
+            dashboard/index.html
+  dotnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/setup-dotnet@v4
+        with: {dotnet-version: '10.0.x'}
+      - name: Build, smoke-test, run negative tests and governance fixture parity
+        run: bash scripts/run.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: todm-dotnet-evidence
+          path: |
+            results/governance-dotnet.json
+            results/governance-execution.json
+            results/reports/*.json

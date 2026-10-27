@@ -1,42 +1,47 @@
 # TODM — Test Oracle-Driven Methodology
 
-**Human-governed AI software engineering with independent acceptance oracles.**
+**Human-governed AI software engineering with independent behavioral oracles.**
 
-TODM is a proposed, vendor-neutral methodology for greenfield development, brownfield modernization and application maintenance (AMS). Its central rule is that an AI construction agent must not unilaterally define or change the acceptance conditions by which its own output is judged.
+Author: José María Flores Zazo · Research status: **proposed methodology + synthetic proof of concept**
 
-## Methodology
+TODM separates two questions: **is an agent authorized to act?** and **does its output conform to a separately approved behavioral baseline?** Both are necessary for a controlled release. The construction agent cannot unilaterally approve or modify its own acceptance criteria.
 
-| Gate | Stage | Decision |
-|---|---|---|
-| G0 | Frame scope, risk and mandate | Authorize discovery |
-| G1 | Discover and discriminate evidence | Qualify source evidence |
-| G2 | Specify, review and freeze baseline | Human approves oracle contracts |
-| G3 | Qualify the judges | Positive/negative controls and mutation tests |
-| G4 | Delegate bounded implementation | Agent constructs within mandate |
-| G5 | Run independent verification | PASS / FAIL / INCONCLUSIVE |
-| G6 | Authorize controlled delivery | Separate release authorization |
-| G7 | Observe, learn and version | Monitor drift and propose controlled updates |
+## Run the published research seed
 
-## Research demonstration
-
-The **minimal executable seed** in this repository illustrates independent oracle verification and release authorization, using synthetic data. Run:
+**Python 3.12+** (no external packages):
 
 ```bash
 python3 -m unittest discover -s tests -v
 python3 src/todm_demo.py
 ```
 
-The demo intentionally uses a **limited JSON policy profile**, not a complete SBVR/BPMN/CMMN/DMN/OCL interpreter. The complete v0.4 research artifact (Python reference, .NET 10 source, signed synthetic approvals, 16 governance fixtures, paper and experimental protocol) is being transferred and validated separately; **this repository does not yet contain that full package**.
+**.NET 10 SDK:**
 
-## Two independent predicates
+```bash
+dotnet build dotnet/Todm.Seed/Todm.Seed.csproj -c Release
+dotnet run --project dotnet/Todm.Seed/Todm.Seed.csproj -c Release -- --self-test
+dotnet run --project dotnet/Todm.Seed/Todm.Seed.csproj -c Release
+```
 
-- **Behavioral conformance:** does the produced system satisfy a separately approved oracle baseline?
-- **Agent authority:** was the actor authorized to perform the change and is release independently approved?
+[GitHub Actions](../../actions) builds the .NET project and runs Python and .NET negative controls. A green workflow is required before claiming CI verification.
 
-Both must hold for delivery. Passing a test is not permission to deploy.
+## Methodology
 
-## Scientific status
+G0 scope → G1 discover evidence → G2 approve baseline → G3 qualify oracles → G4 bounded construction → G5 independent verification → G6 release approval → G7 monitoring and change control.
 
-Methodological proposal and synthetic demonstration. **No claim of industrial effectiveness, empirical superiority, production IAM, human identity verification or complete OMG conformance.** A comparative study against conventional SDD/TDD/BDD is required before asserting benefits.
+Profiles: SBVR, DMN, BPMN, CMMN and OCL. **Current public seed demonstrates only a narrow JSON business-policy profile**; it is not a full interpreter of these OMG standards.
 
-Author: José María Flores Zazo. See [publication status](docs/RESEARCH_STATUS.md).
+## Documentation
+
+- [Academic research synopsis](paper/RESEARCH_SYNOPSIS.md)
+- [Comparative experimental protocol](docs/COMPARATIVE_PROTOCOL.md)
+- [Evidence boundaries and limitations](docs/RESEARCH_STATUS.md)
+- [Synthetic business baseline](contracts/v1/policy.json)
+- [Python reference](src/todm_demo.py)
+- [.NET 10 seed](dotnet/Todm.Seed/Program.cs)
+
+## Publication integrity
+
+The full ~20-page manuscript and the more extensive v0.4 demo exist as separate research artifacts, **but are not yet fully transferred to this repository**. Do not cite the seed as proof of comparative superiority, production identity assurance or full OMG conformance. See the research synopsis for hypotheses and limitations.
+
+The synthetic approval label in JSON does **not** represent a real human signature. A release gate in a demonstration does not enforce a production deployment environment.

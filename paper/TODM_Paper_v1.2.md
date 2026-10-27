@@ -998,3 +998,88 @@ or typed decision adapter and a state-invariant evaluator with a narrow
 OCL-compatible profile. *M2* adds BPMN trace conformance, *M3* adds CMMN
 case state and milestone controls, and *M4* adds governed SBVR
 vocabulary with an explicitly reviewed operational mapping. *M5*
+performs cross-adapter mutation qualification, independent audit, and a
+multi-profile experiment. A knowledge-graph/ontology adapter may be
+explored separately after its entity, relationship, and provenance
+schema have been characterized; it is not a prerequisite for M0--M5.
+
+Every milestone must publish parser/version support, deterministic
+outputs, qualification tests, sample evidence, known unsupported
+constructs, and an explicit completion decision. The method should
+remain implementable by different runtimes and vendors, including plain
+code repositories and off-the-shelf engines. A branded reference
+implementation is not evidence that the *methodology itself* is
+tool-independent; this independence should be confirmed in a
+cross-platform replication.
+
+# Discussion
+
+TODM reframes AI-assisted software delivery as a problem of *justified
+acceptance*. Generating an implementation and generating tests both
+become delegated activities; establishing the conditions under which the
+resulting software may be called correct remains an accountable,
+evidence-driven task. Formal and semi-formal models make portions of
+business intent executable, while human review governs uncertainty and
+policy changes. The approach is aligned with professional software
+craftsmanship understood as responsibility for maintainable,
+well-verified outcomes rather than the volume of code produced.
+
+The method is not a replacement for CI/CD, secure development, SDD, TDD,
+BDD, domain modeling, incident management, or architectural governance.
+In particular, a constitutional governance layer determines whether
+actions are legitimate; TODM determines whether their software outputs
+satisfy independently authorized behavioral contracts. Both predicates
+are needed for accountable autonomous delivery. It provides a specific
+control loop tying these practices to independently governed and
+qualified oracles. Its additional ceremony should be justified by risk
+and evidence, not by a demand that every small change instantiate five
+engines.
+
+# Conclusion
+
+This paper defines [TODM]{.smallcaps} as a research-ready, tool-agnostic
+methodology that separates the authority to declare expected behavior
+from the autonomy to construct software. The methodological core is an
+approved, qualified oracle baseline; explicit three-plane separation;
+eight gates with reverse paths; tri-valued verification; and a
+reproducible evaluation protocol. The proposed design accommodates
+greenfield, brownfield, and application management without assuming a
+Big Bang migration, a specific vendor, or the adoption of any particular
+agent-governance framework. It explicitly separates mandate
+authorization from behavioral conformance. Its value is plausible but
+unproven: rigorous comparative studies must establish whether the added
+independence detects consequential defects and sustains bounded
+engineering autonomy. Until then, TODM should be read as a falsifiable
+methodological proposal, not as an experimentally validated quality
+guarantee.
+
+# Ethics, Transparency, and Author Responsibility {#ethics-transparency-and-author-responsibility .unnumbered}
+
+This manuscript describes a methodology and does not report studies on
+human participants, production customers, or private repositories.
+Illustrative values and scenarios are synthetic. Generative AI
+assistance was used to support drafting, language editing, literature
+organization, and document production. All technical claims, references,
+and citations require final human verification prior to submission. The
+human author is responsible for checking references, the technical
+claims, the originality and intellectual-property status of the work,
+and the final submitted version. No AI system is credited as an author.
+
+# Data and Code Availability {#data-and-code-availability .unnumbered}
+
+There is no industrial experimental dataset associated with this
+proposal. The versioned companion artifact (TODM Research Demo v0.4)
+provides limited JSON oracle profiles, fixed synthetic cases, a Python
+evaluator, offline Ed25519 demonstration attestations, a fail-closed
+command-line gate, and a SHA-256 provenance record. Its engineering
+acceptance outcomes are not a comparative dataset and do not establish
+OMG standards conformance, verified local .NET compilation, real human
+approvals, or industrial effectiveness. The release must be archived
+with a persistent public identifier and commit hash before external
+citation as an independently reproducible artifact. The paper's LaTeX
+source and figures form the reproducible manuscript artifact.
+
+[^1]: Author's companion essay (2026):
+    <https://jmfloreszazo.com/de-leviatan-al-autopilot/>. This
+    conceptual essay is not independent empirical validation of CPAG or
+    TODM.

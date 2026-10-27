@@ -1,0 +1,10 @@
+{
+  "profile":"TODM-DMN-first-hit-json-0.1",
+  "notice":"First-hit ordered decision table in JSON, not a full DMN/FEEL implementation.",
+  "rules":[
+    {"id":"DMN-1","when":{"customerActive":false},"result":"REJECT"},
+    {"id":"DMN-2","when":{"risk":"high"},"result":"REVIEW"},
+    {"id":"DMN-3","when":{"amountGt":10000},"result":"REVIEW"},
+    {"id":"DMN-4","when":{},"result":"APPROVE"}
+  ]
+}

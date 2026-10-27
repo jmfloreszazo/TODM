@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0-demo",
+  "approvalKind": "DEMO_SIMULATED",
+  "approvalNote": "No human has reviewed or cryptographically signed this example baseline. Never treat this as production approval.",
+  "sha256": {
+    "bpmn.json": "7fe422ca1e92c0a750325025940cf817a5fc26dbe57e250e42e62ed2e2addc64",
+    "cmmn.json": "129b4a0950816c64e9d6b1bbc015b1f4434576ff4be4d68add65cf3abbac03c1",
+    "dmn.json": "912a6f7bdbde4e0f758f8a5a91819b98261fe8227b1a427ab57330567b0717d1",
+    "ocl.json": "dc4e622698d53f4c4befecd19319770002797408e44193fe144dd68e2c11fc9a",
+    "sbvr.json": "193c133186f644412a16601c5ad6332bac2a1eec94efe7d6a8a05d7577d29bd6"
+  },
+  "sourceOfTruth": "Demonstration synthetic policy: review amount > 10000 EUR; inactive customer cannot be approved."
+}

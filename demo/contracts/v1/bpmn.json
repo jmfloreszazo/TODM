@@ -1,0 +1,6 @@
+{
+  "profile":"TODM-BPMN-trace-json-0.1",
+  "notice":"Event-trace constraints only, not BPMN 2.0 XML execution.",
+  "transitions":[["start","validate"],["validate","decide"],["decide","approve"],["decide","review"],["decide","reject"],["approve","complete"],["reject","complete"],["review","wait_approval"],["wait_approval","complete"]],
+  "requiredByDecision":{"APPROVE":["approve"],"REVIEW":["review","wait_approval"],"REJECT":["reject"]}
+}

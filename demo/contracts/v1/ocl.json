@@ -1,0 +1,9 @@
+{
+  "profile":"TODM-OCL-inspired-invariants-json-0.1",
+  "notice":"Typed conditional invariants, not an OCL grammar/interpreter.",
+  "invariants":[
+    {"id":"OCL-ELIGIBLE","when":{"field":"approved","equals":true},"require":{"field":"customerActive","equals":true}},
+    {"id":"OCL-APPROVAL-REQUIRES-HUMAN","when":{"and":[{"field":"approved","equals":true},{"field":"amount","gt":10000}]},"require":{"field":"humanApproval","equals":true}},
+    {"id":"OCL-APPROVED-STATE","when":{"field":"approved","equals":true},"require":{"field":"caseClosed","equals":true}}
+  ]
+}

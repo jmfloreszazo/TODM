@@ -1,29 +1,26 @@
-# Research verification status — 2026-10-27
+# TODM research publication status — 27 October 2026
 
-## Independently confirmed GitHub Actions
+## Completed and independently verifiable
 
-- **Success:** [16-case Python/.NET 10 JSON-policy parity, run 40596778676](https://github.com/jmfloreszazo/TODM/actions/runs/40596778676). This is a **narrow policy subset**, not the full 16-case five-family governance suite.
+- [x] Full English academic paper (20 pages) in [LaTeX](../paper/source/main.tex) and [Markdown](../paper/TODM_Paper_v1.2.md).
+- [x] [PDF compiled by GitHub Actions](../paper/TODM_Paper_v1.2.pdf), [green build](https://github.com/jmfloreszazo/TODM/actions/runs/40598669468).
+- [x] Full v0.4 demo source published under [demo/](../demo/), with five **limited** JSON semantic oracle profiles.
+- [x] Python/.NET 10 full demo parity across 16 synthetic governance fixtures and five oracle families: [green CI](https://github.com/jmfloreszazo/TODM/actions/runs/40598991585).
+- [x] 88 source files matched to local research artifact with Git object hashes; [SHA-256 manifest](ARTIFACT_MANIFEST.json) verified in CI.
+- [x] Synthetic signed G2/G6 evidence and negative controls executed, without asserting real human identity.
+- [x] Tagged, downloadable [GitHub Research Release v1.2](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.2) with PDF, arXiv-source candidate ZIP and complete reproducibility ZIP.
+- [x] Release workflow reran full Python/.NET 10 checks and integrity validation: [green release run](https://github.com/jmfloreszazo/TODM/actions/runs/40599015278).
+- [x] MIT license and `CITATION.cff` software citation metadata.
 
-- **Success:** [TODM cross-language CI, run 40596270705](https://github.com/jmfloreszazo/TODM/actions/runs/40596270705)
-- Commit: `ba20a842328285a727fe3608c7f1b131504035b4`
-- Python reference: success.
-- .NET 10: build and synthetic acceptance tests succeeded.
-- Regression fixed: manually constructed JSON integer amounts no longer produce spurious `INCONCLUSIVE`.
+## Pending external scientific publication
 
-## Scope of this confirmation
+- [ ] **arXiv:** author account, license choice, category/endorsement (if required), metadata and actual upload/submission. arXiv acceptance has not been claimed.
+- [ ] **Permanent DOI:** deposit the verified tagged research release in a suitable archive such as Zenodo; no DOI is assigned yet.
+- [ ] **Empirical evaluation:** preregister and execute a controlled comparison with independent adjudication and appropriate statistical reporting.
+- [ ] **Industrial validation:** evaluate on real greenfield, brownfield and AMS cases under approved governance controls.
 
-This proves **the minimal public seed**, not the complete v0.4 prototype. The complete research package includes five limited oracle model profiles, 16 governance scenarios, synthetic signed G2/G6 controls, full academic paper and a Python/C# parity script. Those assets have been prepared separately but **are not yet all present in GitHub**.
+## Evidence boundary
 
-## Publication checklist
+The public artifact proves deterministic behavior of the implemented **synthetic test fixtures**, including 16-case Python/.NET parity and negative release controls. It does **not** prove comparative superiority, full OMG conformance, production identity assurance, safe autonomous deployment or peer-reviewed industrial effectiveness.
 
-- [x] Repository public
-- [x] MIT license and citation metadata
-- [x] Minimal Python/.NET CI green
-- [ ] Full research package uploaded and reviewed
-- [x] Minimal JSON-policy 16-scenario Python/.NET parity green
-- [ ] Full five-family v0.4 16-scenario Python/.NET parity green
-- [ ] Versioned release and permanent archive DOI
-- [ ] Full paper source linked to exact immutable artifact
-- [ ] Independent comparative evaluation
-
-**Research boundary:** The synthetic fixtures are not an industrial study. No production identity, complete OMG semantics or empirical superiority is claimed.
+The release tag is a reproducible GitHub snapshot, not a peer-reviewed publication or a DOI.

@@ -1,12 +1,14 @@
 cff-version: 1.2.0
-message: "If you use TODM, cite the repository commit and the associated methodological manuscript. No archival DOI has been assigned yet."
+message: "Cite the full TODM research manuscript and the tagged software artifact. No DOI or arXiv identifier has been assigned."
 type: software
-title: "TODM: Test Oracle-Driven Methodology — Synthetic Research Seed"
+title: "TODM: Test Oracle-Driven Methodology — Research Artifact"
+version: "1.2"
+date-released: "2026-10-27"
 authors:
   - family-names: "Flores Zazo"
     given-names: "José María"
 repository-code: "https://github.com/jmfloreszazo/TODM"
-url: "https://github.com/jmfloreszazo/TODM"
+url: "https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.2"
 license: MIT
 keywords:
   - test oracles
@@ -15,4 +17,12 @@ keywords:
   - model-based testing
   - brownfield modernization
   - software maintenance
-abstract: "A synthetic research seed illustrating independently approved oracle baselines, agent authority checks, and fail-closed software release gates."
+abstract: "A proposed tool-agnostic methodology and reproducible synthetic Python/.NET 10 research artifact with independent behavioral oracles and human-governed release gates."
+preferred-citation:
+  type: generic
+  title: "TODM: A Test Oracle-Driven Methodology for Human-Governed AI Software Engineering"
+  authors:
+    - family-names: "Flores Zazo"
+      given-names: "José María"
+  year: 2026
+  url: "https://github.com/jmfloreszazo/TODM/releases/download/todm-research-v1.2/TODM_Paper_v1.2.pdf"

@@ -1,0 +1,15 @@
+{
+  "artifact": "TODM Research Demonstrator",
+  "version": "0.2.0",
+  "date": "2026-10-27",
+  "verification": {
+    "python_reference": "EXECUTED_PASS",
+    "python_qualification_tests": 9,
+    "governance_fixture_count": 16,
+    "javascript_syntax": "CHECKED_WITH_NODE_22",
+    "dashboard_interaction": "CHECKED_WITH_PLAYWRIGHT_CHROMIUM_16_CASES_AND_3_CRITICAL_CASES",
+    "dotnet_build": "NOT_EXECUTED_SDK_UNAVAILABLE",
+    "dotnet_python_parity": "PENDING_DOTNET_BUILD"
+  },
+  "limitations": "All approvals, mandates and releases are simulated. This artifact does not validate industrial effectiveness or OMG standards conformance."
+}

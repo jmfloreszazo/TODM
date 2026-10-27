@@ -1,0 +1,314 @@
+{
+  "referenceTime": "2026-10-27T12:00:00Z",
+  "notice": "Static research fixtures. SIMULATED_ALLOW does not deploy anything.",
+  "cases": [
+    {
+      "id": "GF-01-greenfield-approved",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "SIMULATED_ALLOW"
+    },
+    {
+      "id": "BF-01-brownfield-approved",
+      "scenario": "brownfield",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "SIMULATED_ALLOW"
+    },
+    {
+      "id": "AMS-01-maintenance-approved",
+      "scenario": "ams",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "SIMULATED_ALLOW"
+    },
+    {
+      "id": "GF-02-boundary-approved",
+      "scenario": "boundary",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "SIMULATED_ALLOW"
+    },
+    {
+      "id": "BF-02-high-risk-reviewed",
+      "scenario": "highrisk",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "SIMULATED_ALLOW"
+    },
+    {
+      "id": "GF-03-wrong-threshold",
+      "scenario": "greenfield",
+      "mutation": "wrong-threshold",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "FAIL",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "BLOCK",
+      "overrideAmount": 11000
+    },
+    {
+      "id": "BF-03-skip-review",
+      "scenario": "brownfield",
+      "mutation": "skip-review",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "FAIL",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "BLOCK"
+    },
+    {
+      "id": "BF-04-close-pending",
+      "scenario": "brownfield",
+      "mutation": "close-pending",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "FAIL",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "BLOCK"
+    },
+    {
+      "id": "AMS-02-inactive-approved",
+      "scenario": "ams",
+      "mutation": "approve-inactive",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "FAIL",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "BLOCK"
+    },
+    {
+      "id": "GF-04-missing-evidence",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "INCONCLUSIVE",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "BLOCK",
+      "dropFields": [
+        "amount"
+      ]
+    },
+    {
+      "id": "GF-05-revoked-agent",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-revoked",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "FAIL",
+      "expectedOutcome": "BLOCK"
+    },
+    {
+      "id": "GF-06-out-of-scope",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "payments-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "FAIL",
+      "expectedOutcome": "BLOCK"
+    },
+    {
+      "id": "GF-07-expired-mandate",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-expired",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "FAIL",
+      "expectedOutcome": "BLOCK"
+    },
+    {
+      "id": "GF-08-unapproved-release",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-01",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": false,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "PASS",
+      "expectedOutcome": "BLOCK"
+    },
+    {
+      "id": "GF-09-unapproved-action",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-limited",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "FAIL",
+      "expectedOutcome": "BLOCK"
+    },
+    {
+      "id": "GF-10-unknown-principal",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "authorization": {
+        "principal": "agent-unknown",
+        "action": "modify-service",
+        "scope": "approvals-service",
+        "at": "2026-10-27T12:00:00Z"
+      },
+      "releaseApproval": {
+        "kind": "DEMO_SIMULATED",
+        "approved": true,
+        "approverRole": "release-owner"
+      },
+      "expectedOracle": "PASS",
+      "expectedAuthority": "FAIL",
+      "expectedOutcome": "BLOCK"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "kind": "SYNTHETIC_CRYPTOGRAPHIC_ASSURANCE_NOT_REAL_HUMAN_IDENTITY",
+  "version": "0.3.0",
+  "summary": {
+    "cases": 16,
+    "signedAllows": 5,
+    "blocks": 11
+  },
+  "cases": [
+    {
+      "caseId": "GF-01-greenfield-approved",
+      "oracle": "PASS",
+      "authority": "PASS",
+      "signedGate": "DEMO_SIGNED_ALLOW"
+    },
+    {
+      "caseId": "BF-01-brownfield-approved",
+      "oracle": "PASS",
+      "authority": "PASS",
+      "signedGate": "DEMO_SIGNED_ALLOW"
+    },
+    {
+      "caseId": "AMS-01-maintenance-approved",
+      "oracle": "PASS",
+      "authority": "PASS",
+      "signedGate": "DEMO_SIGNED_ALLOW"
+    },
+    {
+      "caseId": "GF-02-boundary-approved",
+      "oracle": "PASS",
+      "authority": "PASS",
+      "signedGate": "DEMO_SIGNED_ALLOW"
+    },
+    {
+      "caseId": "BF-02-high-risk-reviewed",
+      "oracle": "PASS",
+      "authority": "PASS",
+      "signedGate": "DEMO_SIGNED_ALLOW"
+    },
+    {
+      "caseId": "GF-03-wrong-threshold",
+      "oracle": "FAIL",
+      "authority": "PASS",
+      "signedGate": "BLOCK"
+    },
+    {
+      "caseId": "BF-03-skip-review",
+      "oracle": "FAIL",
+      "authority": "PASS",
+      "signedGate": "BLOCK"
+    },
+    {
+      "caseId": "BF-04-close-pending",
+      "oracle": "FAIL",
+      "authority": "PASS",
+      "signedGate": "BLOCK"
+    },
+    {
+      "caseId": "AMS-02-inactive-approved",
+      "oracle": "FAIL",
+      "authority": "PASS",
+      "signedGate": "BLOCK"
+    },
+    {
+      "caseId": "GF-04-missing-evidence",
+      "oracle": "INCONCLUSIVE",
+      "authority": "PASS",
+      "signedGate": "BLOCK"
+    },
+    {
+      "caseId": "GF-05-revoked-agent",
+      "oracle": "PASS",
+      "authority": "FAIL",
+      "signedGate": "BLOCK"
+    },
+    {
+      "caseId": "GF-06-out-of-scope",
+      "oracle": "PASS",
+      "authority": "FAIL",
+      "signedGate": "BLOCK"
+    },
+    {
+      "caseId": "GF-07-expired-mandate",
+      "oracle": "PASS",
+      "authority": "FAIL",
+      "signedGate": "BLOCK"
+    },
+    {
+      "caseId": "GF-08-unapproved-release",
+      "oracle": "PASS",
+      "authority": "PASS",
+      "signedGate": "BLOCK"
+    },
+    {
+      "caseId": "GF-09-unapproved-action",
+      "oracle": "PASS",
+      "authority": "FAIL",
+      "signedGate": "BLOCK"
+    },
+    {
+      "caseId": "GF-10-unknown-principal",
+      "oracle": "PASS",
+      "authority": "FAIL",
+      "signedGate": "BLOCK"
+    }
+  ]
+}

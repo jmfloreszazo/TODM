@@ -1,0 +1,58 @@
+{
+  "policyVersion": "TODM-GOV-0.2-demo",
+  "notice": "Synthetic authorization fixtures only. No Entra, OIDC, signatures, policy engine or production enforcement.",
+  "mandates": {
+    "agent-01": {
+      "principal": "agent-01",
+      "actions": [
+        "modify-service",
+        "submit-evidence",
+        "propose-release"
+      ],
+      "scopes": [
+        "approvals-service"
+      ],
+      "validFrom": "2026-10-01T00:00:00Z",
+      "validUntil": "2026-11-30T00:00:00Z",
+      "revoked": false
+    },
+    "agent-revoked": {
+      "principal": "agent-revoked",
+      "actions": [
+        "modify-service",
+        "submit-evidence",
+        "propose-release"
+      ],
+      "scopes": [
+        "approvals-service"
+      ],
+      "validFrom": "2026-10-01T00:00:00Z",
+      "validUntil": "2026-11-30T00:00:00Z",
+      "revoked": true
+    },
+    "agent-limited": {
+      "principal": "agent-limited",
+      "actions": [
+        "submit-evidence"
+      ],
+      "scopes": [
+        "approvals-service"
+      ],
+      "validFrom": "2026-10-01T00:00:00Z",
+      "validUntil": "2026-11-30T00:00:00Z",
+      "revoked": false
+    },
+    "agent-expired": {
+      "principal": "agent-expired",
+      "actions": [
+        "modify-service"
+      ],
+      "scopes": [
+        "approvals-service"
+      ],
+      "validFrom": "2026-09-01T00:00:00Z",
+      "validUntil": "2026-10-15T00:00:00Z",
+      "revoked": false
+    }
+  }
+}

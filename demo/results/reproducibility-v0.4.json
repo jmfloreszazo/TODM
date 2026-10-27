@@ -1,0 +1,50 @@
+{
+  "kind": "TODM_SYNTHETIC_REPRODUCIBILITY_RECORD",
+  "version": "0.4.0",
+  "warning": "These are deterministic synthetic engineering tests, not industrial outcomes or real human identity.",
+  "pythonVersion": "3.13.5",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "command": "python3 scripts/verify_all.py",
+      "exitCode": 0,
+      "stdoutTail": "Python reference: 5 controls PASS; 4 seeded mutants FAIL; missing evidence INCONCLUSIVE\nWrote /mnt/data/TODM_Publication_Release_v1.6/demo/results/reference-execution.json\nTODM governance reference: {'caseCount': 16, 'oraclePass': 11, 'oracleFail': 4, 'oracleInconclusive': 1, 'mandateFail': 5, 'simulatedAllow': 5, 'blocked': 11}\nWrote /mnt/data/TODM_Publication_Release_v1.6/demo/results/governance-execution.json\n",
+      "stderrTail": "ch_oracle_family_exercised_by_a_seeded_mutant) ... ok\ntest_incomplete_evidence (__main__.Qualification.test_incomplete_evidence) ... ok\ntest_manifest_only_tamper (__main__.Qualification.test_manifest_only_tamper) ... ok\ntest_missing_authorization_field (__main__.Qualification.test_missing_authorization_field) ... ok\ntest_qualification_suite (__main__.Qualification.test_qualification_suite) ... ok\ntest_release_cannot_bypass_fail (__main__.Qualification.test_release_cannot_bypass_fail) ... ok\ntest_release_requires_explicit_simulated_approval (__main__.Qualification.test_release_requires_explicit_simulated_approval) ... ok\ntest_unknown_mandate (__main__.Qualification.test_unknown_mandate) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.004s\n\nOK\n"
+    },
+    {
+      "command": "python3 scripts/verify_signed.py",
+      "exitCode": 0,
+      "stdoutTail": "TODM v0.3 signed assurance: {'cases': 16, 'signedAllows': 5, 'blocks': 11}\n",
+      "stderrTail": "_main__.Tests.test_authority_denied_even_if_signed) ... ok\ntest_g6_case_binding_no_replay (__main__.Tests.test_g6_case_binding_no_replay) ... ok\ntest_g6_wrong_digest (__main__.Tests.test_g6_wrong_digest) ... ok\ntest_oracle_denied_even_if_signed (__main__.Tests.test_oracle_denied_even_if_signed) ... ok\ntest_signed_g6_required (__main__.Tests.test_signed_g6_required) ... ok\ntest_tamper_g2_signature (__main__.Tests.test_tamper_g2_signature) ... ok\ntest_tamper_g6_signature (__main__.Tests.test_tamper_g6_signature) ... ok\ntest_tamper_manifest_and_rehash_model (__main__.Tests.test_tamper_manifest_and_rehash_model) ... ok\ntest_valid_signed_baseline (__main__.Tests.test_valid_signed_baseline) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.114s\n\nOK\n"
+    },
+    {
+      "command": "python3 scripts/test_audit_release.py",
+      "exitCode": 0,
+      "stdoutTail": "",
+      "stderrTail": "test_authorized_case (__main__.GateTests.test_authorized_case) ... ok\ntest_bad_policy_mutant (__main__.GateTests.test_bad_policy_mutant) ... ok\ntest_baseline_signature_error_fail_closed (__main__.GateTests.test_baseline_signature_error_fail_closed) ... ok\ntest_evaluation_error_fail_closed (__main__.GateTests.test_evaluation_error_fail_closed) ... ok\ntest_missing_g6_signature_fail_closed (__main__.GateTests.test_missing_g6_signature_fail_closed) ... ok\ntest_revoked_or_unauthorized_fixtures (__main__.GateTests.test_revoked_or_unauthorized_fixtures) ... ok\ntest_unknown_case_fail_closed (__main__.GateTests.test_unknown_case_fail_closed) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.048s\n\nOK\n"
+    },
+    {
+      "command": "python3 scripts/audit_release.py --case GF-01-greenfield-approved --json",
+      "exitCode": 0,
+      "stdoutTail": "{\n  \"caseId\": \"GF-01-greenfield-approved\",\n  \"outcome\": \"DEMO_SIGNED_ALLOW\",\n  \"oracle\": \"PASS\",\n  \"authority\": \"PASS\",\n  \"baselineManifestSha256\": \"db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10\",\n  \"reason\": \"Synthetic cryptographic gate; NOT a real deployment approval\",\n  \"g2Attested\": true,\n  \"g6SignatureVerified\": true\n}\n",
+      "stderrTail": ""
+    },
+    {
+      "command": "python3 scripts/audit_release.py --case GF-03-wrong-threshold --json",
+      "exitCode": 2,
+      "expectedDenial": true
+    }
+  ],
+  "sha256": {
+    "contracts/v1/manifest.json": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+    "assurance/signed/g2-baseline.json": "99420773358735965c077ecd22dc2a41adfc4267a7f459cfe5cf5d8a31d54dc9",
+    "assurance/signed/g2-baseline.sig": "34dc01e3ce8650db76739daa8f791e0b47f25601caf36f05a6df32ff7b4f4922",
+    "governance/fixtures.json": "ec49e77602fce17d8f81ca5debf338909d27ec3ca9dd5ec6c53fd0f6c341d6be",
+    "governance/mandates.json": "d17c07e289d6c58058bc989f50e0459297f73272a62a8d975e5a23c1655e1de7",
+    "results/reference-execution.json": "3621b0e51f8a84e62f10e7527e45e00b3b056f1982fc7dbcf68ceb5a97f3d5ef",
+    "results/governance-execution.json": "8a7a0d0f9d5daf9460abbe6166f035d0c5712fd25bfe45ebea3cecb61fde81c9",
+    "results/signed-assurance-execution.json": "282e199272bcd2b0052c92eb103e9ab4e8af0bc6a419e2367eb9ed0e242fac95"
+  },
+  "allExpectedChecksPassed": true,
+  "dotnetCompiledHere": false
+}

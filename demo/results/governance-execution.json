@@ -1,0 +1,1000 @@
+{
+  "kind": "SYNTHETIC_TWO_PLANE_REFERENCE_NOT_PRODUCTION",
+  "version": "0.2.0",
+  "evaluationTime": "2026-10-27T12:00:00Z",
+  "summary": {
+    "caseCount": 16,
+    "oraclePass": 11,
+    "oracleFail": 4,
+    "oracleInconclusive": 1,
+    "mandateFail": 5,
+    "simulatedAllow": 5,
+    "blocked": 11
+  },
+  "cases": [
+    {
+      "caseId": "GF-01-greenfield-approved",
+      "profile": "greenfield",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "oracleVerdict": "PASS",
+      "authorityVerdict": "PASS",
+      "authorityReason": "Synthetic mandate permits this action at fixture time",
+      "releaseOutcome": "SIMULATED_ALLOW",
+      "releaseReason": "Both controls PASS; G6 approval simulated; no deployment performed",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "PASS",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "G6",
+          "state": "SIMULATED",
+          "detail": "Mandate PASS; simulated release decision"
+        },
+        {
+          "gate": "G7",
+          "state": "DEMO_ONLY",
+          "detail": "Monitoring not connected"
+        }
+      ],
+      "expected": {
+        "oracle": "PASS",
+        "authority": "PASS",
+        "release": "SIMULATED_ALLOW"
+      }
+    },
+    {
+      "caseId": "BF-01-brownfield-approved",
+      "profile": "brownfield",
+      "scenario": "brownfield",
+      "mutation": "none",
+      "oracleVerdict": "PASS",
+      "authorityVerdict": "PASS",
+      "authorityReason": "Synthetic mandate permits this action at fixture time",
+      "releaseOutcome": "SIMULATED_ALLOW",
+      "releaseReason": "Both controls PASS; G6 approval simulated; no deployment performed",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "PASS",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "G6",
+          "state": "SIMULATED",
+          "detail": "Mandate PASS; simulated release decision"
+        },
+        {
+          "gate": "G7",
+          "state": "DEMO_ONLY",
+          "detail": "Monitoring not connected"
+        }
+      ],
+      "expected": {
+        "oracle": "PASS",
+        "authority": "PASS",
+        "release": "SIMULATED_ALLOW"
+      }
+    },
+    {
+      "caseId": "AMS-01-maintenance-approved",
+      "profile": "ams",
+      "scenario": "ams",
+      "mutation": "none",
+      "oracleVerdict": "PASS",
+      "authorityVerdict": "PASS",
+      "authorityReason": "Synthetic mandate permits this action at fixture time",
+      "releaseOutcome": "SIMULATED_ALLOW",
+      "releaseReason": "Both controls PASS; G6 approval simulated; no deployment performed",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "PASS",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "G6",
+          "state": "SIMULATED",
+          "detail": "Mandate PASS; simulated release decision"
+        },
+        {
+          "gate": "G7",
+          "state": "DEMO_ONLY",
+          "detail": "Monitoring not connected"
+        }
+      ],
+      "expected": {
+        "oracle": "PASS",
+        "authority": "PASS",
+        "release": "SIMULATED_ALLOW"
+      }
+    },
+    {
+      "caseId": "GF-02-boundary-approved",
+      "profile": "greenfield",
+      "scenario": "boundary",
+      "mutation": "none",
+      "oracleVerdict": "PASS",
+      "authorityVerdict": "PASS",
+      "authorityReason": "Synthetic mandate permits this action at fixture time",
+      "releaseOutcome": "SIMULATED_ALLOW",
+      "releaseReason": "Both controls PASS; G6 approval simulated; no deployment performed",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "PASS",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "G6",
+          "state": "SIMULATED",
+          "detail": "Mandate PASS; simulated release decision"
+        },
+        {
+          "gate": "G7",
+          "state": "DEMO_ONLY",
+          "detail": "Monitoring not connected"
+        }
+      ],
+      "expected": {
+        "oracle": "PASS",
+        "authority": "PASS",
+        "release": "SIMULATED_ALLOW"
+      }
+    },
+    {
+      "caseId": "BF-02-high-risk-reviewed",
+      "profile": "brownfield",
+      "scenario": "highrisk",
+      "mutation": "none",
+      "oracleVerdict": "PASS",
+      "authorityVerdict": "PASS",
+      "authorityReason": "Synthetic mandate permits this action at fixture time",
+      "releaseOutcome": "SIMULATED_ALLOW",
+      "releaseReason": "Both controls PASS; G6 approval simulated; no deployment performed",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "PASS",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "G6",
+          "state": "SIMULATED",
+          "detail": "Mandate PASS; simulated release decision"
+        },
+        {
+          "gate": "G7",
+          "state": "DEMO_ONLY",
+          "detail": "Monitoring not connected"
+        }
+      ],
+      "expected": {
+        "oracle": "PASS",
+        "authority": "PASS",
+        "release": "SIMULATED_ALLOW"
+      }
+    },
+    {
+      "caseId": "GF-03-wrong-threshold",
+      "profile": "greenfield",
+      "scenario": "greenfield",
+      "mutation": "wrong-threshold",
+      "oracleVerdict": "FAIL",
+      "authorityVerdict": "PASS",
+      "authorityReason": "Synthetic mandate permits this action at fixture time",
+      "releaseOutcome": "BLOCK",
+      "releaseReason": "Oracle and mandate must both PASS",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "FAIL",
+        "dmn": "FAIL",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "FAIL"
+      },
+      "findings": {
+        "sbvr": [
+          {
+            "ruleId": "SBVR-REVIEW-10000",
+            "verdict": "FAIL",
+            "message": "Business rule"
+          }
+        ],
+        "dmn": [
+          {
+            "ruleId": "DMN-DECISION",
+            "verdict": "FAIL",
+            "message": "Expected REVIEW, got APPROVE"
+          }
+        ],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": [
+          {
+            "ruleId": "OCL-APPROVAL-REQUIRES-HUMAN",
+            "verdict": "FAIL",
+            "message": "Constraint violated"
+          }
+        ]
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "FAIL",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "RETURN_TO_G4",
+          "state": "REWORK",
+          "detail": "Candidate defect; baseline remains unchanged"
+        }
+      ],
+      "expected": {
+        "oracle": "FAIL",
+        "authority": "PASS",
+        "release": "BLOCK"
+      }
+    },
+    {
+      "caseId": "BF-03-skip-review",
+      "profile": "brownfield",
+      "scenario": "brownfield",
+      "mutation": "skip-review",
+      "oracleVerdict": "FAIL",
+      "authorityVerdict": "PASS",
+      "authorityReason": "Synthetic mandate permits this action at fixture time",
+      "releaseOutcome": "BLOCK",
+      "releaseReason": "Oracle and mandate must both PASS",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "FAIL",
+        "dmn": "PASS",
+        "bpmn": "FAIL",
+        "cmmn": "FAIL",
+        "ocl": "FAIL"
+      },
+      "findings": {
+        "sbvr": [
+          {
+            "ruleId": "SBVR-REVIEW-10000",
+            "verdict": "FAIL",
+            "message": "Business rule"
+          }
+        ],
+        "dmn": [],
+        "bpmn": [
+          {
+            "ruleId": "BPMN-REQUIRED",
+            "verdict": "FAIL",
+            "message": "Missing review"
+          },
+          {
+            "ruleId": "BPMN-REQUIRED",
+            "verdict": "FAIL",
+            "message": "Missing wait_approval"
+          }
+        ],
+        "cmmn": [
+          {
+            "ruleId": "CMMN-NO-CLOSE-PENDING",
+            "verdict": "FAIL",
+            "message": "Constraint violated"
+          }
+        ],
+        "ocl": [
+          {
+            "ruleId": "OCL-APPROVAL-REQUIRES-HUMAN",
+            "verdict": "FAIL",
+            "message": "Constraint violated"
+          }
+        ]
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "FAIL",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "RETURN_TO_G4",
+          "state": "REWORK",
+          "detail": "Candidate defect; baseline remains unchanged"
+        }
+      ],
+      "expected": {
+        "oracle": "FAIL",
+        "authority": "PASS",
+        "release": "BLOCK"
+      }
+    },
+    {
+      "caseId": "BF-04-close-pending",
+      "profile": "brownfield",
+      "scenario": "brownfield",
+      "mutation": "close-pending",
+      "oracleVerdict": "FAIL",
+      "authorityVerdict": "PASS",
+      "authorityReason": "Synthetic mandate permits this action at fixture time",
+      "releaseOutcome": "BLOCK",
+      "releaseReason": "Oracle and mandate must both PASS",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "FAIL",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [
+          {
+            "ruleId": "CMMN-NO-CLOSE-PENDING",
+            "verdict": "FAIL",
+            "message": "Constraint violated"
+          }
+        ],
+        "ocl": []
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "FAIL",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "RETURN_TO_G4",
+          "state": "REWORK",
+          "detail": "Candidate defect; baseline remains unchanged"
+        }
+      ],
+      "expected": {
+        "oracle": "FAIL",
+        "authority": "PASS",
+        "release": "BLOCK"
+      }
+    },
+    {
+      "caseId": "AMS-02-inactive-approved",
+      "profile": "ams",
+      "scenario": "ams",
+      "mutation": "approve-inactive",
+      "oracleVerdict": "FAIL",
+      "authorityVerdict": "PASS",
+      "authorityReason": "Synthetic mandate permits this action at fixture time",
+      "releaseOutcome": "BLOCK",
+      "releaseReason": "Oracle and mandate must both PASS",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "FAIL",
+        "dmn": "FAIL",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "FAIL"
+      },
+      "findings": {
+        "sbvr": [
+          {
+            "ruleId": "SBVR-INACTIVE-NO-APPROVAL",
+            "verdict": "FAIL",
+            "message": "Business rule"
+          }
+        ],
+        "dmn": [
+          {
+            "ruleId": "DMN-DECISION",
+            "verdict": "FAIL",
+            "message": "Expected REJECT, got APPROVE"
+          }
+        ],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": [
+          {
+            "ruleId": "OCL-ELIGIBLE",
+            "verdict": "FAIL",
+            "message": "Constraint violated"
+          }
+        ]
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "FAIL",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "RETURN_TO_G4",
+          "state": "REWORK",
+          "detail": "Candidate defect; baseline remains unchanged"
+        }
+      ],
+      "expected": {
+        "oracle": "FAIL",
+        "authority": "PASS",
+        "release": "BLOCK"
+      }
+    },
+    {
+      "caseId": "GF-04-missing-evidence",
+      "profile": "greenfield",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "oracleVerdict": "INCONCLUSIVE",
+      "authorityVerdict": "PASS",
+      "authorityReason": "Synthetic mandate permits this action at fixture time",
+      "releaseOutcome": "BLOCK",
+      "releaseReason": "Oracle and mandate must both PASS",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "INCONCLUSIVE",
+        "dmn": "INCONCLUSIVE",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "INCONCLUSIVE"
+      },
+      "findings": {
+        "sbvr": [
+          {
+            "ruleId": "SBVR-REVIEW-10000",
+            "verdict": "INCONCLUSIVE",
+            "message": "Business rule"
+          }
+        ],
+        "dmn": [
+          {
+            "ruleId": "DMN-INPUT",
+            "verdict": "INCONCLUSIVE",
+            "message": "Missing decision input"
+          }
+        ],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": [
+          {
+            "ruleId": "OCL-APPROVAL-REQUIRES-HUMAN",
+            "verdict": "INCONCLUSIVE",
+            "message": "Constraint violated"
+          }
+        ]
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "INCONCLUSIVE",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "RETURN_TO_G1",
+          "state": "REVIEW",
+          "detail": "Acquire missing evidence or clarify rule"
+        }
+      ],
+      "expected": {
+        "oracle": "INCONCLUSIVE",
+        "authority": "PASS",
+        "release": "BLOCK"
+      }
+    },
+    {
+      "caseId": "GF-05-revoked-agent",
+      "profile": "greenfield",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "oracleVerdict": "PASS",
+      "authorityVerdict": "FAIL",
+      "authorityReason": "Mandate revoked",
+      "releaseOutcome": "BLOCK",
+      "releaseReason": "Oracle and mandate must both PASS",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "PASS",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "G6",
+          "state": "BLOCK",
+          "detail": "Mandate FAIL; simulated release decision"
+        }
+      ],
+      "expected": {
+        "oracle": "PASS",
+        "authority": "FAIL",
+        "release": "BLOCK"
+      }
+    },
+    {
+      "caseId": "GF-06-out-of-scope",
+      "profile": "greenfield",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "oracleVerdict": "PASS",
+      "authorityVerdict": "FAIL",
+      "authorityReason": "Scope not delegated",
+      "releaseOutcome": "BLOCK",
+      "releaseReason": "Oracle and mandate must both PASS",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "PASS",
+          "detail": "Independent five-family oracle evaluation"
+        },
+        {
+          "gate": "G6",
+          "state": "BLOCK",
+          "detail": "Mandate FAIL; simulated release decision"
+        }
+      ],
+      "expected": {
+        "oracle": "PASS",
+        "authority": "FAIL",
+        "release": "BLOCK"
+      }
+    },
+    {
+      "caseId": "GF-07-expired-mandate",
+      "profile": "greenfield",
+      "scenario": "greenfield",
+      "mutation": "none",
+      "oracleVerdict": "PASS",
+      "authorityVerdict": "FAIL",
+      "authorityReason": "Outside mandate validity window",
+      "releaseOutcome": "BLOCK",
+      "releaseReason": "Oracle and mandate must both PASS",
+      "baselineManifestSha256": "db78f3b090caad7746ec9f9a7377d038d6798393328529f932cfaa21869f2d10",
+      "oracleFamilies": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      },
+      "gates": [
+        {
+          "gate": "G0",
+          "state": "PASS",
+          "detail": "Synthetic scope fixed"
+        },
+        {
+          "gate": "G1",
+          "state": "PASS",
+          "detail": "Synthetic policy evidence"
+        },
+        {
+          "gate": "G2",
+          "state": "SIMULATED",
+          "detail": "Digest-bound baseline; no human signature"
+        },
+        {
+          "gate": "G3",
+          "state": "DEMO_ONLY",
+          "detail": "Positive/negative/inconclusive qualification"
+        },
+        {
+          "gate": "G4",
+          "state": "PASS",
+          "detail": "Deterministic candidate executed"
+        },
+        {
+          "gate": "G5",
+          "state": "PASS",
+          "detail": "Independent five-family oracle evaluation"
+        },

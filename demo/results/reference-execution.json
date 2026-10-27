@@ -1,0 +1,260 @@
+{
+  "kind": "SYNTHETIC_REFERENCE_EXECUTION_NOT_DOTNET",
+  "caseCount": 9,
+  "passControls": 5,
+  "failMutants": 4,
+  "inconclusiveMissingEvidence": true,
+  "results": [
+    {
+      "scenario": "greenfield-approval",
+      "mutation": "none",
+      "expected": "PASS",
+      "verdict": "PASS",
+      "families": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      }
+    },
+    {
+      "scenario": "brownfield-migration",
+      "mutation": "none",
+      "expected": "PASS",
+      "verdict": "PASS",
+      "families": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      }
+    },
+    {
+      "scenario": "ams-change",
+      "mutation": "none",
+      "expected": "PASS",
+      "verdict": "PASS",
+      "families": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      }
+    },
+    {
+      "scenario": "threshold-boundary",
+      "mutation": "none",
+      "expected": "PASS",
+      "verdict": "PASS",
+      "families": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      }
+    },
+    {
+      "scenario": "high-risk",
+      "mutation": "none",
+      "expected": "PASS",
+      "verdict": "PASS",
+      "families": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": []
+      }
+    },
+    {
+      "scenario": "greenfield-approval",
+      "mutation": "wrong-threshold",
+      "expected": "FAIL",
+      "verdict": "FAIL",
+      "families": {
+        "sbvr": "FAIL",
+        "dmn": "FAIL",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "FAIL"
+      },
+      "findings": {
+        "sbvr": [
+          {
+            "ruleId": "SBVR-REVIEW-10000",
+            "verdict": "FAIL",
+            "message": "Business rule"
+          }
+        ],
+        "dmn": [
+          {
+            "ruleId": "DMN-DECISION",
+            "verdict": "FAIL",
+            "message": "Expected REVIEW, got APPROVE"
+          }
+        ],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": [
+          {
+            "ruleId": "OCL-APPROVAL-REQUIRES-HUMAN",
+            "verdict": "FAIL",
+            "message": "Constraint violated"
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "brownfield-migration",
+      "mutation": "skip-review",
+      "expected": "FAIL",
+      "verdict": "FAIL",
+      "families": {
+        "sbvr": "FAIL",
+        "dmn": "PASS",
+        "bpmn": "FAIL",
+        "cmmn": "FAIL",
+        "ocl": "FAIL"
+      },
+      "findings": {
+        "sbvr": [
+          {
+            "ruleId": "SBVR-REVIEW-10000",
+            "verdict": "FAIL",
+            "message": "Business rule"
+          }
+        ],
+        "dmn": [],
+        "bpmn": [
+          {
+            "ruleId": "BPMN-REQUIRED",
+            "verdict": "FAIL",
+            "message": "Missing review"
+          },
+          {
+            "ruleId": "BPMN-REQUIRED",
+            "verdict": "FAIL",
+            "message": "Missing wait_approval"
+          }
+        ],
+        "cmmn": [
+          {
+            "ruleId": "CMMN-NO-CLOSE-PENDING",
+            "verdict": "FAIL",
+            "message": "Constraint violated"
+          }
+        ],
+        "ocl": [
+          {
+            "ruleId": "OCL-APPROVAL-REQUIRES-HUMAN",
+            "verdict": "FAIL",
+            "message": "Constraint violated"
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "brownfield-migration",
+      "mutation": "close-pending",
+      "expected": "FAIL",
+      "verdict": "FAIL",
+      "families": {
+        "sbvr": "PASS",
+        "dmn": "PASS",
+        "bpmn": "PASS",
+        "cmmn": "FAIL",
+        "ocl": "PASS"
+      },
+      "findings": {
+        "sbvr": [],
+        "dmn": [],
+        "bpmn": [],
+        "cmmn": [
+          {
+            "ruleId": "CMMN-NO-CLOSE-PENDING",
+            "verdict": "FAIL",
+            "message": "Constraint violated"
+          }
+        ],
+        "ocl": []
+      }
+    },
+    {
+      "scenario": "ams-change",
+      "mutation": "approve-inactive",
+      "expected": "FAIL",
+      "verdict": "FAIL",
+      "families": {
+        "sbvr": "FAIL",
+        "dmn": "FAIL",
+        "bpmn": "PASS",
+        "cmmn": "PASS",
+        "ocl": "FAIL"
+      },
+      "findings": {
+        "sbvr": [
+          {
+            "ruleId": "SBVR-INACTIVE-NO-APPROVAL",
+            "verdict": "FAIL",
+            "message": "Business rule"
+          }
+        ],
+        "dmn": [
+          {
+            "ruleId": "DMN-DECISION",
+            "verdict": "FAIL",
+            "message": "Expected REJECT, got APPROVE"
+          }
+        ],
+        "bpmn": [],
+        "cmmn": [],
+        "ocl": [
+          {
+            "ruleId": "OCL-ELIGIBLE",
+            "verdict": "FAIL",
+            "message": "Constraint violated"
+          }
+        ]
+      }
+    }
+  ]
+}

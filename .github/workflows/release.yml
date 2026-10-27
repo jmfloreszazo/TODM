@@ -64,3 +64,5 @@ jobs:
               --title 'TODM Research Artifact v1.2 — Paper and Full Demo' \
               --notes 'Full 20-page research manuscript, arXiv LaTeX source candidate, and reproducible Python/.NET 10 five-family synthetic demo with 16 governance fixtures. GitHub Actions verifies source integrity and cross-language parity. Methodological research proposal; no industrial comparative effectiveness, production identity assurance, DOI, or arXiv acceptance is claimed.'
           fi
+
+# The release is gated on the corrected 88-file SHA-256 provenance manifest.

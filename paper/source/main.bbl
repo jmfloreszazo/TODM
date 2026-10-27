@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+
+\bibitem{barr2015oracle}
+Earl~T. Barr, Mark Harman, Phil McMinn, Muzammil Shahbaz, and Shin Yoo.
+\newblock The oracle problem in software testing: A survey.
+\newblock {\em IEEE Transactions on Software Engineering}, 41(5):507--525,
+  2015.
+
+\bibitem{cucumber2026}
+{Cucumber}.
+\newblock Gherkin reference.
+\newblock \url{https://cucumber.io/docs/gherkin/reference/}.
+
+\bibitem{feathers2004legacy}
+Michael Feathers.
+\newblock {\em Working Effectively with Legacy Code}.
+\newblock Prentice Hall, 2004.
+
+\bibitem{flowable2026}
+{Flowable}.
+\newblock Flowable open source documentation: Bpmn, cmmn, and dmn engines.
+\newblock \url{https://www.flowable.com/open-source/docs/}, 2026.
+
+\bibitem{fowler2004strangler}
+Martin Fowler.
+\newblock Strangler fig application.
+\newblock \url{https://martinfowler.com/bliki/StranglerFigApplication.html},
+  2004.
+
+\bibitem{github2026speckit}
+{GitHub}.
+\newblock Spec kit: Spec-driven development and agentic workflows.
+\newblock \url{https://github.com/github/spec-kit}, 2026.
+
+\bibitem{jia2011mutation}
+Yue Jia and Mark Harman.
+\newblock An analysis and survey of the development of mutation testing.
+\newblock {\em IEEE Transactions on Software Engineering}, 37(5):649--678,
+  2011.
+
+\bibitem{omg2020kdm}
+{Object Management Group}.
+\newblock Knowledge discovery metamodel (kdm).
+\newblock \url{https://www.omg.org/spec/KDM}.
+
+\bibitem{omg2019sbvr}
+{Object Management Group}.
+\newblock Semantics of business vocabulary and business rules (sbvr).
+\newblock \url{https://www.omg.org/spec/SBVR}.
+
+\bibitem{omg2014bpmn}
+{Object Management Group}.
+\newblock Business process model and notation (bpmn), version 2.0.2.
+\newblock \url{https://www.omg.org/spec/BPMN/2.0.2}, 2014.
+
+\bibitem{omg2014ocl}
+{Object Management Group}.
+\newblock Object constraint language (ocl), version 2.4.
+\newblock \url{https://www.omg.org/spec/OCL/2.4}, 2014.
+
+\bibitem{omg2016cmmn}
+{Object Management Group}.
+\newblock Case management model and notation (cmmn), version 1.1.
+\newblock \url{https://www.omg.org/spec/CMMN/1.1}, 2016.
+
+\bibitem{omg2024dmn}
+{Object Management Group}.
+\newblock Decision model and notation (dmn), version 1.5.
+\newblock \url{https://www.omg.org/spec/DMN/1.5}, 2024.
+
+\bibitem{segura2016metamorphic}
+Sergio Segura, Gordon Fraser, Ana~B. S{\'a}nchez, and Antonio Ruiz-Cort{\'e}s.
+\newblock A survey on metamorphic testing.
+\newblock {\em IEEE Transactions on Software Engineering}, 42(9):805--824,
+  2016.
+
+\bibitem{w3c2013prov}
+{W3C}.
+\newblock Prov-o: The prov ontology.
+\newblock \url{https://www.w3.org/TR/prov-o/}, 2013.
+
+\end{thebibliography}

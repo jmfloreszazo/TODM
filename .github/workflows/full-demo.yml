@@ -1,0 +1,57 @@
+name: TODM full v0.4 research artifact
+on:
+  push:
+    paths:
+      - 'demo/**'
+      - '.github/workflows/full-demo.yml'
+  pull_request:
+    paths:
+      - 'demo/**'
+      - '.github/workflows/full-demo.yml'
+  workflow_dispatch:
+
+jobs:
+  python-reference:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run all Python reference, signature and negative controls
+        run: python3 scripts/reproduce.py
+      - name: Verify signed G2/G6 checks
+        run: python3 scripts/verify_signed.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: todm-full-python-evidence
+          path: |
+            demo/results/reference-execution.json
+            demo/results/governance-execution.json
+            demo/results/signed-assurance-execution.json
+            demo/results/reproducibility-v0.4.json
+  dotnet10-full:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build and run full C# engine and all 16 governance fixtures
+        run: bash scripts/run.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: todm-full-dotnet-evidence
+          path: |
+            demo/results/governance-dotnet.json
+            demo/results/governance-execution.json
+            demo/results/reports/*.json

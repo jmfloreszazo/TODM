@@ -1,47 +1,60 @@
 # TODM — Test Oracle-Driven Methodology
 
-**Human-governed AI software engineering with independent behavioral oracles.**
+**A human-governed, tool-agnostic methodology for AI software engineering.**
 
-Author: José María Flores Zazo · Research status: **proposed methodology + synthetic proof of concept**
+Author: **José María Flores Zazo** · Status: **methodological research proposal + synthetic reproducible demonstration**.
 
-TODM separates two questions: **is an agent authorized to act?** and **does its output conform to a separately approved behavioral baseline?** Both are necessary for a controlled release. The construction agent cannot unilaterally approve or modify its own acceptance criteria.
+TODM separates **who is authorized to act** from **whether the resulting software satisfies independently approved business behavior**. Agents can propose requirements, implement code and suggest tests, but cannot unilaterally approve or change the oracle baseline used to judge their work.
 
-## Run the published research seed
+## Read the complete article
 
-**Python 3.12+** (no external packages):
+- **[Full English research paper — PDF](paper/TODM_Paper_v1.2.pdf)** (automatically compiled from LaTeX and committed by GitHub Actions).
+- [Complete manuscript in Markdown](paper/TODM_Paper_v1.2.md).
+- [LaTeX source, figures and references](paper/source/).
+- [How the paper is built and arXiv submission status](paper/README.md).
+- [Paper compilation workflow](.github/workflows/paper-pdf.yml).
+
+## Reproduce the complete research demo
+
+The [full demo v0.4](demo/) contains a Python reference, a C#/.NET 10 implementation, five limited oracle-family profiles, 16 synthetic governance scenarios, public verification keys, synthetic G2/G6 attestations, negative controls and a research protocol.
 
 ```bash
-python3 -m unittest discover -s tests -v
-python3 src/todm_demo.py
+cd demo
+python3 scripts/reproduce.py
+bash scripts/run.sh        # requires .NET 10 SDK and Python 3
 ```
 
-**.NET 10 SDK:**
+**Verified in GitHub Actions:** [full Python/.NET 10 demo and 16-fixture five-family parity](https://github.com/jmfloreszazo/TODM/actions/runs/40598241342).
 
-```bash
-dotnet build dotnet/Todm.Seed/Todm.Seed.csproj -c Release
-dotnet run --project dotnet/Todm.Seed/Todm.Seed.csproj -c Release -- --self-test
-dotnet run --project dotnet/Todm.Seed/Todm.Seed.csproj -c Release
-```
+The smaller [Python seed](src/todm_demo.py) and [.NET 10 seed](dotnet/Todm.Seed/) remain as introductory examples. Their [16 shared policy fixtures](tests/fixtures/policy-cases.json) are separate from the 16 full governance scenarios.
 
-[GitHub Actions](../../actions) builds the .NET project and runs Python and .NET negative controls. A green workflow is required before claiming CI verification.
+## Eight methodological gates
 
-## Methodology
+| Gate | Activity | Approval / outcome |
+|---|---|---|
+| G0 | Scope and risk | Authorized mandate |
+| G1 | Evidence discovery | Classified evidence |
+| G2 | Baseline construction | Accountable human approval |
+| G3 | Oracle qualification | Mutation and negative controls |
+| G4 | Bounded AI construction | Candidate with provenance |
+| G5 | Independent verification | PASS / FAIL / INCONCLUSIVE |
+| G6 | Release governance | Separate authorization |
+| G7 | Drift and evolution | Controlled baseline revision |
 
-G0 scope → G1 discover evidence → G2 approve baseline → G3 qualify oracles → G4 bounded construction → G5 independent verification → G6 release approval → G7 monitoring and change control.
+**Model families:** SBVR vocabulary and rules, DMN decisions, BPMN processes, CMMN cases, OCL invariants. Only **declared, limited JSON semantic profiles** are implemented here; this repository does not claim complete OMG conformance.
 
-Profiles: SBVR, DMN, BPMN, CMMN and OCL. **Current public seed demonstrates only a narrow JSON business-policy profile**; it is not a full interpreter of these OMG standards.
+**Applicability:** greenfield, brownfield modernization (incremental or single cutover), and application maintenance (AMS).
 
-## Documentation
+## Evidence and scientific limitations
 
-- [Academic research synopsis](paper/RESEARCH_SYNOPSIS.md)
-- [Comparative experimental protocol](docs/COMPARATIVE_PROTOCOL.md)
-- [Evidence boundaries and limitations](docs/RESEARCH_STATUS.md)
-- [Synthetic business baseline](contracts/v1/policy.json)
-- [Python reference](src/todm_demo.py)
-- [.NET 10 seed](dotnet/Todm.Seed/Program.cs)
+- The 16-case parity tests are **synthetic engineering acceptance**, not a controlled industrial comparison.
+- Demo signatures do **not** prove the identity or authority of real people.
+- No comparative superiority, complete standards implementation or production deployment enforcement is claimed.
+- The complete paper defines falsifiable hypotheses and an experimental protocol; a peer-reviewed empirical study is still required.
+- No DOI or arXiv acceptance is claimed until independently confirmed.
 
-## Publication integrity
+See [research status](docs/PUBLICATION_STATUS.md), [comparative protocol](docs/COMPARATIVE_PROTOCOL.md), [full experiment plan](docs/EXPERIMENT_COMPARISON.md) and [GitHub Actions](../../actions).
 
-The full ~20-page manuscript and the more extensive v0.4 demo exist as separate research artifacts, **but are not yet fully transferred to this repository**. Do not cite the seed as proof of comparative superiority, production identity assurance or full OMG conformance. See the research synopsis for hypotheses and limitations.
+## Citation and license
 
-The synthetic approval label in JSON does **not** represent a real human signature. A release gate in a demonstration does not enforce a production deployment environment.
+[Software citation metadata](CITATION.cff) · [MIT license](LICENSE). Please cite an immutable commit hash until a versioned archive DOI is available.

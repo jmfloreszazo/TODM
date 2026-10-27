@@ -1,0 +1,39 @@
+{
+  "profile": "TODM-CMMN-case-constraints-json-0.1",
+  "notice": "Case milestone constraints, not full CMMN sentry/stage semantics.",
+  "constraints": [
+    {
+      "id": "CMMN-RECORDED",
+      "when": {
+        "field": "caseClosed",
+        "equals": true
+      },
+      "require": {
+        "field": "decisionRecorded",
+        "equals": true
+      }
+    },
+    {
+      "id": "CMMN-NO-CLOSE-PENDING",
+      "when": {
+        "field": "caseClosed",
+        "equals": true
+      },
+      "require": {
+        "field": "decision",
+        "notEquals": "REVIEW"
+      }
+    },
+    {
+      "id": "CMMN-CLOSED-STAGE",
+      "when": {
+        "field": "caseClosed",
+        "equals": true
+      },
+      "require": {
+        "field": "caseStage",
+        "equals": "completed"
+      }
+    }
+  ]
+}

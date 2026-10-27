@@ -1,0 +1,33 @@
+{
+  "profile": "TODM-SBVR-derived-rules-0.1",
+  "notice": "Reviewed operational rules in JSON; not an SBVR parser or conformant SBVR implementation.",
+  "terms": {
+    "amount": "Requested amount in EUR",
+    "manualReview": "Request needs manual assessment",
+    "customerActive": "Customer is eligible to request approval"
+  },
+  "rules": [
+    {
+      "id": "SBVR-REVIEW-10000",
+      "when": {
+        "field": "amount",
+        "gt": 10000
+      },
+      "require": {
+        "field": "manualReview",
+        "equals": true
+      }
+    },
+    {
+      "id": "SBVR-INACTIVE-NO-APPROVAL",
+      "when": {
+        "field": "customerActive",
+        "equals": false
+      },
+      "require": {
+        "field": "approved",
+        "equals": false
+      }
+    }
+  ]
+}

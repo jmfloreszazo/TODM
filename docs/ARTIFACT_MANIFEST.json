@@ -527,9 +527,9 @@
     },
     {
       "target": ".github/workflows/full-demo.yml",
-      "sha256": "bf0860014d64473f5e8a594af43aa710aee3201513b5778229a801a5ea0d5489",
-      "size": 1675,
-      "git_sha1": "8f677a5c1c561482cd9e3e923e339a6103ee7e9b"
+      "sha256": "4c8d1e83fb8b8fe792bb6f778b2ac8b8511a5064de7dca2154f117d968aa7b90",
+      "size": 1807,
+      "git_sha1": "d34e2f0ac7bccd4a8fa7e6c9216a3a42e958e244"
     }
   ]
 }

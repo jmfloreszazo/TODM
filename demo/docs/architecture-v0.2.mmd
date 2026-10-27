@@ -1,0 +1,23 @@
+flowchart TB
+  subgraph A[Authority plane - CPAG style integration]
+    HM[Human policy owners] --> M[Versioned mandates]
+    M --> E[Authorization evaluator]
+    REV[Revocation and scope restrictions] --> E
+  end
+  subgraph B[TODM oracle control plane]
+    BP[Human-reviewed baseline G2 - simulated here] --> BASE[Digest-checked SBVR DMN BPMN CMMN OCL profiles]
+    BASE --> Q[G3 oracle qualification]
+    Q --> O[Independent oracle evaluator G5]
+  end
+  subgraph C[Construction plane]
+    AG[Agent or human constructor] --> CODE[.NET candidate G4]
+    CODE --> EV[Observed behavior and trace]
+  end
+  EV --> O
+  E --> R{G6: mandate PASS and oracle PASS and release approval?}
+  O --> R
+  R -->|No| BLOCK[Block and record reason]
+  R -->|Yes - demo only| OK[Simulated allow, no deployment]
+  BLOCK -.->|implementation defect| AG
+  BLOCK -.->|ambiguous or incomplete evidence| BP
+  OK -.-> MON[G7 observation - not connected]

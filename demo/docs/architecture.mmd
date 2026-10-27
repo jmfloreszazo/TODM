@@ -1,0 +1,15 @@
+flowchart TD
+    A[Requirements / legacy traces / policy] --> B[AI proposes contracts]
+    B --> C{Human approval}
+    C -->|Reject| B
+    C -->|Approve exact version| D[Versioned Oracle Baseline]
+    D --> E[Oracle Engine: 5 scoped JSON profiles]
+    F[Construction agents or human developers] --> G[.NET candidate implementation]
+    G --> H[Observed behavior: JSON evidence]
+    H --> E
+    E --> I{PASS / FAIL / INCONCLUSIVE}
+    I -->|FAIL implementation| F
+    I -->|Ambiguous rule| C
+    I -->|PASS + other controls| J{Human Go / No-Go}
+    K[Optional Bolt ontology adapter] -.-> B
+    K -.-> E

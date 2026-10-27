@@ -64,12 +64,12 @@ public static class Program
         string decision;
         try
         {
-            amount = observation["amount"]!.GetValue<decimal>();
+            amount = JsonSerializer.Deserialize<decimal>(observation["amount"]!.ToJsonString());
             active = observation["customerActive"]!.GetValue<bool>();
             risk = observation["risk"]!.GetValue<string>();
             decision = observation["decision"]!.GetValue<string>();
         }
-        catch (Exception ex) when (ex is InvalidOperationException or FormatException)
+        catch (Exception ex) when (ex is InvalidOperationException or FormatException or JsonException)
         {
             return Inconclusive;
         }
@@ -111,6 +111,7 @@ public static class Program
         Check(Evaluate(policy, Case()) == Pass, "greenfield correct");
         Check(Evaluate(policy, Case(10000)) == Pass, "boundary exactly 10000");
         Check(Evaluate(policy, Case(11000)) == Fail, "wrong threshold mutant");
+        Check(Evaluate(policy, new JsonObject { ["amount"] = 11000, ["customerActive"] = true, ["risk"] = "low", ["decision"] = "APPROVE" }) == Fail, "integer JSON amount conversion");
         Check(Evaluate(policy, Case(11000, decision: "REVIEW")) == Pass, "review required");
         Check(Evaluate(policy, Case(risk: "high", decision: "REVIEW")) == Pass, "high risk");
         Check(Evaluate(policy, Case(active: false, decision: "REJECT")) == Pass, "inactive customer");

@@ -6,6 +6,12 @@ Author: **José María Flores Zazo** · Status: **methodological research propos
 
 TODM separates **who is authorized to act** from **whether the resulting software satisfies independently approved business behavior**. Agents can propose requirements, implement code and suggest tests, but cannot unilaterally approve or change the oracle baseline used to judge their work.
 
+## Verified public research release
+
+**[TODM Research Artifact v1.2 — tagged GitHub Release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.2)** contains the compiled 20-page PDF, a standalone arXiv LaTeX source ZIP, and a full research artifact ZIP. Its release workflow re-ran the 88-file SHA-256 integrity check and full Python/.NET 10 governance parity successfully: [verified release run](https://github.com/jmfloreszazo/TODM/actions/runs/40599015278).
+
+**This GitHub release is not an arXiv submission or a DOI registration.**
+
 ## Read the complete article
 
 - **[Full English research paper — PDF](paper/TODM_Paper_v1.2.pdf)** (automatically compiled from LaTeX and committed by GitHub Actions).

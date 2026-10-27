@@ -2,6 +2,8 @@
 
 ## Independently confirmed GitHub Actions
 
+- **Success:** [16-case Python/.NET 10 JSON-policy parity, run 40596778676](https://github.com/jmfloreszazo/TODM/actions/runs/40596778676). This is a **narrow policy subset**, not the full 16-case five-family governance suite.
+
 - **Success:** [TODM cross-language CI, run 40596270705](https://github.com/jmfloreszazo/TODM/actions/runs/40596270705)
 - Commit: `ba20a842328285a727fe3608c7f1b131504035b4`
 - Python reference: success.
@@ -18,7 +20,8 @@ This proves **the minimal public seed**, not the complete v0.4 prototype. The co
 - [x] MIT license and citation metadata
 - [x] Minimal Python/.NET CI green
 - [ ] Full research package uploaded and reviewed
-- [ ] Full 16-scenario Python/.NET parity green
+- [x] Minimal JSON-policy 16-scenario Python/.NET parity green
+- [ ] Full five-family v0.4 16-scenario Python/.NET parity green
 - [ ] Versioned release and permanent archive DOI
 - [ ] Full paper source linked to exact immutable artifact
 - [ ] Independent comparative evaluation

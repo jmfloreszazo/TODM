@@ -1,0 +1,229 @@
+{
+  "kind": "TODM_SYNTHETIC_POLICY_PARITY_V1",
+  "notice": "This 16-case JSON policy subset is NOT the full 16-case five-oracle v0.4 governance experiment.",
+  "cases": [
+    {
+      "id": "GF-01-approved",
+      "observation": {
+        "amount": 9000,
+        "customerActive": true,
+        "risk": "low",
+        "decision": "APPROVE"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "PASS",
+      "expectedRelease": "ALLOW"
+    },
+    {
+      "id": "GF-02-boundary",
+      "observation": {
+        "amount": 10000,
+        "customerActive": true,
+        "risk": "low",
+        "decision": "APPROVE"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "PASS",
+      "expectedRelease": "ALLOW"
+    },
+    {
+      "id": "BF-01-review",
+      "observation": {
+        "amount": 10001,
+        "customerActive": true,
+        "risk": "low",
+        "decision": "REVIEW"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "PASS",
+      "expectedRelease": "ALLOW"
+    },
+    {
+      "id": "BF-02-threshold-mutant",
+      "observation": {
+        "amount": 11000,
+        "customerActive": true,
+        "risk": "low",
+        "decision": "APPROVE"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "FAIL",
+      "expectedRelease": "BLOCK"
+    },
+    {
+      "id": "AMS-01-highrisk",
+      "observation": {
+        "amount": 9000,
+        "customerActive": true,
+        "risk": "high",
+        "decision": "REVIEW"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "PASS",
+      "expectedRelease": "ALLOW"
+    },
+    {
+      "id": "AMS-02-highrisk-mutant",
+      "observation": {
+        "amount": 9000,
+        "customerActive": true,
+        "risk": "high",
+        "decision": "APPROVE"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "FAIL",
+      "expectedRelease": "BLOCK"
+    },
+    {
+      "id": "AMS-03-inactive",
+      "observation": {
+        "amount": 3000,
+        "customerActive": false,
+        "risk": "low",
+        "decision": "REJECT"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "PASS",
+      "expectedRelease": "ALLOW"
+    },
+    {
+      "id": "AMS-04-inactive-mutant",
+      "observation": {
+        "amount": 3000,
+        "customerActive": false,
+        "risk": "low",
+        "decision": "APPROVE"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "FAIL",
+      "expectedRelease": "BLOCK"
+    },
+    {
+      "id": "GF-03-incomplete",
+      "observation": {
+        "customerActive": true,
+        "risk": "low",
+        "decision": "APPROVE"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "INCONCLUSIVE",
+      "expectedRelease": "BLOCK"
+    },
+    {
+      "id": "GF-04-invalid-amount",
+      "observation": {
+        "amount": -1,
+        "customerActive": true,
+        "risk": "low",
+        "decision": "APPROVE"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "INCONCLUSIVE",
+      "expectedRelease": "BLOCK"
+    },
+    {
+      "id": "GF-05-revoked",
+      "observation": {
+        "amount": 9000,
+        "customerActive": true,
+        "risk": "low",
+        "decision": "APPROVE"
+      },
+      "mandateActive": false,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "PASS",
+      "expectedRelease": "BLOCK"
+    },
+    {
+      "id": "GF-06-no-g6",
+      "observation": {
+        "amount": 9000,
+        "customerActive": true,
+        "risk": "low",
+        "decision": "APPROVE"
+      },
+      "mandateActive": true,
+      "g6Approved": false,
+      "tamperBaseline": false,
+      "expectedOracle": "PASS",
+      "expectedRelease": "BLOCK"
+    },
+    {
+      "id": "GF-07-baseline-tamper",
+      "observation": {
+        "amount": 9000,
+        "customerActive": true,
+        "risk": "low",
+        "decision": "APPROVE"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": true,
+      "expectedOracle": "PASS",
+      "expectedRelease": "BLOCK"
+    },
+    {
+      "id": "GF-08-unnecessary-review",
+      "observation": {
+        "amount": 10000,
+        "customerActive": true,
+        "risk": "low",
+        "decision": "REVIEW"
+      },
+      "mandateActive": true,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "FAIL",
+      "expectedRelease": "BLOCK"
+    },
+    {
+      "id": "BF-03-review-revoked",
+      "observation": {
+        "amount": 11000,
+        "customerActive": true,
+        "risk": "low",
+        "decision": "REVIEW"
+      },
+      "mandateActive": false,
+      "g6Approved": true,
+      "tamperBaseline": false,
+      "expectedOracle": "PASS",
+      "expectedRelease": "BLOCK"
+    },
+    {
+      "id": "AMS-05-inactive-no-g6",
+      "observation": {
+        "amount": 3000,
+        "customerActive": false,
+        "risk": "low",
+        "decision": "REJECT"
+      },
+      "mandateActive": true,
+      "g6Approved": false,
+      "tamperBaseline": false,
+      "expectedOracle": "PASS",
+      "expectedRelease": "BLOCK"
+    }
+  ]
+}

@@ -15,6 +15,8 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Demonstrate fail-closed release
         run: python3 src/todm_demo.py
+      - name: Validate all 16 Python policy fixtures
+        run: python3 scripts/check_parity.py
   dotnet10-seed:
     runs-on: ubuntu-latest
     steps:
@@ -28,3 +30,5 @@ jobs:
         run: dotnet run --project dotnet/Todm.Seed/Todm.Seed.csproj -c Release --no-build -- --self-test
       - name: Demonstrate .NET fail-closed release
         run: dotnet run --project dotnet/Todm.Seed/Todm.Seed.csproj -c Release --no-build
+      - name: Assert Python/.NET verdict parity across 16 fixtures
+        run: python3 scripts/check_parity.py --dotnet

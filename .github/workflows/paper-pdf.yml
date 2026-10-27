@@ -1,0 +1,68 @@
+name: Build and publish TODM research paper PDF
+on:
+  push:
+    paths:
+      - 'paper/source/**'
+      - '.github/workflows/paper-pdf.yml'
+  pull_request:
+    paths:
+      - 'paper/source/**'
+      - '.github/workflows/paper-pdf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-pdf-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  compile-latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install reproducible LaTeX toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-latex-recommended \
+            texlive-latex-extra texlive-fonts-recommended \
+            latexmk poppler-utils zip
+      - name: Compile full paper from committed LaTeX sources
+        run: |
+          cd paper/source
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+          test -s main.pdf
+          cp main.pdf ../TODM_Paper_v1.2.pdf
+          pdfinfo ../TODM_Paper_v1.2.pdf | grep -E '^(Title|Pages|Page size):'
+          sha256sum ../TODM_Paper_v1.2.pdf
+      - name: Prepare standalone arXiv source archive
+        run: |
+          cd paper/source
+          zip -9 -q ../TODM_arXiv_source_v1.2.zip \
+            main.tex references.bib main.bbl \
+            figures/todm_method.pdf figures/todm_planes.pdf
+          test -s ../TODM_arXiv_source_v1.2.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TODM-Paper-PDF-and-arXiv-Source
+          path: |
+            paper/TODM_Paper_v1.2.pdf
+            paper/TODM_arXiv_source_v1.2.zip
+          if-no-files-found: error
+          retention-days: 90
+      - name: Commit compiled PDF to repository
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paper/TODM_Paper_v1.2.pdf
+          if git diff --cached --quiet; then
+            echo 'PDF unchanged; no commit necessary.'
+          else
+            git commit -m "Build TODM full research paper PDF from LaTeX [skip ci]"
+            git push origin HEAD:main
+          fi

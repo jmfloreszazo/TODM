@@ -28,6 +28,9 @@ public static class Program
                 return 0;
             }
 
+            if (args.Contains("--batch", StringComparer.Ordinal))
+                return RunBatch(policy, digest);
+
             var scenario = new JsonObject
             {
                 ["amount"] = 11000,
@@ -89,6 +92,39 @@ public static class Program
         verdict == Pass && mandateActive && g6Approved &&
         string.Equals(currentDigest, approvedDigest, StringComparison.Ordinal)
             ? "ALLOW" : "BLOCK";
+
+    private static int RunBatch(JsonObject policy, string digest)
+    {
+        var file = Path.Combine("tests", "fixtures", "policy-cases.json");
+        var cases = (JsonNode.Parse(File.ReadAllText(file))?["cases"] as JsonArray)
+            ?? throw new InvalidDataException("Missing batch fixtures");
+        var results = new List<object>();
+        var mismatches = 0;
+        foreach (var item in cases)
+        {
+            var test = item as JsonObject ?? throw new InvalidDataException("Invalid fixture");
+            var id = test["id"]!.GetValue<string>();
+            var observation = test["observation"] as JsonObject
+                ?? throw new InvalidDataException("Invalid observation");
+            var verdict = Evaluate(policy, observation);
+            var mandate = test["mandateActive"]!.GetValue<bool>();
+            var approved = test["g6Approved"]!.GetValue<bool>();
+            var tampered = test["tamperBaseline"]!.GetValue<bool>();
+            var gate = Gate(verdict, mandate, approved,
+                tampered ? "tampered" : digest, digest);
+            var expectedVerdict = test["expectedOracle"]!.GetValue<string>();
+            var expectedRelease = test["expectedRelease"]!.GetValue<string>();
+            if (verdict != expectedVerdict || gate != expectedRelease) mismatches++;
+            results.Add(new { id, oracle = verdict, release = gate });
+        }
+        Console.WriteLine(JsonSerializer.Serialize(new
+        {
+            kind = "TODM_SYNTHETIC_POLICY_PARITY_V1",
+            cases = results,
+            mismatches
+        }));
+        return mismatches == 0 && results.Count == 16 ? 0 : 1;
+    }
 
     private static void RunSelfTests(JsonObject policy, string digest)
     {

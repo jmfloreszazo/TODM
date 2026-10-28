@@ -59,7 +59,7 @@ The smaller [Python seed](src/todm_demo.py) and [.NET 10 seed](dotnet/Todm.Seed/
 - The complete paper defines falsifiable hypotheses and an experimental protocol; a peer-reviewed empirical study is still required.
 - No DOI or arXiv acceptance is claimed until independently confirmed.
 
-See [research status](docs/PUBLICATION_STATUS.md), [comparative protocol](docs/COMPARATIVE_PROTOCOL.md), [full experiment plan](docs/EXPERIMENT_COMPARISON.md) and [GitHub Actions](../../actions).
+See [research status](docs/PUBLICATION_STATUS.md), [comparative protocol](docs/COMPARATIVE_PROTOCOL.md), [full experiment plan](docs/EXPERIMENT_COMPARISON.md) and [GitHub Actions](https://github.com/jmfloreszazo/TODM/actions).
 
 ## Citation and license
 

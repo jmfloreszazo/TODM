@@ -21,15 +21,15 @@ def expect(path: str, fragments: tuple[str, ...] = ()) -> None:
             if fragment not in content:
                 errors.append(f"{path}: missing expected text {fragment!r}")
 
-expect("VERSION", ("1.4.0",))
+expect("VERSION", ("1.5.0",))
 expect("CITATION.cff", ('version: "1.4.0"', "todm-research-v1.4.0/TODM_Paper_v1.4.pdf"))
 expect("README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md", "full demo v1.4", "todm-research-v1.4.0"))
 expect("paper/source/main.tex", ("Research artifact companion, v1.4",))
 expect("paper/TODM_Paper_v1.4.md", ("version 1.4",))
 expect("paper/README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md"))
-expect("demo/README.md", ("Research Artifact v1.4", "reproducibility-v1.4.json"))
-expect("demo/scripts/reproduce.py", ("'version':'1.4.0'", "reproducibility-v1.4.json", "'profileSchemaVersion':'0.4.0'"))
-expect("docs/VERSIONING.md", ("1.4.0", "profile"))
+expect("demo/README.md", ("Research Artifact v1.5", "reproducibility-v1.5.json"))
+expect("demo/scripts/reproduce.py", ("'version':'1.5.0'", "reproducibility-v1.4.json", "'profileSchemaVersion':'0.4.0'"))
+expect("docs/VERSIONING.md", ("1.5.0", "0.4.0"))
 expect(".github/workflows/full-demo.yml", ("TODM v1.4 full research artifact", "reproducibility-v1.4.json"))
 expect(".github/workflows/paper-pdf.yml", ("TODM_Paper_v1.4.pdf", "TODM_arXiv_source_v1.4.zip"))
 expect(".github/workflows/release.yml", ("todm-research-v1.4.0", "TODM_Paper_v1.4.pdf", "TODM_Research_Artifact_v1.4.0.zip"))
@@ -38,4 +38,4 @@ if not args.allow_uncompiled_pdf:
     expect("paper/TODM_Paper_v1.4.pdf")
 if errors:
     raise SystemExit("\n".join(errors))
-print("OK: TODM methodology, paper, demo, citation and release aligned to v1.4.0")
+print("OK: TODM development target v1.5 with published v1.4 paper")

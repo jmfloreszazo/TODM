@@ -1,0 +1,42 @@
+name: "Research challenge — counterexample"
+description: "Report an oracle false positive, false negative, or governance bypass."
+title: "[Counterexample] "
+labels: ["research"]
+body:
+  - type: markdown
+    attributes:
+      value: "Report ground truth independently of TODM's verdict. Do not include credentials or private data."
+  - type: input
+    id: release
+    attributes:
+      label: "Release, commit, and oracle profile"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: "Finding type"
+      options:
+        - "False negative / missed defect"
+        - "False positive / false alarm"
+        - "Incorrect inconclusive decision"
+        - "Unauthorized gate bypass"
+        - "Other methodological limitation"
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: "Reproduction steps, expected behavior and ground-truth justification"
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: "Observed TODM behavior and evidence"
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: "Impact and limitations"

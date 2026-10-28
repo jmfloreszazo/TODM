@@ -17,7 +17,7 @@
 - The CPAG-style authorization plane is **only a synthetic fixture evaluator**, not a CPAG implementation, a real PDP/PEP, a verified mandate registry, an IAM system, or a cryptographically enforceable revocation mechanism.
 - `SIMULATED_ALLOW` never deploys software, updates a repository, or grants privileges. G6 approval is a JSON boolean, not a human approval.
 - All G0–G7 traces are **illustrative gate records**. No actual workflow orchestrator, protected human review, release infrastructure, or production G7 telemetry is integrated.
-- Python and .NET are independent implementations of a small subset; their parity is **not verified locally** because .NET 10 SDK was unavailable. CI is supplied to validate it.
+- Python and .NET are independent implementations of a small subset; their parity was **not verified in the original authoring environment**, where .NET 10 SDK was unavailable; it has subsequently **passed GitHub Actions** on the fixed 16 synthetic fixtures and five oracle families ([verified run](https://github.com/jmfloreszazo/TODM/actions/runs/40650709906)). This does not establish production equivalence or full standards conformance.
 - `dashboard/index.html` is an offline visualization of precomputed synthetic evidence. It does not execute the .NET runtime, connect to a live agent, or change the release state.
 - The nine Python qualification tests do not establish full oracle soundness/completeness or OMG-standard compliance. They only establish deterministic behavior for the declared fixtures.
 - An attacker who can modify the model and manifest together can produce a self-consistent forged baseline; this is **explicitly shown** by the manifest-edit test.

@@ -104,3 +104,7 @@ Preserve the useful method: G0–G7, separation of authority and conformance, PA
 3. Changes to research hypotheses and preregistration are versioned; once trials begin, preserve the original plan and log deviations.
 4. Mark every item complete only after collecting the stated exit evidence.
 5. Keep synthetic demo, repository policy enforcement and industrial transfer at distinct assurance levels.
+
+## PR #5 implementation acceptance boundary
+
+The implementation/review completion criteria for this **single draft PR** are documented in [PR5_ACCEPTANCE.md](PR5_ACCEPTANCE.md). This prevents external research programmes (human subjects, actual agent runs, industrial replication and production IAM) from being falsely marked as completed PR work. Such activities remain explicitly **open research milestones** above. A PR may be ready for review with all of its scoped tests passing, without claiming the TODM methodology has been scientifically validated. **Do not merge.**

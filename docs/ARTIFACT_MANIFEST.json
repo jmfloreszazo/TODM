@@ -35,9 +35,9 @@
     },
     {
       "target": "demo/RESULTADOS.md",
-      "sha256": "6ea080d478f35b40efab3068c035c8c8c640d48a7b4cceab997d9d98e534face",
-      "size": 1405,
-      "git_sha1": "55524b8a2d5aecf5ee47dbc15fadd108209088ff"
+      "sha256": "5b7b3dd81bca969afa45f0ee32a4ddafe49ab5c6139ccb77c42dce6435cec106",
+      "size": 1613,
+      "git_sha1": "69dec0a5799897bb6e3525c640a3dc1f44dd75f9"
     },
     {
       "target": "demo/ROADMAP.md",
@@ -197,9 +197,9 @@
     },
     {
       "target": "demo/docs/ARTIFACT_EVALUATION.md",
-      "sha256": "0b6645be6ac3118486210d7497f13518e4e203debd893f106fb4d6cc121ec802",
-      "size": 3363,
-      "git_sha1": "6a35371d42e2b3651aaa2f6a752ccd5a1526940d"
+      "sha256": "68dbe840150bf1316f984a25183173d3bda500611cf20a31ab8a023a55259705",
+      "size": 3576,
+      "git_sha1": "38a138b8a8f945fb6320f3e7e5bd4b7d508552ca"
     },
     {
       "target": "demo/docs/architecture-v0.2.mmd",
@@ -233,15 +233,15 @@
     },
     {
       "target": "demo/docs/paper-companion-v0.3.md",
-      "sha256": "ab8a950c08f02199ede050f1f89b2da37c9b8f07f9db01adfddb792f9f5fd317",
-      "size": 1903,
-      "git_sha1": "4968d062ef2866d364516d6a11c4f0db80643153"
+      "sha256": "0db922327064f3e2c9472d88f67f8292720cf92f9f52bb4be51b40daede4b207",
+      "size": 2155,
+      "git_sha1": "50038e729460e9546e5ef54a4aa25cce06b8548a"
     },
     {
       "target": "demo/docs/paper-companion.md",
-      "sha256": "c9db7cbcd14f0ed4b900b94bcbf99cc0c37fb9492bd2a2eab15e034d7e47f67d",
-      "size": 3502,
-      "git_sha1": "d593106ee37a4eb1e53fd9ddd11a084907e80ed5"
+      "sha256": "7411466d1e3ba25d4c2306b44fae5cc40c49322ed2a2835d09215479eef58e9f",
+      "size": 3546,
+      "git_sha1": "a1e5e0e8bb379f15397ce44724864b7114000c05"
     },
     {
       "target": "demo/docs/reproducibility-manifest.json",

@@ -29,9 +29,9 @@
     },
     {
       "target": "demo/README.md",
-      "sha256": "c543b8bd5d32ac07044711afeb7c62c6ee6dd3bce20f1e4891971d8b595fe5cf",
-      "size": 2104,
-      "git_sha1": "717cb044b0c3098ab64e900868521534b78506a3"
+      "sha256": "de5117ce9634f9641cd6651a988eb152a2428dc1107076733d3c78fd7ff4f2d3",
+      "size": 2296,
+      "git_sha1": "1ea8861155e27eea37130a40b8bc9bc44f2aacb2"
     },
     {
       "target": "demo/RESULTADOS.md",
@@ -485,9 +485,9 @@
     },
     {
       "target": "paper/TODM_Paper_v1.2.md",
-      "sha256": "4199683c7ce21b9395a328b3bfbc3c6399f648f92935354573141f0759e6da9a",
-      "size": 57485,
-      "git_sha1": "a7d4275633f4ee36acd38d28d721d60f12790b4e"
+      "sha256": "f2969324f3f0a52c97f12a03145edffe75be76ffcf9b1f10bd9a922f07cb338c",
+      "size": 57499,
+      "git_sha1": "a8ad9e117bf53059fe7e10a937f1948e39035394"
     },
     {
       "target": "paper/source/figures/todm_method.pdf",

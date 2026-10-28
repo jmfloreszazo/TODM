@@ -1,7 +1,7 @@
 {
   "artifact": "TODM immutable historical source baseline (v1.4 provenance)",
   "status": "SOURCE_TRANSFER_SHA256_BASELINE",
-  "note": "85 unchanged historical source files from the original 88-file v1.4 transfer baseline. Three evolving v1.5 files (demo/.gitignore, demo/README.md, demo/scripts/reproduce.py) were deliberately removed from this immutable baseline, not silently rehashed. Their previous checksums remain in Git history; v1.5 evidence must be separately versioned.",
+  "note": "84 unchanged historical source files from the original 88-file v1.4 transfer baseline. Four evolving v1.5 files (demo/.gitignore, demo/README.md, demo/scripts/reproduce.py, .github/workflows/full-demo.yml) excluded explicitly, not rehashed. Historical checksums remain in Git history.",
   "files": [
     {
       "target": "demo/.github/workflows/ci.yml",
@@ -506,12 +506,6 @@
       "sha256": "440a3fdebbaaa4d22b952c584580ac1c2a2120ed738633fc693e5fefcbce1c93",
       "size": 1630,
       "git_sha1": "38c745ed723301bbfff5c9e848d0d41af9e5c0d6"
-    },
-    {
-      "target": ".github/workflows/full-demo.yml",
-      "sha256": "a709844f8c270f8ea146e7000a3542ca0ead43a54ea648d775d9340a383e253c",
-      "size": 2080,
-      "git_sha1": "29c91e49e218544df2032d785ffb3eecbbff5072"
     }
   ]
 }

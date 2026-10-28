@@ -1,4 +1,6 @@
-# TODM v0.2 — resultados reproducibles del prototipo
+# TODM v1.4 — resultados reproducibles del prototipo (casos históricos v0.2/v0.4)
+
+**Versión de publicación 1.4.0.** Los recuentos originales son sintéticos y proceden de casos históricos; la compilación .NET y la paridad se verifican por GitHub Actions.
 
 **Verificado localmente:** Python 3 (biblioteca estándar), con `python3 scripts/verify_all.py`.
 

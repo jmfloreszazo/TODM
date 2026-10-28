@@ -22,7 +22,7 @@ def expect(path: str, fragments: tuple[str, ...] = ()) -> None:
                 errors.append(f"{path}: missing expected text {fragment!r}")
 
 expect("VERSION", ("1.5.0",))
-expect("CITATION.cff", ('version: "1.4.0"', "todm-research-v1.4.0/TODM_Paper_v1.4.pdf"))
+expect("CITATION.cff", ('version: "1.5.0"', "todm-research-v1.5.0/TODM_Paper_v1.5.pdf"))
 expect("README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md", "todm-research-v1.4.0"))
 expect("paper/source/main.tex", ("Research artifact companion, v1.4",))
 expect("paper/TODM_Paper_v1.4.md", ("version 1.4",))
@@ -32,7 +32,7 @@ expect("demo/scripts/reproduce.py", ("'version':'1.5.0'", "reproducibility-v1.5.
 expect("docs/VERSIONING.md", ("1.5.0", "0.4.0"))
 expect(".github/workflows/full-demo.yml", ("TODM v1.4 full research artifact", "reproducibility-v1.5.json"))
 expect(".github/workflows/paper-pdf.yml", ("TODM_Paper_v1.5.pdf", "TODM_arXiv_source_v1.5.zip"))
-expect(".github/workflows/release.yml", ("todm-research-v1.4.0", "TODM_Paper_v1.4.pdf", "TODM_Research_Artifact_v1.4.0.zip"))
+expect(".github/workflows/release.yml", ("todm-research-v1.5.0", "TODM_Paper_v1.5.pdf", "TODM_Research_Artifact_v1.5.0.zip"))
 expect("paper/ARXIV_SUBMISSION.md", ("todm-research-v1.4.0/TODM_Paper_v1.4.pdf",))
 if not args.allow_uncompiled_pdf:
     expect("paper/TODM_Paper_v1.4.pdf")

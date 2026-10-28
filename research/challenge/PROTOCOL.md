@@ -39,3 +39,18 @@ Synthetic fixture selection; oracle author bias; baseline leakage; shared assump
 ## Submission and review
 
 Use RESULT_TEMPLATE.md and link a reproducible repository or redacted evidence. Maintainers may request clarification but must not rewrite evaluators' conclusions. All results, including negative findings, remain independently attributable. Participation does not confer authorship or endorsement automatically.
+
+
+## Independence and G2 assurance requirements (protocol amendment v0.2)
+
+The original H1–H3 are retained as hypotheses, not asserted outcomes. For any proposed agent study, choose **S1** arm identifiers as defined in [BASELINES.md](BASELINES.md) and complete [the canonical preregistration](../../docs/COMPARATIVE_PROTOCOL.md) before data collection; do not use ambiguous unprefixed A/B/C arms.
+
+**Oracle provenance:** record (a) original business policy and its independent provenance, (b) agent's proposed draft if applicable, (c) exact content and digest approved by an authorized business reviewer, (d) reviewer permissions, scope, timestamp and revocation conditions, (e) qualification tests, and (f) the separately adjudicated ground truth. Disclose shared authors, prompts, code, fixtures or privileges. A self-generated oracle or unreviewed approval click is not independent assurance.
+
+**Evidence segregation:** freeze candidate agent permissions, approved baselines and hidden evaluation material in separate protected scopes. Keep ground-truth labels and oracle scoring rules unavailable to the candidate producer. Document any exposure or bypass. Record both legitimate allowed edits and unauthorized denied writes. Agent instructions, local hooks and self-reported refusals are not substitutes for permission enforcement.
+
+**Human G2 pilot:** independently preregister correct/incorrect AI-proposed oracle items, presentation formats, case order, reviewer familiarity, consent, time and error-detection endpoints. Include digest-bound approval and reapproval after payload changes. Report approval of incorrect rules and rejection of correct rules separately; never interpret a fast click as proven comprehension.
+
+**Evidence hierarchy:** a synthetic fixture demonstrates reference behavior; a CI pass demonstrates the tested workflow on that commit; independent replication demonstrates portability; controlled experiments support scoped quantitative claims; a repository security boundary supports only the threats it was tested against. Publication on Zenodo does not prove peer review.
+
+**Change control:** preregistration and hypotheses must be immutable once trials begin. Log any deviation with a new version and reason. Publish incomplete, null and adverse results, not only successful cases.

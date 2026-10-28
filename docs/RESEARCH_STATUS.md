@@ -9,7 +9,7 @@
 - Independent release gate with synthetic G2/G6 Ed25519 signatures, negative controls, revoked/unauthorized mandates, and explicit PASS / FAIL / INCONCLUSIVE outcomes.
 - [Successful full Python/.NET 10 five-family parity CI](https://github.com/jmfloreszazo/TODM/actions/runs/40598991585).
 - [Successful 20-page PDF LaTeX compilation](https://github.com/jmfloreszazo/TODM/actions/runs/40598669468).
-- [Verified GitHub research release v1.3](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.3) with downloadable PDF, arXiv source ZIP and full research artifact ZIP.
+- [Verified GitHub research release v1.4](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4) with downloadable PDF, arXiv source ZIP and full research artifact ZIP.
 - [Successful full release verification](https://github.com/jmfloreszazo/TODM/actions/runs/40599015278) and [88-file SHA-256 provenance manifest](ARTIFACT_MANIFEST.json).
 
 ## Not yet demonstrated or completed

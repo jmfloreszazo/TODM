@@ -16,7 +16,7 @@ TODM separates **who is authorized to act** from **whether the resulting softwar
 
 ## Verified public research release
 
-**[TODM Research Artifact v1.3 — audited GitHub Release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.3)** contains the compiled 20-page PDF, a standalone arXiv LaTeX source ZIP, and a full research artifact ZIP. Its release workflow re-ran the 88-file SHA-256 integrity check, documentation checks and full Python/.NET 10 governance parity successfully: [verified v1.3 release run](https://github.com/jmfloreszazo/TODM/actions/runs/40650709906).
+**[TODM Research Artifact v1.4 — audited GitHub Release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4)** contains the compiled 20-page PDF, a standalone arXiv LaTeX source ZIP, and a full research artifact ZIP. Its release workflow re-ran the 88-file SHA-256 integrity check, documentation checks and full Python/.NET 10 governance parity successfully: [verified v1.3 release run](https://github.com/jmfloreszazo/TODM/actions/runs/40650709906).
 
 **This GitHub release is not an arXiv submission or a DOI registration.**
 

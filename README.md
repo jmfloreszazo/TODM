@@ -66,6 +66,7 @@ TODM defines eight gates: **G0** scope and risk, **G1** evidence discovery, **G2
 
 ## Read the research and inspect the evidence
 
+- **[v1.5 manuscript (Markdown)](paper/TODM_Paper_v1.5.md)** · [v1.5 LaTeX source](paper/source/v1.5.tex) · [PDF build workflow](.github/workflows/paper-pdf.yml)
 - **[Complete v1.4 paper (PDF)](paper/TODM_Paper_v1.4.pdf)** · [Markdown manuscript](paper/TODM_Paper_v1.4.md) · [LaTeX source](paper/source/)
 - [Research and publication status](docs/PUBLICATION_STATUS.md) · [limitations](demo/docs/limitations.md)
 - [Full reproducibility instructions](demo/README.md) · [historical v0.4 model profiles](research-models/v0.4/)

@@ -8,7 +8,7 @@
 - [x] Python/.NET 10 full demo parity across 16 synthetic governance fixtures and five oracle families: [green CI](https://github.com/jmfloreszazo/TODM/actions/runs/40598991585).
 - [x] 88 source files matched to local research artifact with Git object hashes; [SHA-256 manifest](ARTIFACT_MANIFEST.json) verified in CI.
 - [x] Synthetic signed G2/G6 evidence and negative controls executed, without asserting real human identity.
-- [x] Tagged, downloadable [GitHub Research Release v1.3](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.3) with PDF, arXiv-source candidate ZIP and complete reproducibility ZIP.
+- [x] Tagged, downloadable [GitHub Research Release v1.4](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4) with PDF, arXiv-source candidate ZIP and complete reproducibility ZIP.
 - [x] Release workflow reran full Python/.NET 10 checks and integrity validation: [green release run](https://github.com/jmfloreszazo/TODM/actions/runs/40599015278).
 - [x] MIT license and `CITATION.cff` software citation metadata.
 

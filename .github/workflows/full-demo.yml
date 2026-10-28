@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify full artifact source integrity (88 SHA-256 hashes)
+      - name: Verify full artifact source integrity (85 SHA-256 hashes)
         run: python3 ../scripts/verify_artifact_manifest.py
       - name: Run all Python reference, signature and negative controls
         run: python3 scripts/reproduce.py
@@ -36,12 +36,12 @@ jobs:
         run: python3 scripts/verify_signed.py
       - uses: actions/upload-artifact@v4
         with:
-          name: todm-v1.4-python-evidence
+          name: todm-v1.5-python-evidence
           path: |
             demo/results/reference-execution.json
             demo/results/governance-execution.json
             demo/results/signed-assurance-execution.json
-            demo/results/reproducibility-v1.4.json
+            demo/results/reproducibility-v1.5.json
           if-no-files-found: error
   dotnet10-full:
     runs-on: ubuntu-latest
@@ -60,7 +60,7 @@ jobs:
         run: bash scripts/run.sh
       - uses: actions/upload-artifact@v4
         with:
-          name: todm-v1.4-dotnet-evidence
+          name: todm-v1.5-dotnet-evidence
           path: |
             demo/results/governance-dotnet.json
             demo/results/governance-execution.json

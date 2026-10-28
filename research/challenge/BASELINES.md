@@ -1,26 +1,43 @@
-# Baselines and comparison controls
+# Experimental arms and comparison controls
 
-This document defines **proposed** comparison arms, not results.
+**Status:** research design; **not observed results**. This file defines two distinct comparisons, which must never reuse ambiguous A/B/C identifiers.
 
-- **A — Conventional:** developer implementation and developer-authored tests, without an independently approved oracle baseline.
-- **B — AI-assisted:** agent-generated implementation and tests; log prompts, model versions, harness configuration, and tool usage.
-- **C — TODM:** separately approved oracle baseline, oracle qualification, bounded construction, independent evaluation, and separate release authorization.
+## Study S1 — Agent-controlled oracle independence (primary causal comparison)
 
-Follow the canonical [comparative preregistration template](../../docs/COMPARATIVE_PROTOCOL.md). For every arm, use matched tasks, controlled time/tool budgets where feasible, randomized order, and independent adjudication. Keep clean controls as well as faulty cases; assess equivalent mutations. Record failed runs and abstentions. Never infer superiority from the existing synthetic demo.
+All S1 arms use **AI agents** for candidate construction and implementation tests, with matched tasks, models, CLI/harness versions and budgets where practicable.
 
-## Minimum comparison record
+| Arm | Candidate and implementation tests | Independent acceptance oracle | Mutation qualification | Goal |
+| --- | --- | --- | --- | --- |
+| **S1-A — Coupled** | Agent-generated | None; coupled agent tests only | No | Measure defects escaping the coupled pipeline |
+| **S1-B — Independent** | Agent-generated | Frozen, human-governed, read-only oracle created outside the implementation agent's writable scope | No | Isolate oracle independence |
+| **S1-C — Qualified** | Agent-generated | Same frozen independent oracle | Yes; frozen qualification process | Isolate contribution of oracle qualification |
 
-| Field | Required |
-| --- | --- |
-| Task and frozen specification | Yes |
-| Arm and evaluator identity | Yes |
-| Tool/model version and settings | If applicable |
-| Baseline hash and code commit | Yes |
-| Ground-truth adjudication method | Yes |
-| Seeded defects and clean controls | Yes |
-| TP, FP, FN, TN or explicit N/A | Yes |
-| Inconclusive and excluded runs | Yes |
-| Time and actual cost | Yes |
-| Reproducibility commands | Yes |
+The evaluator must not count a known hardcoded fixture assertion as evidence of independent effectiveness. Include clean cases, hidden defects and contradictions where available. Count **release-escaping defects** per task and variant, not only test pass rates. Define negative controls and ground-truth labels outside the agent's writable scope. A real permission-boundary test is necessary before claiming resistance to manipulation.
 
-Preregister the primary endpoint, analysis unit, sample size and stopping criteria **before** measuring outcomes.
+The primary S1 contrasts are **S1-B vs S1-A** and **S1-C vs S1-B**. Estimate defect escape, recall/precision, false alarms, inconclusive decisions, bypass attempts, review effort, latency and costs with task-level uncertainty. Randomize and preregister.
+
+## Study S2 — Delivery-model comparison (exploratory, separate population)
+
+| Arm | Delivery approach | Interpretation |
+| --- | --- | --- |
+| **S2-H — Human-led** | Human developer implementation and developer-authored tests | Optional exploratory operational comparator |
+| **S2-AI — Agent-led** | Agent-assisted development with implementation-coupled tests | Agent workflow comparator |
+| **S2-TODM — Governed** | Agent implementation with G2/G3/G5/G6 TODM workflow | End-to-end feasibility comparison |
+
+S2 is **not interchangeable** with S1: human skill, effort, time budget and workflow differ. Do not pool results or describe S2 as a controlled isolation of oracle independence.
+
+## Study S3 — Human approval effectiveness at G2
+
+A separate human-subject pilot compares **presentation formats**, not S1/S2 implementation arms: decision table / DMN-style view, Gherkin and code or plain language. Expose exact approval content, changes, provenance and downstream impact. Capture detection of wrong rules, false rejection of correct rules, review time and confidence. An approval click alone does not establish comprehension.
+
+## Shared preregistration and evidence controls
+
+- Freeze tasks, sample size and rationale, primary endpoint, analysis unit, stop rule and exclusion criteria **before** recording outcomes.
+- Freeze approved expected behavior independently of agent-generated candidate and tests; use blinded adjudication when possible.
+- Record actor privileges, artifact hashes, tool/model identity, prompts, harness configuration and budgets.
+- Preserve results for clean controls, faults, mutants that survive, FAIL, PASS, INCONCLUSIVE, abstentions, failed runs and deviations.
+- Report uncertainty and costs. Bootstrap by **task**, not repeated execution row.
+- Separate authorization violations from behavioral failures: passing a functional oracle cannot erase a mandate violation.
+- Published synthetic fixture demonstrations are **not** an S1, S2 or S3 trial.
+
+The canonical research-question and measurement detail is maintained in [COMPARATIVE_PROTOCOL.md](../../docs/COMPARATIVE_PROTOCOL.md); independent research submissions use [PROTOCOL.md](PROTOCOL.md).

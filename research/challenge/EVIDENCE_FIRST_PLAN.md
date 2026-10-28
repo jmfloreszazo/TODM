@@ -88,8 +88,11 @@ Preserve the useful method: G0–G7, separation of authority and conformance, PA
 - [x] Expand `research/challenge/PROTOCOL.md` with independent oracle-origin and G2 pilot preregistration requirements (documentation; no trial run).
 - [x] Add `research/challenge/CLAIM_EVIDENCE_LEDGER.md` distinguishing inspected source assertions from unverified runtime/external evidence.
 - [x] Reconcile `research/challenge/BASELINES.md` and `docs/COMPARATIVE_PROTOCOL.md`: S1 agent-oracle, S2 delivery, S3 human G2; protocol remains unregistered until TBDs are frozen.
-- [x] Diagnose docs CI failure: stale v1.4 README expectation; update the alignment checker for v1.5 and retain historic paper requirements.\n- [ ] Confirm all PR-head CI conclusions after new commits and inspect failures; DOI external record remains unverified from available source.
-- [x] Add synthetic approval-to-payload binding reference, regression tests and dedicated CI (local behavior only).\n- [x] Add CODEOWNERS review ownership proposal (not enforcement without rulesets).\n- [ ] Demonstrate actual denied write under restricted credentials; M1/P1 remains incomplete.
+- [x] Diagnose docs CI failure: stale v1.4 README expectation; update the alignment checker for v1.5 and retain historic paper requirements.
+- [ ] Confirm all PR-head CI conclusions after new commits and inspect failures; DOI external record remains unverified from available source.
+- [x] Add synthetic approval-to-payload binding reference, regression tests and dedicated CI (local behavior only).
+- [x] Add CODEOWNERS review ownership proposal (not enforcement without rulesets).
+- [ ] Demonstrate actual denied write under restricted credentials; M1/P1 remains incomplete.
 
 ## Working constraints
 

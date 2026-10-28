@@ -35,13 +35,13 @@
     },
     {
       "target": "demo/RESULTADOS.md",
-      "sha256": "467b3d4c97d9056a7120cd62032709bfdd4c808464e52f65571f0a53887ede77",
+      "sha256": "6ea080d478f35b40efab3068c035c8c8c640d48a7b4cceab997d9d98e534face",
       "size": 1405,
       "git_sha1": "55524b8a2d5aecf5ee47dbc15fadd108209088ff"
     },
     {
       "target": "demo/ROADMAP.md",
-      "sha256": "f2e9a92f4447714ddebd19ea9097c32475bbade1d8775c01349bd94b6ac02fe1",
+      "sha256": "fdedc9b8bff090b5b9cb8aead04a564dd769bb0fd7f23552d13e9de288ebc955",
       "size": 3087,
       "git_sha1": "63e138e1508fbf388e00ebb3d9a268bb20e70561"
     },
@@ -227,7 +227,7 @@
     },
     {
       "target": "demo/docs/limitations.md",
-      "sha256": "212f6be3728d3401c7daa4fdad551ee511741cb85d5b6b27152ee72db039c705",
+      "sha256": "96f9755bed957a186d4ded0ecd4c9ad17664bf57b666cb8d606224c249b5f7e7",
       "size": 3380,
       "git_sha1": "051183fbee330c290038916d5cc0f797fdedebd3"
     },
@@ -239,7 +239,7 @@
     },
     {
       "target": "demo/docs/paper-companion.md",
-      "sha256": "c7e214b3193fdcd1c1294bf2e1eab813a9a3c6bbba38a628842132cc483ffc8e",
+      "sha256": "c9db7cbcd14f0ed4b900b94bcbf99cc0c37fb9492bd2a2eab15e034d7e47f67d",
       "size": 3502,
       "git_sha1": "d593106ee37a4eb1e53fd9ddd11a084907e80ed5"
     },

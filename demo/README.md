@@ -28,6 +28,6 @@ bash scripts/run.sh                                                 # optional .
 - `src/`, `samples/`, `tests/`: .NET 10 reference and smoke/parity harness.
 - `results/`: generated JSON evidence; `dashboard/`: offline visualization.
 - `docs/ARTIFACT_EVALUATION.md`: evaluation, reproduction and limitations.
-- `.github/workflows/ci.yml`: Python and .NET CI jobs.
+- `../.github/workflows/full-demo.yml`: repository-level Python/.NET 10 full-demo CI; `../.github/workflows/ci.yml`: smaller seed CI. The bundled `demo/.github/workflows/ci.yml` is a standalone template, not an active workflow in this repository.
 
 **Methodological contribution:** G0–G7 lifecycle, human-approved independent oracle baseline, qualified oracles, fail/inconclusive semantics, bounded delegation and independent release authorization. **Scientific status:** method proposed; synthetic engineering acceptance demonstrated; comparative effectiveness not established.

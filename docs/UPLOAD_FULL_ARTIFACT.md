@@ -8,7 +8,7 @@ The complete paper, five-family Python/.NET 10 demonstration, signed synthetic G
 - [Full paper PDF](../paper/TODM_Paper_v1.2.pdf)
 - [Paper LaTeX sources](../paper/source/)
 - [Full-demo CI (green)](https://github.com/jmfloreszazo/TODM/actions/runs/40598991585)
-- [Verified tagged GitHub release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.3)
+- [Verified tagged GitHub release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4)
 - [Release validation CI (green)](https://github.com/jmfloreszazo/TODM/actions/runs/40599015278)
 
 **Remaining external work:** actual arXiv submission, archival DOI deposit and independent controlled comparative study. See [publication status](PUBLICATION_STATUS.md).

@@ -89,10 +89,13 @@ Preserve the useful method: G0–G7, separation of authority and conformance, PA
 - [x] Add `research/challenge/CLAIM_EVIDENCE_LEDGER.md` distinguishing inspected source assertions from unverified runtime/external evidence.
 - [x] Reconcile `research/challenge/BASELINES.md` and `docs/COMPARATIVE_PROTOCOL.md`: S1 agent-oracle, S2 delivery, S3 human G2; protocol remains unregistered until TBDs are frozen.
 - [x] Diagnose docs CI failure: stale v1.4 README expectation; update the alignment checker for v1.5 and retain historic paper requirements.
-- [ ] Confirm all PR-head CI conclusions after new commits and inspect failures; DOI external record remains unverified from available source.
+- [x] Confirm four PR-head workflows all green at commit `debe72fff7a17039238a0cc10d67cff7196b28c6` (documentation, Python/.NET CI, full demo and approval-reference tests).
+- [ ] Reconfirm CI after subsequent commits; DOI external record and release assets remain separately unverified.
 - [x] Add synthetic approval-to-payload binding reference, regression tests and dedicated CI (local behavior only).
 - [x] Add CODEOWNERS review ownership proposal (not enforcement without rulesets).
 - [ ] Demonstrate actual denied write under restricted credentials; M1/P1 remains incomplete.
+- [x] Add S1 scoring contract and tests for TP/FP/FN/TN, INCONCLUSIVE handling, duplicates, malformed ground truth and task count. **No experimental results collected.**
+- [ ] Implement preregistered paired task-level statistical analysis after research design is frozen.
 
 ## Working constraints
 

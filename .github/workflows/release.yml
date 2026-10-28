@@ -37,12 +37,12 @@ jobs:
           cd paper/source
           zip -9 -q ../../release/TODM_arXiv_source_v1.2.zip main.tex references.bib main.bbl figures/todm_method.pdf figures/todm_planes.pdf
           cd ../..
-          zip -9 -q -r release/TODM_Research_Artifact_v1.3.zip \
+          zip -9 -q -r release/TODM_Research_Artifact_v1.4.zip \
             paper demo docs scripts research-models dotnet contracts tests \
             README.md LICENSE CITATION.cff .github/workflows \
             -x '*/__pycache__/*' '*.pyc'
           test -s release/TODM_arXiv_source_v1.2.zip
-          test -s release/TODM_Research_Artifact_v1.3.zip
+          test -s release/TODM_Research_Artifact_v1.4.zip
           sha256sum paper/TODM_Paper_v1.2.pdf release/*.zip
       - uses: actions/upload-artifact@v4
         with:
@@ -55,16 +55,16 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view todm-research-v1.3 >/dev/null 2>&1; then
+          if gh release view todm-research-v1.4 >/dev/null 2>&1; then
             echo 'Research release already exists; refusing to overwrite immutable assets.'
           else
-            gh release create todm-research-v1.3 \
+            gh release create todm-research-v1.4 \
               paper/TODM_Paper_v1.2.pdf \
               release/TODM_arXiv_source_v1.2.zip \
-              release/TODM_Research_Artifact_v1.3.zip \
+              release/TODM_Research_Artifact_v1.4.zip \
               --target "$GITHUB_SHA" \
-              --title 'TODM Research Artifact v1.3 — Audited Paper and Full Demo' \
-              --notes 'Audited documentation, full 20-page research manuscript, arXiv LaTeX source candidate, and reproducible Python/.NET 10 five-family synthetic demo with 16 governance fixtures. GitHub Actions verifies source integrity and cross-language parity. Methodological research proposal; no industrial comparative effectiveness, production identity assurance, DOI, or arXiv acceptance is claimed.'
+              --title 'TODM Research Artifact v1.4 — Audited Paper and Full Demo' \
+              --notes 'Final audited documentation with live README badges, full 20-page research manuscript, arXiv LaTeX source candidate, and reproducible Python/.NET 10 five-family synthetic demo with 16 governance fixtures. GitHub Actions verifies source integrity and cross-language parity. Methodological research proposal; no industrial comparative effectiveness, production identity assurance, DOI, or arXiv acceptance is claimed.'
           fi
 
 # The release is gated on the corrected 88-file SHA-256 provenance manifest.

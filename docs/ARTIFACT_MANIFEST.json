@@ -1,7 +1,7 @@
 {
-  "artifact": "TODM paper v1.2 and demo v0.4",
+  "artifact": "TODM unified v1.4.0 research artifact with historical v0.4 profile schema",
   "status": "SOURCE_TRANSFER_SHA256_BASELINE",
-  "note": "Source hashes are of the local v1.6 publication kit before transfer. Generated PDF excluded; workflow compiles it.",
+  "note": "88-file source integrity manifest; v1.4.0 current paper/demo files and explicitly retained historical v0.4/v1.2 provenance. Digest consistency is not a production trust root.",
   "files": [
     {
       "target": "demo/.github/workflows/ci.yml",
@@ -29,9 +29,9 @@
     },
     {
       "target": "demo/README.md",
-      "sha256": "de5117ce9634f9641cd6651a988eb152a2428dc1107076733d3c78fd7ff4f2d3",
-      "size": 2296,
-      "git_sha1": "1ea8861155e27eea37130a40b8bc9bc44f2aacb2"
+      "sha256": "01f80a3107ba55fe470e361f4c41c1001dbe849e67f5cf9077e49814ba3eb22a",
+      "size": 2451,
+      "git_sha1": "0e048c39d4614d43c4ed3274d8819139dff53b85"
     },
     {
       "target": "demo/RESULTADOS.md",
@@ -377,9 +377,9 @@
     },
     {
       "target": "demo/scripts/reproduce.py",
-      "sha256": "a04cef63d19c93515173fedb96465f238b3793e5c6a5f3e72475d0e56a71121f",
-      "size": 2389,
-      "git_sha1": "cc5c1121fa9ba5e4b8820e82d4dce0b25edd99a0"
+      "sha256": "b350d0f342da160e8b8a2fdfe561f6be018996e1c03c65c9cb8a8bfdc2aaa95c",
+      "size": 2420,
+      "git_sha1": "d37a42ffcf86d1fafecd390edddbafe3c2b5ba49"
     },
     {
       "target": "demo/scripts/run.ps1",
@@ -509,9 +509,9 @@
     },
     {
       "target": "paper/source/main.tex",
-      "sha256": "db8d7d4dc295351705ef823aa2d384532db3842bef156fd45d60976df2f6b696",
-      "size": 62021,
-      "git_sha1": "52cf1738e0893f8c20cb4570dab6b48feebb7a53"
+      "sha256": "bfdc587c291ab7657f923580e12582cde2a757826cc8cffec22325469ce66314",
+      "size": 62054,
+      "git_sha1": "0dff4790a0b494bc9b02b597f968b748328f8d59"
     },
     {
       "target": "paper/source/references.bib",
@@ -527,9 +527,9 @@
     },
     {
       "target": ".github/workflows/full-demo.yml",
-      "sha256": "4c8d1e83fb8b8fe792bb6f778b2ac8b8511a5064de7dca2154f117d968aa7b90",
-      "size": 1807,
-      "git_sha1": "d34e2f0ac7bccd4a8fa7e6c9216a3a42e958e244"
+      "sha256": "a709844f8c270f8ea146e7000a3542ca0ead43a54ea648d775d9340a383e253c",
+      "size": 2080,
+      "git_sha1": "29c91e49e218544df2032d785ffb3eecbbff5072"
     }
   ]
 }

@@ -1,0 +1,32 @@
+# TODM — ignore generated dependencies and local state, NOT research evidence.
+**/bin/
+**/obj/
+**/node_modules/
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.tox/
+**/.nox/
+**/.venv/
+**/venv/
+**/env/
+*.py[cod]
+*.pyo
+*.egg-info/
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pfx
+*.p12
+*.key
+*.snk
+# Do not ignore results/, reports/, JSON, CSV, PDFs, or research attestations.

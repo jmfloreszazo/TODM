@@ -16,23 +16,23 @@ TODM separates **who is authorized to act** from **whether the resulting softwar
 
 ## Verified public research release
 
-**[TODM Research Artifact v1.4 — audited GitHub Release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4)** contains the compiled 20-page PDF, a standalone arXiv LaTeX source ZIP, and a full research artifact ZIP. Its release workflow re-ran the 88-file SHA-256 integrity check, documentation checks and full Python/.NET 10 governance parity successfully: [verified v1.3 release run](https://github.com/jmfloreszazo/TODM/actions/runs/40650709906).
+**[TODM Research Artifact v1.4.0 — unified paper and demo](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4.0)** contains the compiled 20-page PDF, a standalone arXiv LaTeX source ZIP, and a full research artifact ZIP. Its release workflow re-ran the 88-file SHA-256 integrity check, documentation checks and full Python/.NET 10 governance parity successfully: [v1.4 release workflow](.github/workflows/release.yml).
 
 **This GitHub release is not an arXiv submission or a DOI registration.**
 
-See the [28 October technical audit](docs/AUDIT_2026-10-28.md) and [documentation integrity CI](.github/workflows/docs-integrity.yml). Badges reflect live workflow and release states, not static claims of scientific validation.
+See the [versioning policy](docs/VERSIONING.md), [28 October technical audit](docs/AUDIT_2026-10-28.md) and [documentation integrity CI](.github/workflows/docs-integrity.yml). Badges reflect live workflow and release states, not static claims of scientific validation.
 
 ## Read the complete article
 
-- **[Full English research paper — PDF](paper/TODM_Paper_v1.2.pdf)** (automatically compiled from LaTeX and committed by GitHub Actions).
-- [Complete manuscript in Markdown](paper/TODM_Paper_v1.2.md).
+- **[Full English research paper — PDF](paper/TODM_Paper_v1.4.pdf)** (automatically compiled from LaTeX and committed by GitHub Actions).
+- [Complete manuscript in Markdown](paper/TODM_Paper_v1.4.md).
 - [LaTeX source, figures and references](paper/source/).
 - [How the paper is built and arXiv submission status](paper/README.md).
 - [Paper compilation workflow](.github/workflows/paper-pdf.yml).
 
 ## Reproduce the complete research demo
 
-The [full demo v0.4](demo/) contains a Python reference, a C#/.NET 10 implementation, five limited oracle-family profiles, 16 synthetic governance scenarios, public verification keys, synthetic G2/G6 attestations, negative controls and a research protocol.
+The [full demo v1.4](demo/) contains a Python reference, a C#/.NET 10 implementation, five limited oracle-family profiles, 16 synthetic governance scenarios, public verification keys, synthetic G2/G6 attestations, negative controls and a research protocol.
 
 ```bash
 cd demo
@@ -74,6 +74,10 @@ See [research status](docs/PUBLICATION_STATUS.md), [comparative protocol](docs/C
 ## Repository metadata
 
 Suggested GitHub **About** description and discovery topics are recorded in [repository metadata](docs/REPOSITORY_METADATA.md). Updating GitHub's About fields requires repository administration access; the GitHub connector used to publish this README cannot modify those fields.
+
+## Versioning
+
+**Unified public version: 1.4.0.** The original v0.4 JSON profile/evidence schema and v1.2 manuscript are retained as **historical provenance**, not as the current artifact version. See [versioning and reproducibility](docs/VERSIONING.md). The v1.4 PDF is rebuilt from the versioned LaTeX source by CI before the v1.4.0 release is published.
 
 ## Citation and license
 

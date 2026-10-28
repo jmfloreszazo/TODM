@@ -4,9 +4,9 @@
 
 ## Files
 
-- [Compiled 20-page manuscript PDF](https://github.com/jmfloreszazo/TODM/releases/download/todm-research-v1.4/TODM_Paper_v1.2.pdf)
-- [Standalone LaTeX source ZIP for arXiv](https://github.com/jmfloreszazo/TODM/releases/download/todm-research-v1.4/TODM_arXiv_source_v1.2.zip)
-- [Full research artifact](https://github.com/jmfloreszazo/TODM/releases/download/todm-research-v1.4/TODM_Research_Artifact_v1.3.zip)
+- [Compiled 20-page manuscript PDF](https://github.com/jmfloreszazo/TODM/releases/download/todm-research-v1.4.0/TODM_Paper_v1.4.pdf)
+- [Standalone LaTeX source ZIP for arXiv](https://github.com/jmfloreszazo/TODM/releases/download/todm-research-v1.4.0/TODM_arXiv_source_v1.4.zip)
+- [Full research artifact](https://github.com/jmfloreszazo/TODM/releases/download/todm-research-v1.4.0/TODM_Research_Artifact_v1.4.0.zip)
 - [Verified paper compilation](https://github.com/jmfloreszazo/TODM/actions/runs/40598669468)
 
 ## Suggested metadata (review before submitting)

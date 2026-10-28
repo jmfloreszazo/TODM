@@ -1,4 +1,6 @@
-# TODM paper companion — verified scope, v0.3
+# TODM paper companion — historical v0.3 scope (superseded by v1.4)
+
+**Historical record:** this document captures the original v0.3 stage; the current [v1.4 demo](../README.md) has verified .NET 10 parity and a compiled paper. Earlier pending statements below refer only to that historical stage.
 
 **Paper:** *TODM: A Test Oracle-Driven Methodology for Human-Governed AI Software Engineering* (v1.1). This is a **synthetic executable artifact**, not a field study.
 

@@ -1,15 +1,22 @@
-name: TODM full v0.4 research artifact
+name: TODM v1.4 full research artifact
 on:
   push:
+    branches: [main]
     paths:
       - 'demo/**'
+      - 'docs/ARTIFACT_MANIFEST.json'
       - '.github/workflows/full-demo.yml'
   pull_request:
     paths:
       - 'demo/**'
+      - 'docs/ARTIFACT_MANIFEST.json'
       - '.github/workflows/full-demo.yml'
   workflow_dispatch:
-
+permissions:
+  contents: read
+concurrency:
+  group: todm-full-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   python-reference:
     runs-on: ubuntu-latest
@@ -29,12 +36,13 @@ jobs:
         run: python3 scripts/verify_signed.py
       - uses: actions/upload-artifact@v4
         with:
-          name: todm-full-python-evidence
+          name: todm-v1.4-python-evidence
           path: |
             demo/results/reference-execution.json
             demo/results/governance-execution.json
             demo/results/signed-assurance-execution.json
-            demo/results/reproducibility-v0.4.json
+            demo/results/reproducibility-v1.4.json
+          if-no-files-found: error
   dotnet10-full:
     runs-on: ubuntu-latest
     defaults:
@@ -52,8 +60,9 @@ jobs:
         run: bash scripts/run.sh
       - uses: actions/upload-artifact@v4
         with:
-          name: todm-full-dotnet-evidence
+          name: todm-v1.4-dotnet-evidence
           path: |
             demo/results/governance-dotnet.json
             demo/results/governance-execution.json
             demo/results/reports/*.json
+          if-no-files-found: error

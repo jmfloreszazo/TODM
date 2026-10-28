@@ -1,5 +1,5 @@
 # TODM — Test Oracle-Driven Methodology
-## Research synopsis and publication status
+## Research synopsis and publication status — v1.4.0
 
 **Author:** José María Flores Zazo  
 **Working title:** *TODM: A Test Oracle-Driven Methodology for Human-Governed AI Software Engineering*  
@@ -76,4 +76,4 @@ Oracle quality depends on the validity of the human-approved baseline; human app
 
 ### Artifact statement
 
-The **complete** Python/.NET 10 five-family synthetic research artifact is [public](../demo/) and has [passed full cross-language CI](https://github.com/jmfloreszazo/TODM/actions/runs/40598991585). The [20-page paper](TODM_Paper_v1.2.pdf) has been compiled by [GitHub Actions](https://github.com/jmfloreszazo/TODM/actions/runs/40598669468). A [tagged release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4) contains the paper and reproducibility bundle. arXiv acceptance, a DOI and industrial empirical validation remain pending.
+The **complete** Python/.NET 10 five-family synthetic research artifact is [public](../demo/) and has [passed full cross-language CI](https://github.com/jmfloreszazo/TODM/actions/runs/40598991585). The [20-page paper](TODM_Paper_v1.2.pdf) has been compiled by [GitHub Actions](https://github.com/jmfloreszazo/TODM/actions/runs/40598669468). A [tagged release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4.0) contains the paper and reproducibility bundle. arXiv acceptance, a DOI and industrial empirical validation remain pending.

@@ -1,4 +1,4 @@
-# TODM v0.4 — Reproducible research artifact
+# TODM v1.4 — Reproducible research artifact (original profile schema v0.4)
 
 ## What is actually demonstrated
 
@@ -14,9 +14,9 @@ python3 scripts/audit_release.py --case GF-01-greenfield-approved --json
 python3 scripts/audit_release.py --case GF-03-wrong-threshold --json # exit 2 = expected BLOCK
 ```
 
-The first command exits nonzero on any unexpected result and writes `results/reproducibility-v0.4.json`. `scripts/audit_release.py` exits **0 only for synthetic signed allow**, and **2 for BLOCK**. It fails closed on missing/invalid G2, wrong model hashes, missing G6, invalid mandate or failing/inconclusive oracles. The fixture timestamp is fixed: **2026-10-27T12:00:00Z**. Results must not be interpreted as authorization to deploy.
+The first command exits nonzero on any unexpected result and writes `results/reproducibility-v1.4.json`. `scripts/audit_release.py` exits **0 only for synthetic signed allow**, and **2 for BLOCK**. It fails closed on missing/invalid G2, wrong model hashes, missing G6, invalid mandate or failing/inconclusive oracles. The fixture timestamp is fixed: **2026-10-27T12:00:00Z**. Results must not be interpreted as authorization to deploy.
 
-For C# verification, use `bash scripts/run.sh` with .NET 10 SDK, or the GitHub Actions workflow. C# parity is **not established** unless that job succeeds; no .NET SDK is available in the local authoring environment.
+For C# verification, use `bash scripts/run.sh` with .NET 10 SDK, or the GitHub Actions workflow. C#/.NET 10 compilation and 16-case Python parity have passed [GitHub Actions](https://github.com/jmfloreszazo/TODM/actions/runs/40653338691). The original authoring environment lacked .NET 10; the public CI is the authoritative synthetic verification. This does not establish industrial effectiveness.
 
 ## Trust and reproducibility boundary
 

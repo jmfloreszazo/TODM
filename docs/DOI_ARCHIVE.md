@@ -1,6 +1,6 @@
 # Permanent archival DOI — next external step
 
-**GitHub research release:** https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4
+**GitHub research release:** https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4.0
 
 **Status:** GitHub release exists and has downloadable PDF, LaTeX source ZIP and full demo ZIP. **No DOI has been issued.**
 
@@ -16,4 +16,4 @@ A GitHub tag or release URL is **not** itself a DOI. Do not invent an identifier
 
 ## Scientific status
 
-An archived software artifact with a DOI is still not a controlled comparative experiment or a peer-reviewed acceptance decision. The next study must follow the predeclared evaluation protocol in `docs/COMPARATIVE_PROTOCOL.md`.
+An archived software artifact with a DOI is still not a controlled comparative experiment or a peer-reviewed acceptance decision. The next study must follow the predeclared evaluation protocol in [comparative protocol](COMPARATIVE_PROTOCOL.md).

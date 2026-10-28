@@ -1,5 +1,13 @@
 # TODM — Test Oracle-Driven Methodology
 
+[![Full research demo](https://github.com/jmfloreszazo/TODM/actions/workflows/full-demo.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/full-demo.yml)
+[![Cross-language CI](https://github.com/jmfloreszazo/TODM/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/ci.yml)
+[![Paper PDF](https://github.com/jmfloreszazo/TODM/actions/workflows/paper-pdf.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/paper-pdf.yml)
+[![Docs integrity](https://github.com/jmfloreszazo/TODM/actions/workflows/docs-integrity.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/docs-integrity.yml)
+[![Research release](https://github.com/jmfloreszazo/TODM/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/release.yml)
+[![Latest release](https://img.shields.io/github/v/release/jmfloreszazo/TODM?display_name=tag&label=release)](https://github.com/jmfloreszazo/TODM/releases/latest)
+[![MIT License](https://img.shields.io/github/license/jmfloreszazo/TODM)](LICENSE)
+
 **A human-governed, tool-agnostic methodology for AI software engineering.**
 
 Author: **José María Flores Zazo** · Status: **methodological research proposal + synthetic reproducible demonstration**.
@@ -8,11 +16,11 @@ TODM separates **who is authorized to act** from **whether the resulting softwar
 
 ## Verified public research release
 
-**[TODM Research Artifact v1.3 — audited GitHub Release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.3)** contains the compiled 20-page PDF, a standalone arXiv LaTeX source ZIP, and a full research artifact ZIP. Its release workflow re-ran the 88-file SHA-256 integrity check and full Python/.NET 10 governance parity successfully: [verified release run](https://github.com/jmfloreszazo/TODM/actions/runs/40599015278).
+**[TODM Research Artifact v1.3 — audited GitHub Release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.3)** contains the compiled 20-page PDF, a standalone arXiv LaTeX source ZIP, and a full research artifact ZIP. Its release workflow re-ran the 88-file SHA-256 integrity check, documentation checks and full Python/.NET 10 governance parity successfully: [verified v1.3 release run](https://github.com/jmfloreszazo/TODM/actions/runs/40650709906).
 
 **This GitHub release is not an arXiv submission or a DOI registration.**
 
-See the [28 October technical audit](docs/AUDIT_2026-10-28.md) and [documentation integrity CI](.github/workflows/docs-integrity.yml).
+See the [28 October technical audit](docs/AUDIT_2026-10-28.md) and [documentation integrity CI](.github/workflows/docs-integrity.yml). Badges reflect live workflow and release states, not static claims of scientific validation.
 
 ## Read the complete article
 
@@ -32,7 +40,7 @@ python3 scripts/reproduce.py
 bash scripts/run.sh        # requires .NET 10 SDK and Python 3
 ```
 
-**Verified in GitHub Actions:** [full Python/.NET 10 demo and 16-fixture five-family parity](https://github.com/jmfloreszazo/TODM/actions/runs/40598241342).
+**Verified in GitHub Actions:** [full Python/.NET 10 demo and 16-fixture five-family parity](https://github.com/jmfloreszazo/TODM/actions/runs/40650709906).
 
 The smaller [Python seed](src/todm_demo.py) and [.NET 10 seed](dotnet/Todm.Seed/) remain as introductory examples. Their [16 shared policy fixtures](tests/fixtures/policy-cases.json) are separate from the 16 full governance scenarios.
 
@@ -62,6 +70,10 @@ The smaller [Python seed](src/todm_demo.py) and [.NET 10 seed](dotnet/Todm.Seed/
 - No DOI or arXiv acceptance is claimed until independently confirmed.
 
 See [research status](docs/PUBLICATION_STATUS.md), [comparative protocol](docs/COMPARATIVE_PROTOCOL.md), [full experiment plan](docs/EXPERIMENT_COMPARISON.md) and [GitHub Actions](https://github.com/jmfloreszazo/TODM/actions).
+
+## Repository metadata
+
+Suggested GitHub **About** description and discovery topics are recorded in [repository metadata](docs/REPOSITORY_METADATA.md). Updating GitHub's About fields requires repository administration access; the GitHub connector used to publish this README cannot modify those fields.
 
 ## Citation and license
 

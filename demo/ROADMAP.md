@@ -7,7 +7,7 @@ This checklist distinguishes implemented research artifacts from proposed capabi
 - [x] Synthetic G2 digest verification and explicit demo-approval warning
 - [x] Five correct controls, four seeded mutants, missing-evidence verdict
 - [x] Python reference evaluator and repeatable results
-- [x] C# candidate and independent oracle engine source (compilation pending external .NET 10 execution)
+- [x] C# candidate and independent oracle engine source (compilation and synthetic parity verified in GitHub Actions)
 
 ## H1 — Governance separation (v0.2)
 - [x] Explicit, time-bounded synthetic mandates and revocation
@@ -17,7 +17,7 @@ This checklist distinguishes implemented research artifacts from proposed capabi
 - [x] G0–G7 evidence traces and return paths
 - [x] Offline executive dashboard and paper-to-code traceability
 - [x] Python qualification tests and baseline tamper rejection
-- [ ] Confirm .NET 10 build and cross-language parity on GitHub Actions
+- [x] Confirm .NET 10 build and cross-language parity on [GitHub Actions](https://github.com/jmfloreszazo/TODM/actions/runs/40650709906)
 
 ## H2 — True independent authority and approvals
 - [ ] Signed, human-reviewed G2 baseline with protected storage and separation of duties

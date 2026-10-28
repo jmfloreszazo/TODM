@@ -2,13 +2,13 @@ cff-version: 1.2.0
 message: "Cite the full TODM research manuscript and the tagged software artifact. No DOI or arXiv identifier has been assigned."
 type: software
 title: "TODM: Test Oracle-Driven Methodology — Research Artifact"
-version: "1.4.0"
+version: "1.5.0"
 date-released: "2026-10-28"
 authors:
   - family-names: "Flores Zazo"
     given-names: "José María"
 repository-code: "https://github.com/jmfloreszazo/TODM"
-url: "https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4.0"
+url: "https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.5.0"
 license: MIT
 keywords:
   - test oracles
@@ -25,4 +25,4 @@ preferred-citation:
     - family-names: "Flores Zazo"
       given-names: "José María"
   year: 2026
-  url: "https://github.com/jmfloreszazo/TODM/releases/download/todm-research-v1.4.0/TODM_Paper_v1.4.pdf"
+  url: "https://github.com/jmfloreszazo/TODM/releases/download/todm-research-v1.4.0/TODM_Paper_v1.5.pdf"

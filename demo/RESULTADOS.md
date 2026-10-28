@@ -11,6 +11,6 @@
 - Alterar un modelo sin actualizar su hash produce error de integridad.
 - Alterar el manifiesto local **no se detecta criptográficamente**: falta firma/almacén protegido.
 
-Los números describen los casos de prueba diseñados, no sensibilidad, precisión ni eficacia en proyectos reales. **.NET 10 y paridad C#/Python pendientes de ejecución en un entorno con SDK.**
+Los números describen los casos de prueba diseñados, no sensibilidad, precisión ni eficacia en proyectos reales. **Actualización de verificación (28/10/2026):** .NET 10 y la paridad C#/Python de los 16 escenarios y las cinco familias ya se ejecutaron satisfactoriamente en [GitHub Actions](https://github.com/jmfloreszazo/TODM/actions/runs/40650709906). El resto de resultados sigue siendo exclusivamente sintético.
 
 **Prueba clave:** `GF-05-revoked-agent` tiene resultado de software correcto (TODM PASS) y autoridad revocada (mandato FAIL), por lo que G6 bloquea. `GF-03-wrong-threshold` invierte la situación: mandato PASS y TODM FAIL. `GF-08-unapproved-release` tiene ambos PASS, pero G6 deniega por falta de autorización de entrega.

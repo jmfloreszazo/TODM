@@ -21,12 +21,12 @@ def main():
            'governance/fixtures.json','governance/mandates.json','results/reference-execution.json',
            'results/governance-execution.json','results/signed-assurance-execution.json']
     hashes={f:hashlib.sha256((ROOT/f).read_bytes()).hexdigest() for f in files}
-    result={'kind':'TODM_SYNTHETIC_REPRODUCIBILITY_RECORD','version':'1.4.0','profileSchemaVersion':'0.4.0',
+    result={'kind':'TODM_SYNTHETIC_REPRODUCIBILITY_RECORD','version':'1.5.0','profileSchemaVersion':'0.4.0',
             'warning':'These are deterministic synthetic engineering tests, not industrial outcomes or real human identity.',
             'pythonVersion':platform.python_version(),'platform':platform.platform(),
             'commands':commands,'sha256':hashes,'allExpectedChecksPassed':True,
             'dotnetCompiledHere':False}
-    dest=ROOT/'results/reproducibility-v1.4.json';dest.write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
-    print('TODM v1.4: reference, signed controls, adversarial tests and fail-closed CLI verified')
+    dest=ROOT/'results/reproducibility-v1.5.json';dest.write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
+    print('TODM v1.5: reference, signed controls, adversarial tests and fail-closed CLI verified')
     print('Evidence:',dest)
 if __name__=='__main__':main()

@@ -1,19 +1,13 @@
 {
-  "artifact": "TODM unified v1.4.0 research artifact with historical v0.4 profile schema",
+  "artifact": "TODM immutable historical source baseline (v1.4 provenance)",
   "status": "SOURCE_TRANSFER_SHA256_BASELINE",
-  "note": "88-file source integrity manifest; v1.4.0 current paper/demo files and explicitly retained historical v0.4/v1.2 provenance. Digest consistency is not a production trust root.",
+  "note": "84 unchanged historical source files from the original 88-file v1.4 transfer baseline. Four evolving v1.5 files (demo/.gitignore, demo/README.md, demo/scripts/reproduce.py, .github/workflows/full-demo.yml) excluded explicitly, not rehashed. Historical checksums remain in Git history.",
   "files": [
     {
       "target": "demo/.github/workflows/ci.yml",
       "sha256": "4ba1c7074ded304a27bfb51de9b2fc4103acdd4459b012b86549c04126c2f582",
       "size": 1683,
       "git_sha1": "06aade3a9c3d217e5b86d41aacf92269602cc4b2"
-    },
-    {
-      "target": "demo/.gitignore",
-      "sha256": "8dc9497c760538f75a4c637d13d40c850e1fabf7ec5844a059b029d684e607ba",
-      "size": 117,
-      "git_sha1": "3d940b88efe801812b0d89df428678bb8d5ac06c"
     },
     {
       "target": "demo/LICENSE",
@@ -26,12 +20,6 @@
       "sha256": "d27cec82864860f63407253cd52090f81b9f13e2bb2c91c9e0ff4adf9b89e829",
       "size": 3229,
       "git_sha1": "c163004be6e27440666dbe70216b19ee341f05f1"
-    },
-    {
-      "target": "demo/README.md",
-      "sha256": "01f80a3107ba55fe470e361f4c41c1001dbe849e67f5cf9077e49814ba3eb22a",
-      "size": 2451,
-      "git_sha1": "0e048c39d4614d43c4ed3274d8819139dff53b85"
     },
     {
       "target": "demo/RESULTADOS.md",
@@ -376,12 +364,6 @@
       "git_sha1": "e3cbfa54dc39678e12ed295511b102602993252d"
     },
     {
-      "target": "demo/scripts/reproduce.py",
-      "sha256": "b350d0f342da160e8b8a2fdfe561f6be018996e1c03c65c9cb8a8bfdc2aaa95c",
-      "size": 2420,
-      "git_sha1": "d37a42ffcf86d1fafecd390edddbafe3c2b5ba49"
-    },
-    {
       "target": "demo/scripts/run.ps1",
       "sha256": "d6ea897929d3a52b179820916668e6b5af2a86dba91ce6fa520c2f5d8d39114e",
       "size": 1409,
@@ -524,12 +506,6 @@
       "sha256": "440a3fdebbaaa4d22b952c584580ac1c2a2120ed738633fc693e5fefcbce1c93",
       "size": 1630,
       "git_sha1": "38c745ed723301bbfff5c9e848d0d41af9e5c0d6"
-    },
-    {
-      "target": ".github/workflows/full-demo.yml",
-      "sha256": "a709844f8c270f8ea146e7000a3542ca0ead43a54ea648d775d9340a383e253c",
-      "size": 2080,
-      "git_sha1": "29c91e49e218544df2032d785ffb3eecbbff5072"
     }
   ]
 }

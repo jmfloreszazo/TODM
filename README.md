@@ -1,84 +1,89 @@
 # TODM — Test Oracle-Driven Methodology
 
+> **AI agents can write code. Who verifies that the code is actually right?**
+
+**TODM makes AI-generated software accountable to independently approved business behavior.** It separates permission to act from proof of correctness, using executable test oracles, human-governed baselines, and fail-closed release gates.
+
 [![Full research demo](https://github.com/jmfloreszazo/TODM/actions/workflows/full-demo.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/full-demo.yml)
 [![Cross-language CI](https://github.com/jmfloreszazo/TODM/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/ci.yml)
 [![Paper PDF](https://github.com/jmfloreszazo/TODM/actions/workflows/paper-pdf.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/paper-pdf.yml)
 [![Docs integrity](https://github.com/jmfloreszazo/TODM/actions/workflows/docs-integrity.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/docs-integrity.yml)
-[![Research release](https://github.com/jmfloreszazo/TODM/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/release.yml)
-[![Latest release](https://img.shields.io/github/v/release/jmfloreszazo/TODM?display_name=tag&label=release)](https://github.com/jmfloreszazo/TODM/releases/latest)
-[![MIT License](https://img.shields.io/github/license/jmfloreszazo/TODM)](LICENSE)
+[![License: MIT](https://img.shields.io/github/license/jmfloreszazo/TODM)](LICENSE)
 
-**A human-governed, tool-agnostic methodology for AI software engineering.**
+**Research status:** proposed methodology + reproducible **synthetic** Python/.NET 10 engineering demonstration. Not a production-certified governance platform or an industrial effectiveness study.
 
-Author: **José María Flores Zazo** · Status: **methodological research proposal + synthetic reproducible demonstration**.
+## The problem in 30 seconds
 
-TODM separates **who is authorized to act** from **whether the resulting software satisfies independently approved business behavior**. Agents can propose requirements, implement code and suggest tests, but cannot unilaterally approve or change the oracle baseline used to judge their work.
+An AI agent writes the implementation. Another AI agent writes the tests. Both may inherit **the same wrong assumption**. All tests pass — and the software is still wrong.
 
-## Verified public research release
+**TODM changes the acceptance question:**
 
-**[TODM Research Artifact v1.4.0 — unified paper and demo](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4.0)** contains the compiled 20-page PDF, a standalone arXiv LaTeX source ZIP, and a full research artifact ZIP. Its release workflow re-ran the 88-file SHA-256 integrity check, documentation checks and full Python/.NET 10 governance parity successfully: [v1.4 release workflow](.github/workflows/release.yml).
+| Without an independent oracle | With TODM |
+| --- | --- |
+| “Did the generated tests pass?” | “Does the result satisfy independently approved business behavior?” |
+| The agent can influence both implementation and expected result | Human-governed baseline separates the expected result from construction |
+| A green build may be mistaken for approval | Verification and release authorization are separate decisions |
+| Ambiguous evidence may be silently accepted | **PASS / FAIL / INCONCLUSIVE**, with fail-closed release |
 
-**This GitHub release is not an arXiv submission or a DOI registration.**
+## See it fail safely — runnable demo
 
-See the [versioning policy](docs/VERSIONING.md), [28 October technical audit](docs/AUDIT_2026-10-28.md) and [documentation integrity CI](.github/workflows/docs-integrity.yml). Badges reflect live workflow and release states, not static claims of scientific validation.
-
-## Read the complete article
-
-- **[Full English research paper — PDF](paper/TODM_Paper_v1.4.pdf)** (automatically compiled from LaTeX and committed by GitHub Actions).
-- [Complete manuscript in Markdown](paper/TODM_Paper_v1.4.md).
-- [LaTeX source, figures and references](paper/source/).
-- [How the paper is built and arXiv submission status](paper/README.md).
-- [Paper compilation workflow](.github/workflows/paper-pdf.yml).
-
-## Reproduce the complete research demo
-
-The [full demo v1.4](demo/) contains a Python reference, a C#/.NET 10 implementation, five limited oracle-family profiles, 16 synthetic governance scenarios, public verification keys, synthetic G2/G6 attestations, negative controls and a research protocol.
+**Requirements:** Python 3.12+ and OpenSSL; optional .NET 10 SDK for cross-language parity.
 
 ```bash
-cd demo
+git clone https://github.com/jmfloreszazo/TODM.git
+cd TODM/demo
 python3 scripts/reproduce.py
-bash scripts/run.sh        # requires .NET 10 SDK and Python 3
+python3 scripts/audit_release.py --case GF-01-greenfield-approved --json
+python3 scripts/audit_release.py --case GF-03-wrong-threshold --json
 ```
 
-**Verified in GitHub Actions:** [full Python/.NET 10 demo and 16-fixture five-family parity](https://github.com/jmfloreszazo/TODM/actions/runs/40650709906).
+The final command is an **expected denial** (exit code 2). It demonstrates the release gate blocking a candidate that violates the baseline. The positive example exits 0. For optional .NET 10 parity: `bash scripts/run.sh`.
 
-The smaller [Python seed](src/todm_demo.py) and [.NET 10 seed](dotnet/Todm.Seed/) remain as introductory examples. Their [16 shared policy fixtures](tests/fixtures/policy-cases.json) are separate from the 16 full governance scenarios.
+**What you can inspect:** [synthetic evidence](demo/results/), [16 governance scenarios](demo/governance/fixtures.json), [five limited model profiles](demo/contracts/v1/), [offline dashboard](demo/dashboard/index.html), [evaluation guide](demo/docs/ARTIFACT_EVALUATION.md).
 
-## Eight methodological gates
+## How it works
 
-| Gate | Activity | Approval / outcome |
-|---|---|---|
-| G0 | Scope and risk | Authorized mandate |
-| G1 | Evidence discovery | Classified evidence |
-| G2 | Baseline construction | Accountable human approval |
-| G3 | Oracle qualification | Mutation and negative controls |
-| G4 | Bounded AI construction | Candidate with provenance |
-| G5 | Independent verification | PASS / FAIL / INCONCLUSIVE |
-| G6 | Release governance | Separate authorization |
-| G7 | Drift and evolution | Controlled baseline revision |
+```text
+BUSINESS AUTHORITY             AI CONSTRUCTION              INDEPENDENT VERIFICATION
+Approve expected behavior ──► Agent implements candidate ──► Compare against approved oracles
+        │                             │                                │
+   Versioned baseline            Provenance trail                PASS / FAIL / INCONCLUSIVE
+        └─────────────────────────────┴────────────────────────────────┘
+                             SEPARATE RELEASE AUTHORIZATION
+```
 
-**Model families:** SBVR vocabulary and rules, DMN decisions, BPMN processes, CMMN cases, OCL invariants. Only **declared, limited JSON semantic profiles** are implemented here; this repository does not claim complete OMG conformance.
+TODM defines eight gates: **G0** scope and risk, **G1** evidence discovery, **G2** baseline approval, **G3** oracle qualification, **G4** bounded AI construction, **G5** independent verification, **G6** release authorization, and **G7** controlled drift and evolution.
 
-**Applicability:** greenfield, brownfield modernization (incremental or single cutover), and application maintenance (AMS).
+**Standards-inspired oracle families:** SBVR (business vocabulary/rules), DMN (decisions), BPMN (processes), CMMN (cases), and OCL (invariants). The demo implements **limited JSON semantic profiles**, not complete OMG engines or certified standards conformance.
 
-## Evidence and scientific limitations
+## Who is this for?
 
-- The 16-case parity tests are **synthetic engineering acceptance**, not a controlled industrial comparison.
-- Demo signatures do **not** prove the identity or authority of real people.
-- No comparative superiority, complete standards implementation or production deployment enforcement is claimed.
-- The complete paper defines falsifiable hypotheses and an experimental protocol; a peer-reviewed empirical study is still required.
-- No DOI or arXiv acceptance is claimed until independently confirmed.
+- **CTOs and engineering leaders:** distinguish faster code generation from evidence of trustworthy delivery.
+- **Software architects:** establish independent acceptance contracts for agentic development.
+- **Modernization teams:** compare legacy and replacement behavior before a controlled cutover.
+- **AI governance and assurance teams:** connect authorization, provenance, verification and release decisions.
+- **Researchers:** challenge falsifiable hypotheses with the [comparative protocol](docs/COMPARATIVE_PROTOCOL.md).
 
-See [research status](docs/PUBLICATION_STATUS.md), [comparative protocol](docs/COMPARATIVE_PROTOCOL.md), [full experiment plan](docs/EXPERIMENT_COMPARISON.md) and [GitHub Actions](https://github.com/jmfloreszazo/TODM/actions).
+## Read the research and inspect the evidence
 
-## Repository metadata
+- **[v1.5 manuscript (Markdown)](paper/TODM_Paper_v1.5.md)** · [v1.5 LaTeX source](paper/source/v1.5.tex) · [PDF build workflow](.github/workflows/paper-pdf.yml)
+- **[Complete v1.4 paper (PDF)](paper/TODM_Paper_v1.4.pdf)** · [Markdown manuscript](paper/TODM_Paper_v1.4.md) · [LaTeX source](paper/source/)
+- [Research and publication status](docs/PUBLICATION_STATUS.md) · [limitations](demo/docs/limitations.md)
+- [Full reproducibility instructions](demo/README.md) · [historical v0.4 model profiles](research-models/v0.4/)
+- [Migration plan towards v1.5.0](docs/V1.5_MIGRATION_PLAN.md) · [repository layout](docs/REPOSITORY_LAYOUT.md)
 
-Suggested GitHub **About** description and discovery topics are recorded in [repository metadata](docs/REPOSITORY_METADATA.md). Updating GitHub's About fields requires repository administration access; the GitHub connector used to publish this README cannot modify those fields.
+**Current verified published research release:** [v1.4.0](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4.0). **v1.5.0 is under development**, not yet a validated release.
 
-## Versioning
+## What this does *not* claim
 
-**Unified public version: 1.4.0.** The original v0.4 JSON profile/evidence schema and v1.2 manuscript are retained as **historical provenance**, not as the current artifact version. See [versioning and reproducibility](docs/VERSIONING.md). The v1.4 PDF is rebuilt from the versioned LaTeX source by CI before the v1.4.0 release is published.
+The 16 governance fixtures are synthetic acceptance checks, not independent industrial evidence. Demo signatures do not establish real-world human identity. No comparative superiority, full standards implementation, production enforcement, DOI or arXiv acceptance is asserted. See the [evaluation protocol](docs/COMPARATIVE_PROTOCOL.md) and [publication status](docs/PUBLICATION_STATUS.md).
 
-## Citation and license
+## Join the work
 
-[Software citation metadata](CITATION.cff) · [MIT license](LICENSE). Please cite an immutable commit hash until a versioned archive DOI is available.
+If your team builds AI-generated software, try the negative-control demo and ask: **who approves the expected result, and can the agent change that approval?**
+
+Open an [issue](https://github.com/jmfloreszazo/TODM/issues) with a counterexample, a missing oracle condition, a reproducibility defect or a modernization scenario. Contributions should preserve evidence provenance and include executable tests.
+
+**Author:** José María Flores Zazo · [Website](https://jmfloreszazo.com) · [Citation](CITATION.cff) · [MIT License](LICENSE)
+
+> **The goal is not to trust an agent more. It is to need less blind trust in its output.**

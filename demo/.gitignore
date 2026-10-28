@@ -2,9 +2,6 @@
 **/obj/
 .vs/
 *.user
-results/evidence/
-results/reports/
-results/threshold-*.json
-
 __pycache__/
 .pytest_cache/
+# Keep all results, evidence, reports, and threshold fixtures versioned.

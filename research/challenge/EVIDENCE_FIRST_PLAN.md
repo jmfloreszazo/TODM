@@ -85,9 +85,9 @@ Preserve the useful method: G0–G7, separation of authority and conformance, PA
 
 - [x] Preserve the existing open research challenge, replication/counterexample templates and protocol.
 - [x] Add this evidence-first execution plan to the **existing PR branch**, without merging.
-- [ ] Expand `research/challenge/PROTOCOL.md` with independent oracle-origin and G2 pilot preregistration requirements.
-- [ ] Add `research/challenge/CLAIM_EVIDENCE_LEDGER.md` populated only by verified evidence.
-- [ ] Reconcile `research/challenge/BASELINES.md` and `docs/COMPARATIVE_PROTOCOL.md` to avoid inconsistent A/B/C definitions.
+- [x] Expand `research/challenge/PROTOCOL.md` with independent oracle-origin and G2 pilot preregistration requirements (documentation; no trial run).
+- [x] Add `research/challenge/CLAIM_EVIDENCE_LEDGER.md` distinguishing inspected source assertions from unverified runtime/external evidence.
+- [x] Reconcile `research/challenge/BASELINES.md` and `docs/COMPARATIVE_PROTOCOL.md`: S1 agent-oracle, S2 delivery, S3 human G2; protocol remains unregistered until TBDs are frozen.
 - [ ] Audit CI and artifact/document claims at PR head.
 - [ ] Begin M1 security-boundary spike on this same branch; never mark it complete without a demonstrated denied write.
 

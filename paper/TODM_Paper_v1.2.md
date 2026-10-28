@@ -184,7 +184,7 @@ discovery while other agents repair known implementation faults. The
 
 ![The eight TODM gates and principal rework loops. Reverse transitions
 are deliberate, not methodological
-failures.](figures/todm_method.pdf){#fig:method width=".87\\linewidth"}
+failures.](source/figures/todm_method.pdf){#fig:method width=".87\\linewidth"}
 
 ## Stage 0: Frame the unit of work and its risks (G0)
 
@@ -537,7 +537,7 @@ Distributed orchestration infrastructure is optional.
 
 ![A tool-neutral three-plane architecture. Protected approval and oracle
 evaluation are separate from AI
-construction.](figures/todm_planes.pdf){#fig:planes width="\\linewidth"}
+construction.](source/figures/todm_planes.pdf){#fig:planes width="\\linewidth"}
 
 ::: tabularx
 \@p13mmp29mmX@ Model & Governs & Binding and evidence obligation\

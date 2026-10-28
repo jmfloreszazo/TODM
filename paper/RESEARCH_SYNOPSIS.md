@@ -76,4 +76,4 @@ Oracle quality depends on the validity of the human-approved baseline; human app
 
 ### Artifact statement
 
-The current GitHub code is a **minimal public seed**. A larger local research package exists with a Python evaluator, a .NET 10 prototype, signed synthetic approvals and extended fixtures. Its full content must be published and compiled before claiming GitHub reproducibility of that package.
+The **complete** Python/.NET 10 five-family synthetic research artifact is [public](../demo/) and has [passed full cross-language CI](https://github.com/jmfloreszazo/TODM/actions/runs/40598991585). The [20-page paper](TODM_Paper_v1.2.pdf) has been compiled by [GitHub Actions](https://github.com/jmfloreszazo/TODM/actions/runs/40598669468). A [tagged release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.2) contains the paper and reproducibility bundle. arXiv acceptance, a DOI and industrial empirical validation remain pending.

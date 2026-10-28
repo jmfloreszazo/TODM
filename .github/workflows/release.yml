@@ -28,7 +28,7 @@ jobs:
         run: |
           python3 scripts/check_markdown_links.py
           python3 scripts/verify_artifact_manifest.py
-          python3 scripts/check_version_alignment.py
+          python3 scripts/check_version_alignment.py --allow-uncompiled-pdf
       - name: Compile and verify canonical v1.5 PDF
         run: |
           sudo apt-get update
@@ -38,8 +38,6 @@ jobs:
           cp v1.5.pdf ../TODM_Paper_v1.5.pdf
       - name: Verify compiled v1.5 PDF matches manuscript
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends poppler-utils
           test -s paper/TODM_Paper_v1.5.pdf
           pdfinfo paper/TODM_Paper_v1.5.pdf | grep -E '^Pages:'
           pdftotext paper/TODM_Paper_v1.5.pdf - | grep -F 'v1.5'

@@ -1,0 +1,43 @@
+name: "Research challenge — reproducibility"
+description: "Report an independent reproduction attempt, including failures."
+title: "[Replication] "
+labels: ["research"]
+body:
+  - type: markdown
+    attributes:
+      value: "Independent, negative, and inconclusive results are welcome. Never upload secrets or sensitive data."
+  - type: input
+    id: artifact
+    attributes:
+      label: "Artifact version and commit"
+      placeholder: "v1.5.0 / SHA"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: "Environment and commands"
+      description: "OS, Python/.NET versions, exact commands, relevant dependency versions."
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: "Reproduction outcome"
+      options:
+        - "Reproduced as documented"
+        - "Partially reproduced"
+        - "Failed to reproduce"
+        - "Inconclusive"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Expected vs observed results and evidence"
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: "Limitations or suspected confounders"

@@ -1,0 +1,9 @@
+# Proposed review ownership for critical research contracts.
+# CODEOWNERS requests review only when applicable GitHub branch rulesets
+# require code-owner review. It does NOT deny token writes by itself.
+/demo/contracts/ @jmfloreszazo
+/demo/governance/ @jmfloreszazo
+/demo/assurance/ @jmfloreszazo
+/research/challenge/approval_reference/ @jmfloreszazo
+/docs/COMPARATIVE_PROTOCOL.md @jmfloreszazo
+/research/challenge/PROTOCOL.md @jmfloreszazo

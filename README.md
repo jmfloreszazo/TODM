@@ -72,11 +72,15 @@ TODM defines eight gates: **G0** scope and risk, **G1** evidence discovery, **G2
 - [Full reproducibility instructions](demo/README.md) · [historical v0.4 model profiles](research-models/v0.4/)
 - [Migration plan towards v1.5.0](docs/V1.5_MIGRATION_PLAN.md) · [repository layout](docs/REPOSITORY_LAYOUT.md)
 
-**Current verified published research release:** [v1.4.0](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4.0). **v1.5.0 is under development**, not yet a validated release.
+**Current published research release:** [v1.5.0](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.5.0) · [Zenodo DOI](https://doi.org/10.5281/zenodo.23725201). Publication does not imply independent scientific validation.
 
 ## What this does *not* claim
 
-The 16 governance fixtures are synthetic acceptance checks, not independent industrial evidence. Demo signatures do not establish real-world human identity. No comparative superiority, full standards implementation, production enforcement, DOI or arXiv acceptance is asserted. See the [evaluation protocol](docs/COMPARATIVE_PROTOCOL.md) and [publication status](docs/PUBLICATION_STATUS.md).
+The 16 governance fixtures are synthetic acceptance checks, not independent industrial evidence. Demo signatures do not establish real-world human identity. No comparative superiority, full standards implementation, production enforcement or arXiv acceptance is asserted. The Zenodo DOI identifies the deposited artifact; it does not certify scientific validity. See the [evaluation protocol](docs/COMPARATIVE_PROTOCOL.md) and [publication status](docs/PUBLICATION_STATUS.md).
+
+## Independent research challenge
+
+Researchers are invited to reproduce, falsify, compare, or independently transfer the method. See the [TODM Open Research Challenge](research/challenge/README.md), [draft protocol](research/challenge/PROTOCOL.md), and [evaluation report template](research/challenge/RESULT_TEMPLATE.md). Negative and inconclusive findings are welcome; no independent validation is claimed.
 
 ## Join the work
 

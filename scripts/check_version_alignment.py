@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check v1.5 development while v1.4 remains the last published artifact."""
+"""Check source and citation alignment for the published v1.5 research artifact."""
 from __future__ import annotations
 import argparse
 from pathlib import Path
@@ -23,7 +23,7 @@ def expect(path: str, fragments: tuple[str, ...] = ()) -> None:
 
 expect("VERSION", ("1.5.0",))
 expect("CITATION.cff", ('version: "1.5.0"', "todm-research-v1.5.0/TODM_Paper_v1.5.pdf"))
-expect("README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md", "todm-research-v1.4.0"))
+expect("README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md", "todm-research-v1.5.0", "10.5281/zenodo.23725201"))
 expect("paper/source/main.tex", ("Research artifact companion, v1.4",))
 expect("paper/TODM_Paper_v1.4.md", ("version 1.4",))
 expect("paper/README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md"))
@@ -38,4 +38,4 @@ if not args.allow_uncompiled_pdf:
     expect("paper/TODM_Paper_v1.4.pdf")
 if errors:
     raise SystemExit("\n".join(errors))
-print("OK: TODM development target v1.5 with published v1.4 paper")
+print("OK: TODM v1.5 publication metadata aligned; historical v1.4 source retained")

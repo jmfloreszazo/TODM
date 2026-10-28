@@ -1,6 +1,6 @@
 # TODM — Test Oracle-Driven Methodology | Research Artifact v1.5
 
-**Version 1.5.0** (the five JSON oracle profiles and fixed fixture schema originated in the v0.4 prototype; historical v0.4 evidence is retained unchanged). An executable, synthetic companion to the TODM methodological paper.** It illustrates why authorized agent action and correct software behavior are different acceptance predicates. It is **not a production governance solution**, not an industrial study, and not five complete OMG engines.
+**Version 1.5.0** (the five JSON oracle profiles and fixed fixture schema originated in the v0.4 prototype; historical v0.4 evidence is retained unchanged). An executable, synthetic companion to the TODM methodological paper. It illustrates why authorized agent action and correct software behavior are different acceptance predicates. It is **not a production governance solution**, not an industrial study, and not five complete OMG engines.
 
 ## Reproduce in one command
 

@@ -1,0 +1,19 @@
+name: TODM S1 scorer contract tests
+on:
+  pull_request:
+    paths:
+      - 'research/challenge/scoring/**'
+      - '.github/workflows/scoring-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scoring-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate S1 scoring and safety semantics
+        run: python3 -m unittest discover -s research/challenge/scoring -p 'test_*.py' -v

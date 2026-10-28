@@ -1,0 +1,21 @@
+name: TODM synthetic approval binding tests
+on:
+  pull_request:
+    paths:
+      - 'research/challenge/approval_reference/**'
+      - '.github/workflows/approval-reference.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  binding-reference:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test deterministic approval binding
+        run: python3 -m unittest discover -s research/challenge/approval_reference -p 'test_*.py' -v
+      - name: Show synthetic controls
+        run: python3 research/challenge/approval_reference/approval_binding.py

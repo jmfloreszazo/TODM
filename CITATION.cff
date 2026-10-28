@@ -1,8 +1,9 @@
 cff-version: 1.2.0
-message: "Cite the full TODM research manuscript and the tagged software artifact. No DOI or arXiv identifier has been assigned."
+message: "Cite the full TODM research manuscript and the tagged software artifact. The software artifact has a Zenodo DOI; no arXiv identifier has been assigned."
 type: software
 title: "TODM: Test Oracle-Driven Methodology — Research Artifact"
 version: "1.5.0"
+doi: 10.5281/zenodo.23725201
 date-released: "2026-10-28"
 authors:
   - family-names: "Flores Zazo"

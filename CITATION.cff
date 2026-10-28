@@ -3,7 +3,7 @@ message: "Cite the full TODM research manuscript and the tagged software artifac
 type: software
 title: "TODM: Test Oracle-Driven Methodology — Research Artifact"
 version: "1.3"
-date-released: "2026-10-27"
+date-released: "2026-10-28"
 authors:
   - family-names: "Flores Zazo"
     given-names: "José María"

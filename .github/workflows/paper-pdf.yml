@@ -30,15 +30,15 @@ jobs:
         run: |
           cd paper/source
           latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error v1.5.tex
-          test -s main.pdf
-          cp main.pdf ../TODM_Paper_v1.5.pdf
+          test -s v1.5.pdf
+          cp v1.5.pdf ../TODM_Paper_v1.5.pdf
           pdfinfo ../TODM_Paper_v1.5.pdf | grep -E '^(Title|Pages|Page size):'
           pdftotext ../TODM_Paper_v1.5.pdf - | grep -F 'v1.5'
           sha256sum ../TODM_Paper_v1.5.pdf
       - name: Package canonical v1.5 arXiv source
         run: |
           cd paper/source
-          zip -9 -q ../TODM_arXiv_source_v1.5.zip v1.5.tex references.bib main.bbl figures/todm_method.pdf figures/todm_planes.pdf
+          zip -9 -q ../TODM_arXiv_source_v1.5.zip v1.5.tex references.bib figures/todm_method.pdf figures/todm_planes.pdf
       - uses: actions/upload-artifact@v4
         with:
           name: TODM-v1.5-Paper-PDF-and-arXiv-Source

@@ -1,14 +1,14 @@
-name: Verify and publish TODM v1.4 research release
+name: Verify and publish TODM v1.5 research release
 on:
   workflow_run:
     workflows:
-      - Build TODM v1.4 research paper PDF
+      - Build TODM v1.5 research paper PDF
     types: [completed]
   workflow_dispatch:
 permissions:
   contents: write
 concurrency:
-  group: todm-v1.4-release
+  group: todm-v1.5-release
   cancel-in-progress: false
 jobs:
   verify-and-release:
@@ -29,49 +29,56 @@ jobs:
           python3 scripts/check_markdown_links.py
           python3 scripts/verify_artifact_manifest.py
           python3 scripts/check_version_alignment.py
-      - name: Verify compiled v1.4 PDF matches manuscript
+      - name: Compile and verify canonical v1.5 PDF
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern latexmk poppler-utils zip
+          cd paper/source
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error v1.5.tex
+          cp v1.5.pdf ../TODM_Paper_v1.5.pdf
+      - name: Verify compiled v1.5 PDF matches manuscript
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends poppler-utils
-          test -s paper/TODM_Paper_v1.4.pdf
-          pdfinfo paper/TODM_Paper_v1.4.pdf | grep -E '^Pages:'
-          pdftotext paper/TODM_Paper_v1.4.pdf - | grep -F 'v1.4'
+          test -s paper/TODM_Paper_v1.5.pdf
+          pdfinfo paper/TODM_Paper_v1.5.pdf | grep -E '^Pages:'
+          pdftotext paper/TODM_Paper_v1.5.pdf - | grep -F 'v1.5'
       - name: Reproduce full Python research artifact
         run: cd demo && python3 scripts/reproduce.py
       - name: Verify full .NET 10 governance fixtures and five oracle families
         run: cd demo && bash scripts/run.sh
-      - name: Assemble canonical v1.4 release archives
+      - name: Assemble canonical v1.5 release archives
         run: |
           mkdir -p release
           cd paper/source
-          zip -9 -q ../../release/TODM_arXiv_source_v1.4.zip main.tex references.bib main.bbl figures/todm_method.pdf figures/todm_planes.pdf
+          zip -9 -q ../../release/TODM_arXiv_source_v1.5.zip v1.5.tex references.bib figures/todm_method.pdf figures/todm_planes.pdf
           cd ../..
-          zip -9 -q -r release/TODM_Research_Artifact_v1.4.0.zip \
+          zip -9 -q -r release/TODM_Research_Artifact_v1.5.0.zip \
             paper demo docs scripts research-models dotnet contracts tests \
             README.md VERSION LICENSE CITATION.cff .github/workflows \
             -x '*/__pycache__/*' '*.pyc'
-          test -s release/TODM_arXiv_source_v1.4.zip
-          test -s release/TODM_Research_Artifact_v1.4.0.zip
-          sha256sum paper/TODM_Paper_v1.4.pdf release/*.zip
+          test -s release/TODM_arXiv_source_v1.5.zip
+          test -s release/TODM_Research_Artifact_v1.5.0.zip
+          sha256sum paper/TODM_Paper_v1.5.pdf release/*.zip
       - uses: actions/upload-artifact@v4
         with:
-          name: TODM-v1.4-Verified-Research-Release
+          name: TODM-v1.5-Verified-Research-Release
           path: |
-            paper/TODM_Paper_v1.4.pdf
+            paper/TODM_Paper_v1.5.pdf
             release/*.zip
           if-no-files-found: error
       - name: Publish immutable tagged release only after all checks pass
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view todm-research-v1.4.0 >/dev/null 2>&1; then
-            echo 'Immutable v1.4.0 research release already exists; refusing to overwrite it.'
+          if gh release view todm-research-v1.5.0 >/dev/null 2>&1; then
+            echo 'Immutable v1.5.0 research release already exists; refusing to overwrite it.'
           else
-            gh release create todm-research-v1.4.0 \
-              paper/TODM_Paper_v1.4.pdf \
-              release/TODM_arXiv_source_v1.4.zip \
-              release/TODM_Research_Artifact_v1.4.0.zip \
+            gh release create todm-research-v1.5.0 \
+              paper/TODM_Paper_v1.5.pdf \
+              release/TODM_arXiv_source_v1.5.zip \
+              release/TODM_Research_Artifact_v1.5.0.zip \
               --target "$(git rev-parse HEAD)" \
-              --title 'TODM v1.4.0 — Unified Paper, Demo and Verified Research Artifact' \
-              --notes 'Unified methodology, 20-page manuscript v1.4, reproducible synthetic Python/.NET 10 five-oracle-family demonstration, 16 governance fixtures, independently checked documentation and SHA-256 provenance. Historical v0.4 fixture format retained as research provenance. No DOI, arXiv acceptance, industrial comparative superiority or production IAM claims.'
+              --title 'TODM v1.5.0 — Unified Paper, Demo and Verified Research Artifact' \
+              --notes 'Unified methodology, v1.5 manuscript, reproducible synthetic Python/.NET 10 five-oracle-family demonstration, 16 governance fixtures, independently checked documentation and SHA-256 provenance. Historical v0.4 fixture format retained as research provenance. No DOI, arXiv acceptance, industrial comparative superiority or production IAM claims.'
           fi

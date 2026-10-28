@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assert that the public TODM paper, demo, citation and release are v1.4.0."""
+"""Check v1.5 development while v1.4 remains the last published artifact."""
 from __future__ import annotations
 import argparse
 from pathlib import Path
@@ -23,12 +23,12 @@ def expect(path: str, fragments: tuple[str, ...] = ()) -> None:
 
 expect("VERSION", ("1.5.0",))
 expect("CITATION.cff", ('version: "1.4.0"', "todm-research-v1.4.0/TODM_Paper_v1.4.pdf"))
-expect("README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md", "full demo v1.4", "todm-research-v1.4.0"))
+expect("README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md", "todm-research-v1.4.0"))
 expect("paper/source/main.tex", ("Research artifact companion, v1.4",))
 expect("paper/TODM_Paper_v1.4.md", ("version 1.4",))
 expect("paper/README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md"))
 expect("demo/README.md", ("Research Artifact v1.5", "reproducibility-v1.5.json"))
-expect("demo/scripts/reproduce.py", ("'version':'1.5.0'", "reproducibility-v1.4.json", "'profileSchemaVersion':'0.4.0'"))
+expect("demo/scripts/reproduce.py", ("'version':'1.5.0'", "reproducibility-v1.5.json", "'profileSchemaVersion':'0.4.0'"))
 expect("docs/VERSIONING.md", ("1.5.0", "0.4.0"))
 expect(".github/workflows/full-demo.yml", ("TODM v1.4 full research artifact", "reproducibility-v1.4.json"))
 expect(".github/workflows/paper-pdf.yml", ("TODM_Paper_v1.4.pdf", "TODM_arXiv_source_v1.4.zip"))

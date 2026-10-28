@@ -4,12 +4,12 @@
 
 ## Verified public engineering artifact
 
-- Complete [20-page paper](../paper/TODM_Paper_v1.2.pdf), [LaTeX source](../paper/source/main.tex), references, figures and [arXiv submission checklist](../paper/ARXIV_SUBMISSION.md).
-- Full [v0.4 synthetic research demo](../demo/) with Python and .NET 10 engines, five limited JSON semantic oracle profiles (SBVR, BPMN, CMMN, DMN, OCL), and 16 governance fixtures.
+- Complete [20-page paper](../paper/TODM_Paper_v1.4.pdf), [LaTeX source](../paper/source/main.tex), references, figures and [arXiv submission checklist](../paper/ARXIV_SUBMISSION.md).
+- Full [v1.4 synthetic research demo](../demo/) with Python and .NET 10 engines, five limited JSON semantic oracle profiles (SBVR, BPMN, CMMN, DMN, OCL), and 16 governance fixtures.
 - Independent release gate with synthetic G2/G6 Ed25519 signatures, negative controls, revoked/unauthorized mandates, and explicit PASS / FAIL / INCONCLUSIVE outcomes.
 - [Successful full Python/.NET 10 five-family parity CI](https://github.com/jmfloreszazo/TODM/actions/runs/40598991585).
 - [Successful 20-page PDF LaTeX compilation](https://github.com/jmfloreszazo/TODM/actions/runs/40598669468).
-- [Verified GitHub research release v1.4](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4) with downloadable PDF, arXiv source ZIP and full research artifact ZIP.
+- [Verified GitHub research release v1.4.0](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4.0) with downloadable PDF, arXiv source ZIP and full research artifact ZIP.
 - [Successful full release verification](https://github.com/jmfloreszazo/TODM/actions/runs/40599015278) and [88-file SHA-256 provenance manifest](ARTIFACT_MANIFEST.json).
 
 ## Not yet demonstrated or completed
@@ -28,3 +28,5 @@ Compared with conventional developer-authored acceptance tests, an independently
 Constitutional/mandate governance (CPAG) concerns **who may act**. TODM concerns **whether the result meets an independently approved behavioral contract**. Neither replaces the other.
 
 See [publication status](PUBLICATION_STATUS.md), [arXiv submission](../paper/ARXIV_SUBMISSION.md) and [DOI archiving](DOI_ARCHIVE.md).
+
+**Unified version:** [1.4.0](VERSIONING.md); historical v0.4 fixture schema remains explicitly separate from the published version.

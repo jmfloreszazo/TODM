@@ -30,5 +30,5 @@ The full [research demo](../demo/) implements limited operational profiles for S
 
 ## arXiv
 
-See [author submission checklist](ARXIV_SUBMISSION.md).\n
+See [author submission checklist](ARXIV_SUBMISSION.md).
 The CI artifact `TODM_arXiv_source_v1.2.zip` is a *candidate* LaTeX upload bundle. **No arXiv submission or endorsement is asserted.** The author must review submission metadata, references, license and any arXiv moderation requirements before submitting.

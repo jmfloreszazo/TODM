@@ -22,7 +22,7 @@ cd paper/source
 latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex
 ```
 
-The workflow [paper-pdf.yml](../.github/workflows/paper-pdf.yml) compiles the full article, verifies the PDF, uploads the PDF and a standalone arXiv-source ZIP as CI artifacts, and commits the PDF to `paper/TODM_Paper_v1.2.pdf`. The paper build has **passed GitHub Actions**: [verified 20-page PDF compilation](https://github.com/jmfloreszazo/TODM/actions/runs/40598669468). The PDF is also a downloadable asset in the [tagged research release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.2).
+The workflow [paper-pdf.yml](../.github/workflows/paper-pdf.yml) compiles the full article, verifies the PDF, uploads the PDF and a standalone arXiv-source ZIP as CI artifacts, and commits the PDF to `paper/TODM_Paper_v1.2.pdf`. The paper build has **passed GitHub Actions**: [verified 20-page PDF compilation](https://github.com/jmfloreszazo/TODM/actions/runs/40598669468). The PDF is also a downloadable asset in the [tagged research release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.3).
 
 ## Reproducibility and limitations
 

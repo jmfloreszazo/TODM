@@ -1,6 +1,6 @@
-# TODM — Test Oracle-Driven Methodology | Research Artifact v0.4
+# TODM — Test Oracle-Driven Methodology | Research Artifact v1.4
 
-**An executable, synthetic companion to the TODM methodological paper.** It illustrates why authorized agent action and correct software behavior are different acceptance predicates. It is **not a production governance solution**, not an industrial study, and not five complete OMG engines.
+**Version 1.4.0** (the five JSON oracle profiles and fixed fixture schema originated in the v0.4 prototype; historical v0.4 evidence is retained unchanged). An executable, synthetic companion to the TODM methodological paper.** It illustrates why authorized agent action and correct software behavior are different acceptance predicates. It is **not a production governance solution**, not an industrial study, and not five complete OMG engines.
 
 ## Reproduce in one command
 
@@ -10,7 +10,7 @@ Requirements: Python 3.12+, OpenSSL with Ed25519; .NET 10 SDK **only** for the o
 python3 scripts/reproduce.py
 ```
 
-The command runs oracle qualification, 16 governance fixtures, signed G2/G6 verification, negative controls, and a fail-closed release gate; evidence is written to `results/reproducibility-v0.4.json`.
+The command runs oracle qualification, 16 governance fixtures, signed G2/G6 verification, negative controls, and a fail-closed release gate; evidence is written to `results/reproducibility-v1.4.json`.
 
 ```bash
 python3 scripts/audit_release.py --case GF-01-greenfield-approved --json  # synthetic allow; exit 0

@@ -1,10 +1,11 @@
 name: Verify and publish TODM v1.5 research release
 on:
-  workflow_run:
-    workflows:
-      - Build TODM v1.5 research paper PDF
-    types: [completed]
   workflow_dispatch:
+    inputs:
+      confirm_release:
+        description: 'Type PUBLISH_V1_5_EXPLICITLY to authorize a release workflow run'
+        required: true
+        type: string
 permissions:
   contents: write
 concurrency:
@@ -12,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   verify-and-release:
-    if: (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    if: github.ref == 'refs/heads/main' && inputs.confirm_release == 'PUBLISH_V1_5_EXPLICITLY'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

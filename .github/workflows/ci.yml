@@ -1,8 +1,14 @@
-name: TODM cross-language CI
+name: TODM v1.4 cross-language CI
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: todm-seed-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   python-reference:
     runs-on: ubuntu-latest
@@ -24,8 +30,8 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
-      - name: Build .NET 10 with warnings as errors
-        run: dotnet build dotnet/Todm.Seed/Todm.Seed.csproj -c Release
+      - name: Build .NET 10
+        run: dotnet build dotnet/Todm.Seed/Todm.Seed.csproj -c Release -warnaserror
       - name: Run synthetic acceptance and governance assertions
         run: dotnet run --project dotnet/Todm.Seed/Todm.Seed.csproj -c Release --no-build -- --self-test
       - name: Demonstrate .NET fail-closed release

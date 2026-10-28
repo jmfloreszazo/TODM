@@ -1,49 +1,61 @@
-name: Build and publish TODM research paper PDF
+name: Build TODM v1.4 research paper PDF
 on:
   push:
+    branches: [main]
     paths:
       - 'paper/source/**'
+      - 'paper/TODM_Paper_v1.4.md'
+      - '.github/workflows/paper-pdf.yml'
+  pull_request:
+    paths:
+      - 'paper/source/**'
+      - 'paper/TODM_Paper_v1.4.md'
       - '.github/workflows/paper-pdf.yml'
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: todm-paper-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   compile-latex:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install LaTeX and Latin Modern fonts
+      - name: Install LaTeX, fonts and PDF tools
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern latexmk poppler-utils zip
-      - name: Compile full manuscript and verify PDF
+      - name: Compile canonical v1.4 manuscript
         run: |
           cd paper/source
           latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex
           test -s main.pdf
-          cp main.pdf ../TODM_Paper_v1.2.pdf
-          pdfinfo ../TODM_Paper_v1.2.pdf | grep -E '^(Title|Pages|Page size):'
-          sha256sum ../TODM_Paper_v1.2.pdf
-      - name: Package arXiv LaTeX source
+          cp main.pdf ../TODM_Paper_v1.4.pdf
+          pdfinfo ../TODM_Paper_v1.4.pdf | grep -E '^(Title|Pages|Page size):'
+          pdftotext ../TODM_Paper_v1.4.pdf - | grep -F 'v1.4'
+          sha256sum ../TODM_Paper_v1.4.pdf
+      - name: Package canonical v1.4 arXiv source
         run: |
           cd paper/source
-          zip -9 -q ../TODM_arXiv_source_v1.2.zip main.tex references.bib main.bbl figures/todm_method.pdf figures/todm_planes.pdf
+          zip -9 -q ../TODM_arXiv_source_v1.4.zip main.tex references.bib main.bbl figures/todm_method.pdf figures/todm_planes.pdf
       - uses: actions/upload-artifact@v4
         with:
-          name: TODM-Paper-PDF-and-arXiv-Source
+          name: TODM-v1.4-Paper-PDF-and-arXiv-Source
           path: |
-            paper/TODM_Paper_v1.2.pdf
-            paper/TODM_arXiv_source_v1.2.zip
+            paper/TODM_Paper_v1.4.pdf
+            paper/TODM_arXiv_source_v1.4.zip
           if-no-files-found: error
-      - name: Commit generated PDF
+      - name: Commit generated v1.4 PDF to main (only after successful compilation)
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add paper/TODM_Paper_v1.2.pdf
+          git add paper/TODM_Paper_v1.4.pdf
           if git diff --cached --quiet; then
-            echo 'PDF unchanged'
+            echo 'Compiled v1.4 PDF is unchanged'
           else
-            git commit -m "Compile TODM paper PDF [skip ci]"
+            git commit -m "Build canonical TODM v1.4 research paper PDF"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main

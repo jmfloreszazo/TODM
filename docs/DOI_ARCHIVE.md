@@ -1,6 +1,6 @@
 # Permanent archival DOI — next external step
 
-**GitHub research release:** https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.3
+**GitHub research release:** https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4
 
 **Status:** GitHub release exists and has downloadable PDF, LaTeX source ZIP and full demo ZIP. **No DOI has been issued.**
 

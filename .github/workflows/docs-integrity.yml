@@ -38,7 +38,7 @@ jobs:
           python-version: '3.12'
       - name: Verify local Markdown links
         run: python3 scripts/check_markdown_links.py
-      - name: Verify 88 frozen research sources
+      - name: Verify 85 immutable historical research sources
         run: python3 scripts/verify_artifact_manifest.py
       - name: Verify v1.4 paper, demo, workflow and citation alignment
         run: python3 scripts/check_version_alignment.py --allow-uncompiled-pdf

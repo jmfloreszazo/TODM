@@ -1,0 +1,10 @@
+{
+  "scope": "Introduction through Conclusions; includes tables/captions; excludes abstract, declarations, references and supplement",
+  "word_counts": {
+    "v1.5": 6863,
+    "v2.0": 3873
+  },
+  "reduction_percent": 43.6,
+  "pandoc": "pandoc 3.7.0.2",
+  "v2_main_sections": 8
+}

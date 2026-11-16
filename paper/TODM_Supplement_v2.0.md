@@ -42,7 +42,7 @@ The process figure in the main article shows the method as a feedback-driven set
 
 **Activities:** monitor production behavior, false positives, unanticipated states, incident rates, policy changes, drift, and evidence freshness. Introduce new rule candidates from observed anomalies without treating observations as automatically correct. **Outputs:** conformance trends, change proposals, incidents, baseline evolution history, and a new work backlog. **Gate G7:** the operational service has assigned ownership and alert action paths. A change in business policy restarts baseline review; a software defect can trigger a bounded repair; a new business capability restarts Stage 0.
 
-<div id="tab:gates">
+<a id="tab:gates"></a>
 
 | Gate | Sufficient evidence to advance | On failure / missing evidence |
 |:---|:---|:---|
@@ -63,7 +63,7 @@ Forward, repair, and escalation semantics at each gate. “Hold” prevents a fa
 
 TODM distinguishes *who may propose*, *who may approve*, *who may implement*, and *who may certify the evidence*. One human can hold several roles in a small project only when independence requirements remain meaningful and documented; for critical changes, the person approving the business interpretation should not be acting merely as a proxy for the implementing agent. No committee size is prescribed.
 
-<div id="tab:roles">
+<a id="tab:roles"></a>
 
 | Role | Discover | Baseline | Oracle QA | Build | Release | Accountability |
 |:---|:---|:---|:---|:---|:---|:---|
@@ -118,7 +118,7 @@ A coding agent may have a valid mandate to change a service yet produce an imple
 ```
 where $`a`$ is an action, $`M`$ is its human-approved mandate, $`E`$ is the execution context, $`x`$ is the candidate’s observable behavior, $`B_v`$ is the approved oracle baseline, and $`\mathcal{O}`$ is the applicable evidence set. Authorization concerns *who may do what, where, and for how long*; conformance concerns *whether the resulting behavior satisfies the approved contracts*. A release is eligible for human consideration only when both checks succeed and the evidence is sufficient.
 
-<div id="tab:authority">
+<a id="tab:authority"></a>
 
 | Action authorization | Oracle verdict | Mandatory disposition |
 |:---|:---|:---|
@@ -157,7 +157,7 @@ A minimum viable pilot can cover a single, observable decision with one responsi
 
 The reference architecture in the logical-plane figure in the main article separates authority, construction, and verification. A practical implementation needs only file storage, version control, CI jobs, a candidate application, and at least one functioning oracle adapter. Distributed orchestration infrastructure is optional.
 
-<div id="tab:models">
+<a id="tab:models"></a>
 
 | Model | Governs | Binding and evidence obligation |
 |:---|:---|:---|
@@ -254,7 +254,7 @@ Across all profiles, the invariant elements are authority separation, baseline i
 
 This paper deliberately excludes economic claims and cost KPIs. The evaluation concerns behavioral correctness, independent fault detection, evidence integrity, governance, reliability, and engineering autonomy. Numerical thresholds below are *candidate acceptance thresholds for future studies*, not observed performance.
 
-<div id="tab:metrics">
+<a id="tab:metrics"></a>
 
 | Metric | Operational definition and interpretation |
 |:---|:---|
@@ -282,13 +282,13 @@ A staged implementation reduces technical risk without requiring five complete s
 
 Every milestone must publish parser/version support, deterministic outputs, qualification tests, sample evidence, known unsupported constructs, and an explicit completion decision. The method should remain implementable by different runtimes and vendors, including plain code repositories and off-the-shelf engines. A branded reference implementation is not evidence that the *methodology itself* is tool-independent; this independence should be confirmed in a cross-platform replication.
 
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<a id="refs"></a>
 
-<div id="ref-omg2020kdm" class="csl-entry">
+<a id="ref-omg2020kdm"></a>
 
 Object Management Group. n.d. “Knowledge Discovery Metamodel (KDM).” <https://www.omg.org/spec/KDM>.
 
-<div id="ref-w3c2013prov" class="csl-entry">
+<a id="ref-w3c2013prov"></a>
 
 W3C. 2013. “PROV-o: The PROV Ontology.” <https://www.w3.org/TR/prov-o/>.
 

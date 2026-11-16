@@ -138,7 +138,7 @@ Changing a baseline requires a diff, rationale, provenance, approval, and requal
 
 Suppose the authoritative business policy states: requests over EUR 10,000 require human authorization before approval or persistence as approved. A generated SDD specification incorrectly sets the review threshold at EUR 12,000; the generated tests confirm EUR 11,000 should be automatically approved.
 
-<div id="tab:example">
+<a id="tab:example"></a>
 
 | Control | Relevant observation | Oracle response |
 |:---|:---|:---|
@@ -219,61 +219,61 @@ This manuscript describes a methodology and does not report studies on human par
 
 The repository at <https://github.com/jmfloreszazo/TODM> contains the historical manuscripts, synthetic companion artifact, and evaluation protocols. This v2.0 draft derives from commit `61354abc03e73fbf258b6e8d66e35678da134ef8`; historical versions remain available. No industrial experimental dataset or new empirical results accompany this editorial revision. The supplement preserves operational details removed from the main text. Neither this draft nor its supplement establishes production enforcement, full OMG conformance, or real human approval. The existing v1.5 release metadata does not identify a published v2.0 release.
 
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<a id="refs"></a>
 
-<div id="ref-sigsoftEmpiricalStandards" class="csl-entry">
+<a id="ref-sigsoftEmpiricalStandards"></a>
 
 ACM SIGSOFT. n.d. “Empirical Standards: Multi-Methodology and Mixed Methods Research.” <https://www2.sigsoft.org/EmpiricalStandards/docs/standards?standard=MixedMethods>.
 
-<div id="ref-barr2015oracle" class="csl-entry">
+<a id="ref-barr2015oracle"></a>
 
 Barr, Earl T., Mark Harman, Phil McMinn, Muzammil Shahbaz, and Shin Yoo. 2015. “The Oracle Problem in Software Testing: A Survey.” *IEEE Transactions on Software Engineering* 41 (5): 507–25. <https://doi.org/10.1109/TSE.2014.2372785>.
 
-<div id="ref-cucumber2026" class="csl-entry">
+<a id="ref-cucumber2026"></a>
 
 Cucumber. n.d. “Gherkin Reference.” <https://cucumber.io/docs/gherkin/reference/>.
 
-<div id="ref-feathers2004legacy" class="csl-entry">
+<a id="ref-feathers2004legacy"></a>
 
 Feathers, Michael. 2004. *Working Effectively with Legacy Code*. Prentice Hall.
 
-<div id="ref-flowable2026" class="csl-entry">
+<a id="ref-flowable2026"></a>
 
 Flowable. 2026. “Flowable Open Source Documentation: BPMN, CMMN, and DMN Engines.” <https://www.flowable.com/open-source/docs/>.
 
-<div id="ref-fowler2004strangler" class="csl-entry">
+<a id="ref-fowler2004strangler"></a>
 
 Fowler, Martin. 2004. “Strangler Fig Application.” <https://martinfowler.com/bliki/StranglerFigApplication.html>.
 
-<div id="ref-github2026speckit" class="csl-entry">
+<a id="ref-github2026speckit"></a>
 
 GitHub. 2026. “Spec Kit: Spec-Driven Development and Agentic Workflows.” <https://github.com/github/spec-kit>.
 
-<div id="ref-jia2011mutation" class="csl-entry">
+<a id="ref-jia2011mutation"></a>
 
 Jia, Yue, and Mark Harman. 2011. “An Analysis and Survey of the Development of Mutation Testing.” *IEEE Transactions on Software Engineering* 37 (5): 649–78. <https://doi.org/10.1109/TSE.2010.62>.
 
-<div id="ref-omg2014bpmn" class="csl-entry">
+<a id="ref-omg2014bpmn"></a>
 
 Object Management Group. 2014a. “Business Process Model and Notation (BPMN), Version 2.0.2.” <https://www.omg.org/spec/BPMN/2.0.2>.
 
-<div id="ref-omg2014ocl" class="csl-entry">
+<a id="ref-omg2014ocl"></a>
 
 ———. 2014b. “Object Constraint Language (OCL), Version 2.4.” <https://www.omg.org/spec/OCL/2.4>.
 
-<div id="ref-omg2016cmmn" class="csl-entry">
+<a id="ref-omg2016cmmn"></a>
 
 ———. 2016. “Case Management Model and Notation (CMMN), Version 1.1.” <https://www.omg.org/spec/CMMN/1.1>.
 
-<div id="ref-omg2024dmn" class="csl-entry">
+<a id="ref-omg2024dmn"></a>
 
 ———. 2024. “Decision Model and Notation (DMN), Version 1.5.” <https://www.omg.org/spec/DMN/1.5>.
 
-<div id="ref-omg2019sbvr" class="csl-entry">
+<a id="ref-omg2019sbvr"></a>
 
 ———. n.d. “Semantics of Business Vocabulary and Business Rules (SBVR).” <https://www.omg.org/spec/SBVR>.
 
-<div id="ref-segura2016metamorphic" class="csl-entry">
+<a id="ref-segura2016metamorphic"></a>
 
 Segura, Sergio, Gordon Fraser, Ana B. Sánchez, and Antonio Ruiz-Cortés. 2016. “A Survey on Metamorphic Testing.” *IEEE Transactions on Software Engineering* 42 (9): 805–24. <https://doi.org/10.1109/TSE.2016.2532875>.
 

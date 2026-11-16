@@ -39,6 +39,9 @@
 \title{\textbf{TODM: A Test Oracle-Driven Methodology for Human-Governed AI Software Engineering}}
 \author{Jos\'e Mar\'ia Flores Zazo}
 \date{16 November 2026 --- v2.0 editorial draft}
+\let\originalthebibliography\thebibliography
+\let\originalendthebibliography\endthebibliography
+\renewenvironment{thebibliography}[1]{\originalthebibliography{#1}\small\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}{\originalendthebibliography}
 \begin{document}
 \maketitle
 \begin{abstract}

@@ -19,7 +19,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: todm-v2-editorial-build
+  group: todm-v2-editorial-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   compile:

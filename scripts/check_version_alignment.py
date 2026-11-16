@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check source and citation alignment for the published v1.5 research artifact."""
+"""Check v2.0 development metadata while retaining the published v1.5 citation."""
 from __future__ import annotations
 import argparse
 from pathlib import Path
@@ -21,7 +21,10 @@ def expect(path: str, fragments: tuple[str, ...] = ()) -> None:
             if fragment not in content:
                 errors.append(f"{path}: missing expected text {fragment!r}")
 
-expect("VERSION", ("1.5.0",))
+expect("VERSION", ("2.0.0-dev",))
+expect("paper/source/v2.0.tex", ("v2.0 editorial draft",))
+expect("paper/TODM_Paper_v2.0.md", ("2.0 editorial draft",))
+expect("paper/source/references-v2.0.bib", ("sigsoftEmpiricalStandards",))
 expect("CITATION.cff", ('version: "1.5.0"', "todm-research-v1.5.0/TODM_Paper_v1.5.pdf"))
 expect("README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md", "todm-research-v1.5.0", "10.5281/zenodo.23725201"))
 expect("paper/source/main.tex", ("Research artifact companion, v1.4",))
@@ -38,4 +41,4 @@ if not args.allow_uncompiled_pdf:
     expect("paper/TODM_Paper_v1.4.pdf")
 if errors:
     raise SystemExit("\n".join(errors))
-print("OK: TODM v1.5 publication metadata aligned; historical v1.4 source retained")
+print("OK: TODM v2.0 draft aligned; published v1.5 metadata and historical v1.4 source retained")

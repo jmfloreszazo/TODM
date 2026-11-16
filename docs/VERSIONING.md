@@ -1,13 +1,12 @@
 # TODM versioning and reproducibility
 
-**Development target: 1.5.0 (not yet released).** Latest validated public research release: **1.4.0**.
+**Development target: 2.0.0-dev.** This is an editorial draft, not a released methodology or new research result.
 
-- **Methodology:** eight gates G0–G7; independently approved oracle baseline; greenfield, brownfield and AMS.
-- **Research manuscript:** v1.4 remains the last published canonical manuscript until v1.5 source, Markdown and PDF are compiled and verified.
-- **Demo:** v1.5 evidence generator writes `demo/results/reproducibility-v1.5.json`; the underlying synthetic JSON profile schema remains **0.4.0**.
-- **Historical evidence:** `demo/results/reproducibility-v0.4.json`, historical research models, prior papers and prior release artifacts must remain intact.
-- **Latest published release:** `todm-research-v1.4.0`. Do not create a v1.5 tag until the manuscript, citation, integrity checks, and release workflow are aligned.
-- **SHA-256 provenance:** `docs/ARTIFACT_MANIFEST.json` freezes 88 historical sources. Never modify a frozen source without explicit manifest reconciliation and review.
-- **External scientific status:** no DOI, arXiv acceptance, industrial comparative superiority, or complete OMG implementation is claimed.
+- **Manuscript:** `paper/source/v2.0.tex` is canonical for v2.0. `scripts/render_paper_markdown.py` generates its Markdown and the supplement.
+- **Published citation:** `CITATION.cff` continues to identify the v1.5.0 artifact and its existing DOI. No v2.0 tag, DOI, arXiv identifier, or release is created.
+- **Demo:** the v1.5 evidence generator and synthetic profile schema **0.4.0** are unchanged. The editorial revision does not independently validate their outcomes.
+- **Historical evidence:** previous manuscripts, bibliography, figures and the 84 sources protected by `ARTIFACT_MANIFEST.json` remain intact.
+- **Builds:** the historical v1.5 workflow remains available. `paper-v2-pdf.yml` compiles review artifacts and saves generated PDF/Markdown only on the isolated editorial branch after a push. It never writes to main or publishes a release.
+- **Release boundary:** the existing release workflow stays pinned to v1.5.0. A later v2.0 release requires explicit reconciliation of source, evidence, citation and packaging.
 
-The root VERSION tracks the development target. It must not be used alone as evidence that the release or manuscript has been published.
+The root VERSION tracks development and is not proof of publication. See the [revision plan](V2.0_EDITORIAL_PLAN_ES.md).

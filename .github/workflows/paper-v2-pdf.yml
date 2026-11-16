@@ -1,0 +1,84 @@
+name: Build TODM v2.0 editorial draft
+on:
+  push:
+    branches: [paper/v2.0-editorial-restructure]
+    paths:
+      - 'paper/source/**'
+      - 'scripts/render_paper_markdown.py'
+      - 'scripts/report_editorial_metrics.py'
+      - 'scripts/render_paper_preview.py'
+      - '.github/workflows/paper-v2-pdf.yml'
+  pull_request:
+    paths:
+      - 'paper/source/**'
+      - 'scripts/render_paper_markdown.py'
+      - 'scripts/report_editorial_metrics.py'
+      - 'scripts/render_paper_preview.py'
+      - '.github/workflows/paper-v2-pdf.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: todm-v2-editorial-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install publishing dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern latexmk poppler-utils zip pandoc python3-pil
+      - name: Compile the editorial draft
+        run: |
+          cd paper/source
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error v2.0.tex
+          test -s v2.0.pdf
+          cp v2.0.pdf ../TODM_Paper_v2.0.pdf
+          if grep -Eq 'Overfull|undefined references|undefined citations' v2.0.log; then
+            grep -E 'Overfull|undefined references|undefined citations' v2.0.log
+            exit 1
+          fi
+          pdfinfo ../TODM_Paper_v2.0.pdf
+          pdftotext ../TODM_Paper_v2.0.pdf - | grep -F 'v2.0'
+      - name: Render Markdown and record editorial counts
+        run: |
+          pdftoppm -scale-to 1600 -png -singlefile paper/source/figures/todm_method.pdf paper/source/figures/todm_method
+          pdftoppm -scale-to 1600 -png -singlefile paper/source/figures/todm_planes.pdf paper/source/figures/todm_planes
+          python3 scripts/render_paper_markdown.py
+          python3 scripts/report_editorial_metrics.py
+          python3 scripts/check_markdown_links.py
+          python3 scripts/verify_artifact_manifest.py
+          python3 scripts/check_version_alignment.py --allow-uncompiled-pdf
+      - name: Package review sources and page previews
+        run: |
+          mkdir -p paper/v2-review-pages
+          pdftoppm -r 90 -png paper/TODM_Paper_v2.0.pdf paper/v2-review-pages/page
+          python3 scripts/render_paper_preview.py
+          cd paper/source
+          zip -9 -q ../TODM_source_v2.0.zip v2.0.tex v2.0.bbl supplement-v2.0.tex references.bib references-v2.0.bib figures/todm_method.pdf figures/todm_planes.pdf
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TODM-v2.0-editorial-review
+          path: |
+            paper/TODM_Paper_v2.0.pdf
+            paper/TODM_Paper_v2.0.md
+            paper/TODM_Supplement_v2.0.md
+            paper/TODM_source_v2.0.zip
+            paper/editorial-metrics-v2.0.json
+            paper/v2-review-pages/
+            paper/TODM_Preview_v2.0.png
+          if-no-files-found: error
+      - name: Save generated review files on the isolated editorial branch
+        if: github.event_name == 'push' && github.repository == 'jmfloreszazo/TODM' && github.ref == 'refs/heads/paper/v2.0-editorial-restructure'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add paper/TODM_Preview_v2.0.png paper/TODM_Paper_v2.0.pdf paper/TODM_Paper_v2.0.md paper/TODM_Supplement_v2.0.md paper/editorial-metrics-v2.0.json paper/source/figures/todm_method.png paper/source/figures/todm_planes.png
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: generate v2.0 editorial review artifacts"
+            git push origin HEAD:refs/heads/paper/v2.0-editorial-restructure
+          fi

@@ -1,4 +1,8 @@
-# TODM publication status — 28 October 2026
+# TODM publication status — updated 16 November 2026
+
+## Development manuscript: v2.0 editorial draft
+
+The [v2.0 article](../paper/TODM_Paper_v2.0.md), [review PDF](../paper/TODM_Paper_v2.0.pdf) and [supplement](../paper/TODM_Supplement_v2.0.md) implement the first editorial phase. No v2.0 release, DOI, new executions or scientific validation is claimed. The [revision plan](V2.0_EDITORIAL_PLAN_ES.md) records the pending methodological and evidence work.
 
 ## Published research artifact: v1.5.0
 

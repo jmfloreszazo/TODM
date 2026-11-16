@@ -1,0 +1,10 @@
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+v2.0.bbl
+supplement-v2.0.bbl
+v2.0.pdf
+supplement-v2.0.pdf

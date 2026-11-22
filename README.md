@@ -12,11 +12,11 @@
 
 **Research status:** proposed methodology + reproducible **synthetic** Python/.NET 10 engineering demonstration. Not a production-certified governance platform or an industrial effectiveness study.
 
-## Manuscript v1.6 draft — local editorial review
+## Manuscript v1.6 — local editorial revision
 
 The revised article is available as [PDF](paper/TODM_Paper_v1.6.pdf), [Markdown](paper/TODM_Paper_v1.6.md), and [LaTeX](paper/source/v1.6.tex). It incorporates the November 2026 editorial feedback: eight main sections, an explicit evaluation method before results, justified research questions, categorized threats to validity, and consolidated future work. See the [paper instructions](paper/README.md) for building and preparing the source package.
 
-**This is an unsubmitted manuscript draft, not a v1.6 software release.** The software version, published v1.5.0 DOI, historical manuscripts, and experimental evidence remain unchanged. No reviewer approval, new experiment, or publication is claimed.
+**This is the finalized, unsubmitted manuscript v1.6, not a v1.6 software release.** The software version, published v1.5.0 DOI, historical manuscripts, and experimental evidence remain unchanged. No reviewer approval, new experiment, or publication is claimed.
 
 ## The problem in 30 seconds
 

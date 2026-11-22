@@ -36,7 +36,7 @@
 \pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Test Oracle-Driven Methodology (TODM)}\fancyhead[R]{\small Methodology and evaluation protocol}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0.3pt}
 \title{\textbf{TODM: A Test Oracle-Driven Methodology for Human-Governed AI Software Engineering}\\[5pt]\large A Tool-Agnostic, Falsifiable Method for Greenfield Development, Brownfield Modernization, and Application Management}
 \author{Jos\'e Mar\'ia Flores Zazo}
-\date{22 November 2026 --- Manuscript v1.6 draft\\\small Companion artifact: archived v1.5.0; not a new software release}
+\date{22 November 2026 --- Manuscript v1.6\\\small Finalized for submission preparation; companion artifact archived as v1.5.0}
 \begin{document}
 \maketitle
 \vspace{-1.3em}
@@ -48,9 +48,9 @@ AI coding agents can generate specifications, implementations, and tests that ag
 \section{Introduction}\label{sec:introduction}
 The \emph{test oracle problem} is deciding whether an observed software response is correct \cite{barr2015oracle}. Agentic construction intensifies a familiar failure mode: the same mistaken interpretation can supply specifications, code, and passing tests. Increasing their mutual consistency does not establish agreement with an authoritative business rule. The acceptance gap concerns the source of expected behavior and who may change it, not simply the number of tests.
 
-\todm{} addresses this gap through approved behavioral oracles whose authority is separated from delegated construction. Agents may propose rules and implementations but cannot unilaterally approve their acceptance baseline. The challenges are establishing accountable semantics, qualifying imperfect evaluators, maintaining observable evidence, and distinguishing legitimate actions from correct outputs. The proposed contribution is a composition of established techniques: a versioned oracle baseline, lifecycle gates with recovery paths, a three-plane reference architecture, and a falsifiable evaluation protocol. Neither global novelty nor superior effectiveness is established.
+\todm{} addresses this gap through approved behavioral oracles whose authority is separated from delegated construction. Agents may propose rules and implementations but cannot unilaterally approve their acceptance baseline. The challenges are establishing accountable semantics, qualifying imperfect evaluators, maintaining observable evidence, and distinguishing legitimate actions from correct outputs. The proposed contribution is a composition of established techniques: a versioned oracle baseline, an eight-stage activity flow with recovery paths, a three-plane responsibility model, and a falsifiable evaluation protocol. Neither global novelty nor superior effectiveness is established.
 
-Section~\ref{sec:foundations} positions the method. Section~\ref{sec:method} defines its contracts, lifecycle, controls, and intended application scope; Section~\ref{sec:architecture} describes the component architecture. Section~\ref{sec:validation} defines the current synthetic check protocol, research questions, and planned comparison before Section~\ref{sec:observations} separates a reasoned example from recorded synthetic observations. Sections~\ref{sec:threats} and~\ref{sec:conclusion} discuss validity and future work.
+Section~\ref{sec:foundations} positions the method. Section~\ref{sec:method} defines its contracts, activity flow, controls, and intended application scope; Section~\ref{sec:architecture} explains the responsibility and information-flow model that supports those activities. Section~\ref{sec:validation} defines the current synthetic check protocol, research questions, and planned comparison before Section~\ref{sec:observations} separates a reasoned example from recorded synthetic observations. Sections~\ref{sec:threats} and~\ref{sec:conclusion} discuss validity and future work.
 
 \section{Foundations and Related Work}\label{sec:foundations}
 Oracle techniques include specifications, models, and contracts \cite{barr2015oracle}. Mutation testing injects faults to assess discrimination \cite{jia2011mutation}; metamorphic testing checks relations between executions when individual outputs are difficult to specify \cite{segura2016metamorphic}. TODM does not invent these techniques. Specification-driven development (SDD), including GitHub Spec Kit \cite{github2026speckit}, organizes intent-to-implementation workflows. Test-driven and behavior-driven development (TDD/BDD), including Gherkin examples \cite{cucumber2026}, express executable expectations. TODM is complementary: vetted specifications and examples can become oracles, and these workflows can already incorporate independent approval and qualification. Their absence is a configuration risk, not an inherent deficiency of SDD/TDD/BDD.
@@ -80,7 +80,7 @@ Every extracted rule is tagged \textsf{NORMATIVE} (approved policy or requiremen
 Small changes may need a DMN decision table and an invariant, but not a full case-management engine. All five model families are available, yet selection is justified by behavior and risk rather than compliance theater. Controls must not create unverified claims of exhaustive coverage.
 
 \subsection{Lifecycle and recovery}
-Figure~\ref{fig:method} presents the activity lifecycle, not a component architecture. Gates are evidence checks rather than a rigid temporal sequence: production events can reopen discovery while bounded implementation repairs continue. Authority and baseline constraints persist across iterations. The distinct architecture appears in Section~\ref{sec:architecture}.
+Figure~\ref{fig:method} presents the activity lifecycle as a flowchart, not a reference architecture or an executable BPMN model. Gates are evidence checks rather than a rigid temporal sequence: production events can reopen discovery while bounded implementation repairs continue. Authority and baseline constraints persist across iterations. Section~\ref{sec:architecture} separately describes the responsibility and information-flow model used to support these activities.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=.87\linewidth]{figures/todm_method.pdf}
@@ -142,12 +142,12 @@ These profiles describe intended use, not evaluated organizational cases or evid
 
 All profiles retain authority separation, immutable baselines, qualification, tri-valued evaluation, recovery, and human release rights. These are process-level adoption criteria, not certification or OMG conformance. A small pilot can use one approved decision, boundary controls, a wrong-threshold mutant, and a builder without baseline-write permission. Add model families only for uncovered risks. Where automation cannot supply a meaningful oracle, record the gap and human evaluation criteria rather than claim automated coverage.
 
-\section{Reference Architecture}\label{sec:architecture}
-Figure~\ref{fig:planes} is a component/plane architecture, distinct from the activity lifecycle in Figure~\ref{fig:method}. The governance plane owns approved baselines and mandates; construction produces candidate artifacts; verification binds observations to protected oracles and reports evidence for release decisions. File storage, version control, CI jobs, a candidate application, and one functioning adapter can implement a small deployment; distributed orchestration is optional.
+\section{Responsibility and Information-Flow Model}\label{sec:architecture}
+Figure~\ref{fig:planes} is an operational model of responsibilities and information flows, not a domain-wide reference architecture. It complements the activity flow in Figure~\ref{fig:method} by showing which role owns each decision and what evidence crosses plane boundaries. The authority plane owns approved baselines and mandates; the construction plane produces candidate artifacts; the verification plane binds observations to protected oracles and reports evidence for release decisions. File storage, version control, CI jobs, a candidate application, and one functioning adapter can implement a small deployment; distributed orchestration is optional. The diagram is intentionally non-prescriptive about deployment technology and should not be read as a reusable physical or logical architecture for every domain.
 
 \begin{figure}[htbp]
-\centering\includegraphics[width=\linewidth]{figures/todm_planes.pdf}
-\caption{A tool-neutral three-plane architecture. Protected approval and oracle evaluation are separate from AI construction.}
+\centering\includegraphics[width=\linewidth]{figures/todm_planes_v1.6.pdf}
+\caption{A tool-neutral model of responsibilities and information flows. Protected approval and oracle evaluation are separate from AI construction.}
 \label{fig:planes}
 \end{figure}
 
@@ -202,6 +202,8 @@ Assertions compare evaluator verdicts and CLI exits with declared fixture expect
 
 The falsifiable expectations are higher shared-fault recall with independent approval (RQ1), lower false-positive and inconclusive rates after qualification (RQ2), fewer unauthorized baseline changes under protected approval and accepted autonomy without increased critical escapes (RQ4), and blocked unauthorized-but-conformant candidates under independent enforcement (RQ6). Null or adverse outcomes constrain these claims. RQ3 and RQ5 investigate transfer and interpretation rather than presuppose benefit. No economic or demonstrated percentage-autonomy claim is made.
 
+Table~\ref{tab:metrics} operationalizes the planned research questions, not a set of measured outcomes in this paper. The current evaluation reports fixture verdicts and test exits only. Production defect density, human review effects, and accepted autonomous work cannot be inferred from those counts.
+
 \begin{table}[htbp]
 \centering\footnotesize
 \caption{Operational metrics. Denominators and exclusions must be declared before evaluation.}
@@ -236,6 +238,14 @@ A pilot-based power analysis will determine sample size; no sample or effect est
 \subsection{Reasoned shared-specification example}
 Suppose the authoritative business policy states: requests over EUR~10,000 require human authorization before approval or persistence as approved. A generated SDD specification incorrectly sets the review threshold at EUR~12,000; the generated tests confirm EUR~11,000 should be automatically approved.
 
+Applying the proposed method would proceed as follows; this sequence is illustrative, not a record of a human or agent trial.
+\begin{enumerate}
+\item Frame the approval capability and locate the authoritative EUR~10,000 policy (G0--G1); record its conflict with the generated specification.
+\item Have the accountable owner resolve that conflict and approve the exact oracle baseline; qualify it using boundary controls and wrong-threshold mutants (G2--G3).
+\item Construct within the mandate and evaluate the candidate's EUR~11,000 decision against the approved baseline (G4--G5). Incorrect automatic approval yields \FAIL{} and returns to construction, without changing the oracle to accommodate the defect.
+\item Reverify the repair before a separate human release decision (G6); subsequent operational observations can reopen discovery but cannot silently rewrite the baseline (G7).
+\end{enumerate}
+
 \begin{table}[htbp]
 \centering\small
 \caption{Illustrative example; these are reasoned expected outcomes, not experimental results.}
@@ -259,7 +269,9 @@ For a stateless API, DMN plus an invariant may suffice; long-running approvals a
 Proposed qualification mutants change the threshold to EUR~12,000, omit review, persist approval before review, duplicate approvals, or close an incomplete case. Controls include EUR~9,999, EUR~10,000, malformed inputs, and missing observations. Record survivors, detections, false alarms, and inconclusive outcomes. This is a reasoned protocol illustration, not a claim that the recorded suite implements every listed scenario.
 
 \subsection{Recorded engineering checks and provenance}
-The companion artifact implements five limited JSON semantic profiles associated with SBVR, DMN, BPMN, CMMN, and OCL, a deterministic Python evaluator, a C\#/.NET~10 candidate/scaffold, synthetic greenfield/brownfield/AMS fixtures, static mandates, and demonstration attestations. It exercises gate composition, not full OMG languages or industrial effectiveness.
+The public GitHub repository \url{https://github.com/jmfloreszazo/TODM} puts the article's mechanism into executable, synthetic practice. It contains five limited JSON semantic profiles associated with SBVR, DMN, BPMN, CMMN, and OCL; a deterministic Python evaluator and C\#/.NET~10 candidate/scaffold; synthetic greenfield, brownfield, and AMS fixtures; static mandates; demonstration attestations; and a fail-closed release gate. This artifact exercises the proposed gate composition and selected failure modes, not full OMG languages, production identity/enforcement, or industrial effectiveness.
+
+The companion artifact is archived as v1.5.0 at \href{https://doi.org/10.5281/zenodo.23725201}{doi:10.5281/zenodo.23725201}, with source revision \path{61354abc03e73fbf258b6e8d66e35678da134ef8}. This identifies the artifact snapshot, not the original execution commit or an archive of manuscript v1.6.
 
 The preserved \path{demo/results/reproducibility-v0.4.json} records Python~3.13.5 on \path{Linux-6.18.55-x86_64-with-glibc2.41}. At artifact preparation, \texttt{verify\_all.py}, \texttt{verify\_signed.py}, and \texttt{test\_audit\_release.py} completed nine baseline/qualification, ten signed-assurance, and seven adversarial release-gate tests respectively, each with exit code 0. Across 16 deterministic fixtures, five have passing behavioral and authority controls plus the requisite G6 demonstration signature; eleven are blocked. The behavioral totals are eleven \PASS{}, four \FAIL{}, and one \INC{}; five fixtures fail mandate checks. The reference suite's five known-correct controls pass, four seeded mutants violate at least one oracle family, and one incomplete observation is inconclusive. These are overlapping views of selected fixtures, not independent samples.
 
@@ -268,6 +280,8 @@ The recorded CLI invocation for \texttt{GF-01-greenfield-approved} returned \tex
 G2 Ed25519 demonstration signatures bind the manifest digest and model hashes; G6 signatures bind individual fixtures to that digest. Thus neither a conformant unsigned fixture nor a signed but nonconformant or unauthorized fixture is allowed. Public demonstration keys do not establish human identity. Mandates are unsigned static fixtures; no production enforcement point, credential revocation service, protected deployment, or organizational separation is demonstrated. Fixtures and evaluators share a repository and do not establish epistemic independence.
 
 From \texttt{demo/}, \texttt{python3 scripts/reproduce.py} is the documented reproduction entry point, requiring Python~3.12+ and OpenSSL Ed25519 support. No new execution is claimed here. The historical record states \texttt{dotnetCompiledHere=false}; supplied .NET~10 CI configuration is not evidence of local compilation or parity in that preparation environment. These bounded checks leave the effectiveness questions in Section~\ref{sec:validation} unanswered.
+
+\textbf{Interpretation against the research questions.} The seeded-fault checks illustrate mechanisms relevant to RQ1--RQ2, but contain no matched comparison or independent held-out assessment. The mandate fixtures exercise a decision predicate relevant to RQ6, not real enforcement. Profile labels alone do not answer RQ3, and no autonomous-work or human-review study addresses RQ4--RQ5. The practical result is an inspectable demonstration of selected acceptance decisions, not confirmation of the six research questions.
 
 \section{Threats to Validity}\label{sec:threats}
 \paragraph{Construct validity.} Fixture verdicts operationalize selected gate behavior, not business correctness, full OMG semantics, real human approval, or autonomous productivity. Executed missing-evidence and seeded-fault controls distinguish selected failure classes, and explicit JSON-profile limits narrow the claim. They do not establish complete observability, temporal/security coverage, or semantic truth. Independent domain adjudication, richer bindings, and production identity checks remain pending.
@@ -284,13 +298,10 @@ TODM specifies an acceptance method built from independently governed oracles, b
 Future work should progress from protected manifests and reproducible evidence (M0), through decision/invariant adapters (M1), process traces (M2), case controls (M3), and governed vocabulary mappings (M4), to cross-adapter qualification, independent audit, and multi-profile comparison (M5). These are research milestones, not completion claims for full standards engines. Each must publish supported versions, unsupported constructs, deterministic outputs, qualification evidence, and a completion decision. Optional ontology support follows demonstrated need. Cross-platform and organizational replication must establish whether the proposed separation detects consequential defects and sustains accepted autonomy; until then it remains a falsifiable methodological proposal.
 
 \section*{Ethics, Transparency, and Author Responsibility}
-This manuscript describes a methodology and does not report studies on human participants, production customers, or private repositories. Illustrative values and scenarios are synthetic. Generative AI assistance was used to support drafting, language editing, literature organization, and document production. All technical claims, references, and citations require final human verification prior to submission. The human author is responsible for checking references, the technical claims, the originality and intellectual-property status of the work, and the final submitted version. No AI system is credited as an author.
+The reported evidence comes from internal engineering tests of the companion artifact using synthetic scenarios for software modernization, new development, and maintenance. These are not studies involving human participants or production customers. Generative AI assisted drafting, language editing, literature organization, and document production. The author retains responsibility for the technical claims, references, originality, and final manuscript; no AI system is credited as an author.
 
 \section*{Data and Code Availability}
-There is no industrial experimental dataset. The archived TODM v1.5 artifact has version DOI \href{https://doi.org/10.5281/zenodo.23725201}{10.5281/zenodo.23725201} and concept DOI \href{https://doi.org/10.5281/zenodo.23725200}{10.5281/zenodo.23725200}. The immutable source revision is
-\begin{quote}\ttfamily\small
-61354abc03e73fbf258b6e8d66e35678da134ef8
-\end{quote} It includes limited JSON profiles, synthetic fixtures, evaluators, demonstration attestations, and provenance. The historical \texttt{demo/results/reproducibility-v0.4.json} remains a prior engineering record, not a new v1.5 experiment; the source revision identifies the artifact, not the original execution commit missing from that record. This current manuscript is an unsubmitted editorial revision and is not certified or archived merely by citing the existing release. Archival availability does not establish standards conformance, real human approvals, local .NET compilation in the historical preparation environment, or scientific effectiveness.
+Source code, synthetic examples, and reproduction instructions are publicly available at \url{https://github.com/jmfloreszazo/TODM}. The repository lets readers inspect and run selected TODM mechanisms in practice, illustrating how the methodology applies to modernization, new development, and maintenance. It is a synthetic demonstrator, not a complete production implementation.
 
 \bibliographystyle{plain}
 \bibliography{references-v1.6}

@@ -8,9 +8,9 @@
 - [Python/.NET 10 synthetic research demo](../demo/) with limited oracle profiles, governance fixtures, synthetic signing keys and fail-closed acceptance scenarios.
 - [Comparative protocol](COMPARATIVE_PROTOCOL.md) and [Open Research Challenge](../research/challenge/README.md) invite independent evaluation.
 
-## Manuscript v1.6 draft — 22 November 2026
+## Manuscript v1.6 — 22 November 2026
 
-The [revised PDF](../paper/TODM_Paper_v1.6.pdf), [Markdown](../paper/TODM_Paper_v1.6.md), and [LaTeX](../paper/source/v1.6.tex) are an unsubmitted editorial revision for author/reviewer approval. This manuscript numbering does not change the software version or historical release assets. The v1.5.0 DOI above identifies the original deposit, not this draft. No new experiment or external approval is implied. See the [paper instructions](../paper/README.md).
+The finalized [PDF](../paper/TODM_Paper_v1.6.pdf), [Markdown](../paper/TODM_Paper_v1.6.md), and [LaTeX](../paper/source/v1.6.tex) form the unsubmitted manuscript v1.6. This manuscript numbering does not change the software version or historical release assets. The v1.5.0 DOI above identifies the original deposit, not manuscript v1.6. No new experiment or external approval is implied. See the [paper instructions](../paper/README.md).
 
 ## Historical artifacts
 

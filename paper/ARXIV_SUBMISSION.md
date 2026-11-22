@@ -2,7 +2,7 @@
 
 ## Current manuscript v1.6
 
-**Status:** finalized manuscript dated 22 November 2026, not yet submitted or published. The software remains v1.5.0. Use [v1.6.tex](source/v1.6.tex), [references-v1.6.bib](source/references-v1.6.bib), a matching generated `v1.6.bbl`, and both referenced PDF figures. Put the main file at the ZIP root and preserve `figures/`. Do not include historical sources, logs, auxiliary files, or the output manuscript PDF in the TeX source ZIP. Select `v1.6.tex` as the main document when importing into Overleaf.
+**Status:** finalized manuscript dated 22 November 2026, not submitted to or accepted by arXiv. A GitHub paper release is separate from academic publication. The software remains v1.5.0. Use [v1.6.tex](source/v1.6.tex), [references-v1.6.bib](source/references-v1.6.bib), a matching generated `v1.6.bbl`, and both referenced PDF figures. Put the main file at the ZIP root and preserve `figures/`. Do not include historical sources, logs, auxiliary files, or the output manuscript PDF in the TeX source ZIP. Select `v1.6.tex` as the main document when importing into Overleaf.
 
 Build with `latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error v1.6.tex` from `paper/source`, or use the alternative in the [paper README](README.md). Copy the exact title, author, abstract and five keywords from v1.6, not the historical metadata below. Preserve the author's accented name using supported TeX accents in arXiv metadata fields where required.
 

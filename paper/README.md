@@ -22,7 +22,13 @@ cd paper/source
 tectonic --keep-logs --keep-intermediates v1.6.tex
 ```
 
-After inspecting the output, copy `paper/source/v1.6.pdf` to `paper/TODM_Paper_v1.6.pdf`. Local Tectonic compilation is not proof of compilation by arXiv's TeX Live service. The existing [PDF workflow](../.github/workflows/paper-pdf.yml) still builds v1.5; it has not been redirected to publish v1.6.
+After inspecting the output, copy `paper/source/v1.6.pdf` to `paper/TODM_Paper_v1.6.pdf`. Local Tectonic compilation is not proof of compilation by arXiv's TeX Live service. The [v1.6 workflow](../.github/workflows/paper-v1.6.yml) compiles the manuscript with pdfLaTeX, checks the PDF, and independently rebuilds its source ZIP on pull requests and relevant pushes to `main`. The historical [v1.5 PDF workflow](../.github/workflows/paper-pdf.yml) remains unchanged.
+
+## Paper-only GitHub release
+
+After merging and checking CI, an authorized maintainer can dispatch `paper-v1.6.yml` on `main` with `confirm_release=PUBLISH_PAPER_V1_6`. Only that explicit dispatch can publish the immutable tag `todm-paper-v1.6`; ordinary pushes and pull requests produce build artifacts only. An existing release is not overwritten.
+
+The release contains the compiled PDF, Markdown, portable source ZIP, build provenance with the exact commit and CI run, and SHA-256 checksums. It does not create a software release, modify historical evidence, submit to arXiv, or establish scientific acceptance.
 
 ## Review and submission
 

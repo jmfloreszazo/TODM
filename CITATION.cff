@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Cite the full TODM research manuscript and the tagged software artifact. The software artifact has a Zenodo DOI; no arXiv identifier has been assigned."
+message: "Use the preferred citation for the TODM paper v1.6. The top-level software metadata separately identifies the archived v1.5.0 artifact and its DOI; that DOI does not identify paper v1.6. No arXiv identifier has been assigned."
 type: software
 title: "TODM: Test Oracle-Driven Methodology — Research Artifact"
 version: "1.5.0"
@@ -22,8 +22,10 @@ abstract: "A proposed tool-agnostic methodology and reproducible synthetic Pytho
 preferred-citation:
   type: generic
   title: "TODM: A Test Oracle-Driven Methodology for Human-Governed AI Software Engineering"
+  version: "1.6"
+  date-released: "2026-11-22"
   authors:
     - family-names: "Flores Zazo"
       given-names: "José María"
   year: 2026
-  url: "https://github.com/jmfloreszazo/TODM/releases/download/todm-research-v1.5.0/TODM_Paper_v1.5.pdf"
+  url: "https://github.com/jmfloreszazo/TODM/releases/download/todm-paper-v1.6/TODM_Paper_v1.6.pdf"

@@ -1,10 +1,10 @@
-# Permanent archival DOI — next external step
+# Permanent archival DOI — software v1.5.0 and paper v1.6
 
-**GitHub research release:** https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4.0
+**Paper release:** https://github.com/jmfloreszazo/TODM/releases/tag/todm-paper-v1.6
 
-**Status:** GitHub release exists and has downloadable PDF, LaTeX source ZIP and full demo ZIP. **No DOI has been issued.**
+**Status:** paper v1.6 is available with PDF, Markdown, source ZIP, build provenance and checksums. No separate DOI has been verified for this manuscript. The [v1.5.0 software/research artifact](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.5.0) already has version DOI [10.5281/zenodo.23725201](https://doi.org/10.5281/zenodo.23725201) and concept DOI [10.5281/zenodo.23725200](https://doi.org/10.5281/zenodo.23725200); do not reuse that version DOI as the identifier for paper v1.6.
 
-## Suggested deposit workflow
+## Suggested deposit workflow for paper v1.6
 
 1. Sign in to a trusted research preservation service such as [Zenodo](https://zenodo.org/).
 2. If using Zenodo's GitHub integration, authorize your GitHub account and enable the `jmfloreszazo/TODM` repository for release archiving. Verify that the existing release can be imported; if not, create a subsequent versioned release under a controlled process.

@@ -1,5 +1,7 @@
 # Historical transfer note — complete TODM research artifact
 
+**Current paper:** [v1.6 release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-paper-v1.6). The transfer records below retain their original artifact versions and CI run IDs.
+
 **Status: COMPLETED on 27 October 2026.** This file previously described manual steps for uploading the full v0.4 demo and manuscript; those steps are no longer necessary.
 
 The complete paper, five-family Python/.NET 10 demonstration, signed synthetic G2/G6 fixtures, research evidence and CI workflows have been published.
@@ -11,6 +13,6 @@ The complete paper, five-family Python/.NET 10 demonstration, signed synthetic G
 - [Verified tagged GitHub release](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.4.0)
 - [Release validation CI (green)](https://github.com/jmfloreszazo/TODM/actions/runs/40599015278)
 
-**Remaining external work:** actual arXiv submission, archival DOI deposit and independent controlled comparative study. See [publication status](PUBLICATION_STATUS.md).
+**Current external work:** arXiv submission, any separate archival DOI for paper v1.6, and an independent controlled comparative study. The software v1.5.0 DOI already exists; see [publication status](PUBLICATION_STATUS.md).
 
 **Evidence boundary:** This is a reproducible synthetic research artifact, not an industrial validation or production-ready IAM solution.

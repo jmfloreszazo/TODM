@@ -6,11 +6,17 @@
 
 [![Full research demo](https://github.com/jmfloreszazo/TODM/actions/workflows/full-demo.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/full-demo.yml)
 [![Cross-language CI](https://github.com/jmfloreszazo/TODM/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/ci.yml)
-[![Paper PDF](https://github.com/jmfloreszazo/TODM/actions/workflows/paper-pdf.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/paper-pdf.yml)
+[![Paper v1.6 PDF](https://github.com/jmfloreszazo/TODM/actions/workflows/paper-v1.6.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/paper-v1.6.yml)
 [![Docs integrity](https://github.com/jmfloreszazo/TODM/actions/workflows/docs-integrity.yml/badge.svg?branch=main)](https://github.com/jmfloreszazo/TODM/actions/workflows/docs-integrity.yml)
 [![License: MIT](https://img.shields.io/github/license/jmfloreszazo/TODM)](LICENSE)
 
 **Research status:** proposed methodology + reproducible **synthetic** Python/.NET 10 engineering demonstration. Not a production-certified governance platform or an industrial effectiveness study.
+
+## Manuscript v1.6
+
+The revised article is available as [PDF](paper/TODM_Paper_v1.6.pdf), [Markdown](paper/TODM_Paper_v1.6.md), and [LaTeX](paper/source/v1.6.tex). It incorporates the November 2026 editorial feedback: eight main sections, an explicit evaluation method before results, justified research questions, categorized threats to validity, and consolidated future work. See the [paper instructions](paper/README.md) for building and preparing the source package.
+
+**This is the finalized manuscript v1.6, not a v1.6 software release.** Its paper-only GitHub release uses [tag `todm-paper-v1.6`](https://github.com/jmfloreszazo/TODM/releases/tag/todm-paper-v1.6), with PDF, Markdown, source ZIP, build provenance, and checksums published after explicit authorization and successful CI. The software version, published v1.5.0 DOI, historical manuscripts, and experimental evidence remain unchanged. No reviewer approval, new experiment, arXiv submission, or academic acceptance is claimed.
 
 ## The problem in 30 seconds
 
@@ -66,6 +72,7 @@ TODM defines eight gates: **G0** scope and risk, **G1** evidence discovery, **G2
 
 ## Read the research and inspect the evidence
 
+- **[v1.6 paper (PDF)](paper/TODM_Paper_v1.6.pdf)** · [Markdown](paper/TODM_Paper_v1.6.md) · [LaTeX](paper/source/v1.6.tex) · [v1.6 build and release workflow](.github/workflows/paper-v1.6.yml)
 - **[v1.5 manuscript (Markdown)](paper/TODM_Paper_v1.5.md)** · [v1.5 LaTeX source](paper/source/v1.5.tex) · [PDF build workflow](.github/workflows/paper-pdf.yml)
 - **[Complete v1.4 paper (PDF)](paper/TODM_Paper_v1.4.pdf)** · [Markdown manuscript](paper/TODM_Paper_v1.4.md) · [LaTeX source](paper/source/)
 - [Research and publication status](docs/PUBLICATION_STATUS.md) · [limitations](demo/docs/limitations.md)

@@ -1,0 +1,128 @@
+name: Build and publish TODM paper v1.6
+on:
+  pull_request:
+    paths:
+      - 'paper/**'
+      - '.github/workflows/paper-v1.6.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'paper/**'
+      - '.github/workflows/paper-v1.6.yml'
+  workflow_dispatch:
+    inputs:
+      confirm_release:
+        description: 'Type PUBLISH_PAPER_V1_6 to publish the paper-only release'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: todm-paper-v1.6-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: false
+jobs:
+  build-paper-v1-6:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify documentation and frozen evidence
+        run: |
+          python3 scripts/check_markdown_links.py
+          python3 scripts/check_version_alignment.py
+          python3 scripts/verify_artifact_manifest.py
+      - name: Install LaTeX and PDF tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern latexmk poppler-utils zip unzip
+      - name: Compile and check manuscript v1.6
+        run: |
+          cd paper/source
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error v1.6.tex
+          test -s v1.6.pdf
+          test -s v1.6.bbl
+          if grep -E 'Overfull|undefined references|Citation .* undefined|Missing character' v1.6.log; then
+            echo 'Unresolved manuscript diagnostics.'
+            exit 1
+          fi
+          mkdir -p ../../release
+          cp v1.6.pdf ../../release/TODM_Paper_v1.6.pdf
+          pdftotext v1.6.pdf ../../release/manuscript.txt
+          tr '\n' ' ' < ../../release/manuscript.txt | sed 's/  */ /g' > ../../release/normalized.txt
+          grep -F 'Manuscript v1.6' ../../release/normalized.txt
+          grep -F 'Responsibility and Information-Flow Model' ../../release/normalized.txt
+          grep -F 'internal engineering tests' ../../release/normalized.txt
+          grep -F 'https://github.com/jmfloreszazo/TODM' ../../release/normalized.txt
+          if grep -Ei 'v1\.6 draft|\?\?' ../../release/normalized.txt; then
+            echo 'Draft marker or unresolved cross-reference in compiled PDF.'
+            exit 1
+          fi
+          pages=$(pdfinfo v1.6.pdf | awk '/^Pages:/ {print $2}')
+          test "$pages" -gt 0
+          test "$pages" -le 15
+          pdfinfo v1.6.pdf | grep -E '^(Title|Pages|Page size):'
+      - name: Package and independently compile portable sources
+        run: |
+          cd paper/source
+          zip -9 -q ../../release/TODM_arXiv_source_v1.6.zip \
+            v1.6.tex v1.6.bbl references-v1.6.bib \
+            figures/todm_method.pdf figures/todm_planes_v1.6.pdf
+          package_dir=$(mktemp -d)
+          unzip -q ../../release/TODM_arXiv_source_v1.6.zip -d "$package_dir"
+          cd "$package_dir"
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error v1.6.tex
+          pdftotext v1.6.pdf packaged.txt
+          diff -u "$GITHUB_WORKSPACE/release/manuscript.txt" packaged.txt
+      - name: Record publication provenance and checksums
+        run: |
+          cp paper/TODM_Paper_v1.6.md release/
+          printf 'Manuscript: v1.6\nSoftware artifact: v1.5.0 (unchanged)\nSource commit: %s\nBuild run: %s/%s/actions/runs/%s\nValidation: document compilation and integrity checks; not new empirical results\n' \
+            "$GITHUB_SHA" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" \
+            > release/PAPER_BUILD_PROVENANCE.txt
+          cd release
+          sha256sum TODM_Paper_v1.6.pdf TODM_Paper_v1.6.md \
+            TODM_arXiv_source_v1.6.zip PAPER_BUILD_PROVENANCE.txt > SHA256SUMS
+          sha256sum -c SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TODM-Paper-v1.6
+          path: |
+            release/TODM_Paper_v1.6.pdf
+            release/TODM_Paper_v1.6.md
+            release/TODM_arXiv_source_v1.6.zip
+            release/PAPER_BUILD_PROVENANCE.txt
+            release/SHA256SUMS
+          if-no-files-found: error
+  publish-paper-v1-6:
+    needs: build-paper-v1-6
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.confirm_release == 'PUBLISH_PAPER_V1_6'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: TODM-Paper-v1.6
+          path: release
+      - name: Publish immutable paper-only release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          cd release
+          sha256sum -c SHA256SUMS
+          printf '%s\n\n%s\n\n%s\n\n%s\n' \
+            'Finalized manuscript v1.6 incorporating the editorial review: eight main sections, five keywords, explicit research questions and evaluation protocol, a revised responsibility/information-flow figure, and categorized threats to validity.' \
+            'Includes the compiled PDF, Markdown manuscript, portable arXiv/Overleaf source ZIP, build provenance, and SHA-256 checksums.' \
+            'Paper-only release: software VERSION and CITATION.cff remain v1.5.0. Historical oracle snapshots and raw results are unchanged. The v1.5.0 DOI does not identify this manuscript revision. No arXiv acceptance, peer-review approval, new experiment, or industrial effectiveness is claimed.' \
+            "Source commit: $GITHUB_SHA. Build: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID." \
+            > release-notes.md
+          gh release create todm-paper-v1.6 \
+            TODM_Paper_v1.6.pdf TODM_Paper_v1.6.md TODM_arXiv_source_v1.6.zip \
+            PAPER_BUILD_PROVENANCE.txt SHA256SUMS \
+            --target "$GITHUB_SHA" --draft \
+            --title 'TODM Paper v1.6 — Revised Manuscript' \
+            --notes-file release-notes.md
+          gh release edit todm-paper-v1.6 --draft=false --latest

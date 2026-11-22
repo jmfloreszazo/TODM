@@ -1,6 +1,22 @@
 # arXiv submission package — author checklist
 
-**Status:** Complete candidate source package and compiled PDF are publicly available. **Not submitted to or accepted by arXiv.**
+## Current manuscript v1.6
+
+**Status:** finalized manuscript dated 22 November 2026, not submitted to or accepted by arXiv. A GitHub paper release is separate from academic publication. The software remains v1.5.0. Use [v1.6.tex](source/v1.6.tex), [references-v1.6.bib](source/references-v1.6.bib), a matching generated `v1.6.bbl`, and both referenced PDF figures. Put the main file at the ZIP root and preserve `figures/`. Do not include historical sources, logs, auxiliary files, or the output manuscript PDF in the TeX source ZIP. Select `v1.6.tex` as the main document when importing into Overleaf.
+
+Build with `latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error v1.6.tex` from `paper/source`, or use the alternative in the [paper README](README.md). Copy the exact title, author, abstract and five keywords from v1.6, not the historical metadata below. Preserve the author's accented name using supported TeX accents in arXiv metadata fields where required.
+
+The official [submission guidelines](https://info.arxiv.org/help/submit/index.html), [TeX requirements](https://info.arxiv.org/help/submit_tex.html) and [metadata instructions](https://info.arxiv.org/help/prep.html) were consulted on 22 November 2026. The general instructions do not impose a universal article page limit or journal template. Supply TeX sources for a TeX-generated article, include all figures with case-sensitive paths, and inspect the PDF compiled by arXiv itself. Successful local compilation does not establish arXiv acceptance.
+
+The author has designated manuscript v1.6 as final and authorized its paper-only GitHub release. Authorization to submit to arXiv, Rafael's final review, submission license selection, account/category eligibility, any endorsement, and moderation remain separate pending steps. No Overleaf synchronization, ResearchGate upload or arXiv submission has been performed. The dedicated [v1.6 workflow](../.github/workflows/paper-v1.6.yml) verifies the paper and publishes only on an explicitly confirmed manual dispatch from `main`.
+
+The current [source ZIP](TODM_arXiv_source_v1.6.zip) includes `figures/todm_method.pdf` and the redrawn `figures/todm_planes_v1.6.pdf`. The editable source for the latter is maintained in the repository; arXiv compilation uses the included vector PDF.
+
+## Historical v1.4 checklist (not the v1.6 submission metadata)
+
+The remainder preserves the previous candidate's files and instructions for provenance; do not use its `main.tex`, abstract or keywords for manuscript v1.6.
+
+**Historical status:** Complete candidate source package and compiled PDF are publicly available. **Not submitted to or accepted by arXiv.**
 
 ## Files
 
@@ -44,4 +60,4 @@ cd paper/source
 latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex
 ```
 
-The GitHub Actions workflow compiles the PDF and publishes a release artifact automatically.
+This historical rebuild command is not the v1.6 build command. The historical GitHub Actions PDF workflow still targets v1.5; the separate v1.6 workflow is described above.

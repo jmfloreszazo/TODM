@@ -73,13 +73,15 @@ TODM defines eight gates: **G0** scope and risk, **G1** evidence discovery, **G2
 ## Read the research and inspect the evidence
 
 - **[v1.6 paper (PDF)](paper/TODM_Paper_v1.6.pdf)** · [Markdown](paper/TODM_Paper_v1.6.md) · [LaTeX](paper/source/v1.6.tex) · [v1.6 build and release workflow](.github/workflows/paper-v1.6.yml)
-- **[v1.5 manuscript (Markdown)](paper/TODM_Paper_v1.5.md)** · [v1.5 LaTeX source](paper/source/v1.5.tex) · [PDF build workflow](.github/workflows/paper-pdf.yml)
-- **[Complete v1.4 paper (PDF)](paper/TODM_Paper_v1.4.pdf)** · [Markdown manuscript](paper/TODM_Paper_v1.4.md) · [LaTeX source](paper/source/)
+- **Historical [v1.5 manuscript (Markdown)](paper/TODM_Paper_v1.5.md)** · [v1.5 LaTeX source](paper/source/v1.5.tex) · [historical PDF workflow](.github/workflows/paper-pdf.yml)
+- **Historical [v1.4 paper (PDF)](paper/TODM_Paper_v1.4.pdf)** · [Markdown manuscript](paper/TODM_Paper_v1.4.md) · [LaTeX source](paper/source/)
 - [Research and publication status](docs/PUBLICATION_STATUS.md) · [limitations](demo/docs/limitations.md)
 - [Full reproducibility instructions](demo/README.md) · [historical v0.4 model profiles](research-models/v0.4/)
-- [Migration plan towards v1.5.0](docs/V1.5_MIGRATION_PLAN.md) · [repository layout](docs/REPOSITORY_LAYOUT.md)
+- [Historical v1.5.0 migration plan](docs/V1.5_MIGRATION_PLAN.md) · [repository layout](docs/REPOSITORY_LAYOUT.md)
 
-**Current published research release:** [v1.5.0](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.5.0) · [Zenodo DOI](https://doi.org/10.5281/zenodo.23725201). Publication does not imply independent scientific validation.
+**Current paper release:** [v1.6](https://github.com/jmfloreszazo/TODM/releases/tag/todm-paper-v1.6). **Archived software/research artifact:** [v1.5.0](https://github.com/jmfloreszazo/TODM/releases/tag/todm-research-v1.5.0) · [Zenodo DOI](https://doi.org/10.5281/zenodo.23725201). Publication does not imply independent scientific validation.
+
+**Cite the paper:** Flores Zazo, José María (2026). *TODM: A Test Oracle-Driven Methodology for Human-Governed AI Software Engineering*, version 1.6, 22 November 2026. [PDF](https://github.com/jmfloreszazo/TODM/releases/download/todm-paper-v1.6/TODM_Paper_v1.6.pdf). The [preferred citation](CITATION.cff) identifies this paper separately from the software artifact.
 
 ## What this does *not* claim
 

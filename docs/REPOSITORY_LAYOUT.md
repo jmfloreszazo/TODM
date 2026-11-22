@@ -7,7 +7,7 @@
 | `demo/scripts/` | Reference Python engine and reproducibility tools | Eventually consolidate under `src/python/` and `scripts/` |
 | `contracts/`, `demo/contracts/`, `research-models/` | Contract and model profiles | Preserve schema identifiers; organize after dependency mapping |
 | `demo/results/` | Research evidence and reports | Retain all tracked evidence, with provenance |
-| `paper/` | Manuscripts, PDF and LaTeX | Preserve previous editions; add versioned v1.5 artifacts |
+| `paper/` | Current v1.6 manuscript, PDF, LaTeX and source ZIP | Preserve previous editions and their separate software/evidence versions |
 | `.github/workflows/` | Authoritative CI/CD | Consolidate and validate before deleting any duplicate workflow files |
 | `demo/.github/workflows/` | Nested workflow templates | Review before removal; GitHub only executes root workflows |
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check source and citation alignment for the published v1.5 research artifact."""
+"""Check paper v1.6 citations and the separate archived v1.5 software metadata."""
 from __future__ import annotations
 import argparse
 from pathlib import Path
@@ -22,7 +22,11 @@ def expect(path: str, fragments: tuple[str, ...] = ()) -> None:
                 errors.append(f"{path}: missing expected text {fragment!r}")
 
 expect("VERSION", ("1.5.0",))
-expect("CITATION.cff", ('version: "1.5.0"', "todm-research-v1.5.0/TODM_Paper_v1.5.pdf"))
+expect("CITATION.cff", ('version: "1.5.0"', '  version: "1.6"', '  date-released: "2026-11-22"', "todm-paper-v1.6/TODM_Paper_v1.6.pdf"))
+expect("paper/TODM_Paper_v1.6.md", ("**Manuscript version:** 1.6",))
+expect("paper/source/v1.6.tex", ("Manuscript v1.6",))
+expect("paper/source/references-v1.6.bib")
+expect(".github/workflows/paper-v1.6.yml", ("PUBLISH_PAPER_V1_6", "todm-paper-v1.6"))
 expect("README.md", ("TODM_Paper_v1.4.pdf", "TODM_Paper_v1.4.md", "todm-research-v1.5.0", "10.5281/zenodo.23725201"))
 expect("paper/source/main.tex", ("Research artifact companion, v1.4",))
 expect("paper/TODM_Paper_v1.4.md", ("version 1.4",))
@@ -36,6 +40,7 @@ expect(".github/workflows/release.yml", ("todm-research-v1.5.0", "TODM_Paper_v1.
 expect("paper/ARXIV_SUBMISSION.md", ("todm-research-v1.4.0/TODM_Paper_v1.4.pdf",))
 if not args.allow_uncompiled_pdf:
     expect("paper/TODM_Paper_v1.4.pdf")
+    expect("paper/TODM_Paper_v1.6.pdf")
 if errors:
     raise SystemExit("\n".join(errors))
-print("OK: TODM v1.5 publication metadata aligned; historical v1.4 source retained")
+print("OK: paper v1.6 citation aligned; software v1.5.0 and historical v1.4 sources retained")

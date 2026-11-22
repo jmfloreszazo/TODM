@@ -8,7 +8,7 @@ Build with `latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-erro
 
 The official [submission guidelines](https://info.arxiv.org/help/submit/index.html), [TeX requirements](https://info.arxiv.org/help/submit_tex.html) and [metadata instructions](https://info.arxiv.org/help/prep.html) were consulted on 22 November 2026. The general instructions do not impose a universal article page limit or journal template. Supply TeX sources for a TeX-generated article, include all figures with case-sensitive paths, and inspect the PDF compiled by arXiv itself. Successful local compilation does not establish arXiv acceptance.
 
-The author has designated manuscript v1.6 as final. Authorization to submit, Rafael's final review, license selection, account/category eligibility, any endorsement, and moderation remain separate pending steps. No Overleaf synchronization, ResearchGate upload or arXiv submission has been performed. The existing PDF workflow still targets v1.5 and does not publish v1.6.
+The author has designated manuscript v1.6 as final and authorized its paper-only GitHub release. Authorization to submit to arXiv, Rafael's final review, submission license selection, account/category eligibility, any endorsement, and moderation remain separate pending steps. No Overleaf synchronization, ResearchGate upload or arXiv submission has been performed. The dedicated [v1.6 workflow](../.github/workflows/paper-v1.6.yml) verifies the paper and publishes only on an explicitly confirmed manual dispatch from `main`.
 
 The current [source ZIP](TODM_arXiv_source_v1.6.zip) includes `figures/todm_method.pdf` and the redrawn `figures/todm_planes_v1.6.pdf`. The editable source for the latter is maintained in the repository; arXiv compilation uses the included vector PDF.
 
@@ -60,4 +60,4 @@ cd paper/source
 latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex
 ```
 
-This historical rebuild command is not the v1.6 build command. The existing GitHub Actions PDF workflow targets v1.5; it does not build or publish manuscript v1.6.
+This historical rebuild command is not the v1.6 build command. The historical GitHub Actions PDF workflow still targets v1.5; the separate v1.6 workflow is described above.

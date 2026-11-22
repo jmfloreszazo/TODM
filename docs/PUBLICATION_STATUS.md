@@ -12,6 +12,8 @@
 
 The finalized [PDF](../paper/TODM_Paper_v1.6.pdf), [Markdown](../paper/TODM_Paper_v1.6.md), and [LaTeX](../paper/source/v1.6.tex) form the unsubmitted manuscript v1.6. This manuscript numbering does not change the software version or historical release assets. The v1.5.0 DOI above identifies the original deposit, not manuscript v1.6. No new experiment or external approval is implied. See the [paper instructions](../paper/README.md).
 
+The author has authorized a paper-only GitHub release under [tag `todm-paper-v1.6`](https://github.com/jmfloreszazo/TODM/releases/tag/todm-paper-v1.6). The [dedicated workflow](../.github/workflows/paper-v1.6.yml) publishes the PDF, Markdown, portable source ZIP, build provenance, and SHA-256 checksums only after successful checks and explicit manual confirmation on `main`. Publication status and the exact build run are recorded in the release; this is separate from arXiv submission or peer review.
+
 ## Historical artifacts
 
 The v1.4 release, v0.4 profile schema, and earlier manuscript/results files remain as historical provenance. Their naming does not imply that the v1.5 release is unpublished.

@@ -32,6 +32,6 @@ The release contains the compiled PDF, Markdown, portable source ZIP, build prov
 
 ## Review and submission
 
-Follow the [submission checklist](ARXIV_SUBMISSION.md). The [v1.6 source ZIP](TODM_arXiv_source_v1.6.zip) contains `v1.6.tex`, `references-v1.6.bib`, its matching generated `v1.6.bbl`, and the two referenced PDF figures under `figures/`: `todm_method.pdf` and `todm_planes_v1.6.pdf`. Import it into Overleaf and select `v1.6.tex` as the main document with pdfLaTeX. Sharing, license selection, endorsement and submission remain author actions; no accounts or publication have been created.
+Follow the [submission checklist](ARXIV_SUBMISSION.md). The [v1.6 source ZIP](TODM_arXiv_source_v1.6.zip) contains `v1.6.tex`, `references-v1.6.bib`, its matching generated `v1.6.bbl`, and the two referenced PDF figures under `figures/`: `todm_method.pdf` and `todm_planes_v1.6.pdf`. Import it into Overleaf and select `v1.6.tex` as the main document with pdfLaTeX. Overleaf sharing, arXiv license selection, endorsement and submission remain author actions; a GitHub release does not perform them.
 
 See [publication status](../docs/PUBLICATION_STATUS.md), [reproducible demo](../demo/README.md) and [versioning](../docs/VERSIONING.md).

@@ -1,13 +1,13 @@
 # TODM versioning and reproducibility
 
-**Development target: 1.5.0 (not yet released).** Latest validated public research release: **1.4.0**.
+**Software/research artifact: 1.5.0. Manuscript: 1.6.** These are separate version tracks.
 
 - **Methodology:** eight gates G0–G7; independently approved oracle baseline; greenfield, brownfield and AMS.
-- **Research manuscript:** v1.4 remains the last published canonical manuscript until v1.5 source, Markdown and PDF are compiled and verified.
+- **Research manuscript:** v1.6 is the current finalized paper. The paper-only tag `todm-paper-v1.6` is published through an explicitly confirmed workflow after compilation and checks; it does not bump the software version.
 - **Demo:** v1.5 evidence generator writes `demo/results/reproducibility-v1.5.json`; the underlying synthetic JSON profile schema remains **0.4.0**.
 - **Historical evidence:** `demo/results/reproducibility-v0.4.json`, historical research models, prior papers and prior release artifacts must remain intact.
-- **Latest published release:** `todm-research-v1.4.0`. Do not create a v1.5 tag until the manuscript, citation, integrity checks, and release workflow are aligned.
-- **SHA-256 provenance:** `docs/ARTIFACT_MANIFEST.json` freezes 88 historical sources. Never modify a frozen source without explicit manifest reconciliation and review.
-- **External scientific status:** no DOI, arXiv acceptance, industrial comparative superiority, or complete OMG implementation is claimed.
+- **Published software/research release:** `todm-research-v1.5.0`; prior `todm-research-v1.4.0` assets remain historical records. Root `VERSION` and `CITATION.cff` continue to identify v1.5.0.
+- **SHA-256 provenance:** `docs/ARTIFACT_MANIFEST.json` currently freezes 84 historical sources from the original 88-file transfer baseline. Never modify a frozen source without explicit manifest reconciliation and review.
+- **External scientific status:** the archived v1.5.0 artifact has DOI `10.5281/zenodo.23725201`; this is not a DOI for manuscript v1.6. No arXiv acceptance, industrial comparative superiority, or complete OMG implementation is claimed.
 
-The root VERSION tracks the development target. It must not be used alone as evidence that the release or manuscript has been published.
+The root VERSION identifies the software track. It must not be used alone as evidence that a manuscript has been published. See [publication status](PUBLICATION_STATUS.md) for the distinction between GitHub releases, archival deposits, and scientific acceptance.
